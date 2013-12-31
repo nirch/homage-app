@@ -7,7 +7,7 @@
 //
 
 #import "HMGTemplateCSVLoader.h"
-#import "HMGRemake.h"
+#import "HMGRemakeVideo.h"
 #import "HMGSegment.h"
 #import "HMGVideoSegment.h"
 #import "HMGImageSegment.h"
@@ -21,7 +21,7 @@
 @property (strong, nonatomic) HMGTemplate *template;
 @property (nonatomic) BOOL templateIdMatched;
 
-@property (strong, nonatomic) HMGRemake *remake;
+@property (strong, nonatomic) HMGRemakeVideo *remake;
 @property (strong, nonatomic) NSMutableArray *remakes;
 
 @property (strong, nonatomic) HMGSegment *segment;
@@ -274,7 +274,7 @@ enum TextSegmentFields {
                 if ([field isEqualToString:self.template.templateID])
                 {
                     self.templateIdMatched = YES;
-                    self.remake = [[HMGRemake alloc] init];
+                    self.remake = [[HMGRemakeVideo alloc] init];
                 }
                 break;
             case RemakeVideo:

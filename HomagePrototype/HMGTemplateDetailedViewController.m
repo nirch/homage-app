@@ -86,13 +86,13 @@
     HMGLogDebug(@"%s started" , __PRETTY_FUNCTION__);
     UICollectionViewCell *cell = [self.remakesCView dequeueReusableCellWithReuseIdentifier:@"RemakeCell"
                                                                                forIndexPath:indexPath];
-    HMGRemake *remake = self.remakesArray[indexPath.item];
+    HMGRemakeVideo *remake = self.remakesArray[indexPath.item];
     [self updateCell:cell withRemake:remake];
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
     return cell;
 }
 
-- (void)updateCell:(UICollectionViewCell *)cell withRemake:(HMGRemake *)remake
+- (void)updateCell:(UICollectionViewCell *)cell withRemake:(HMGRemakeVideo *)remake
 {
     HMGLogDebug(@"%s started" , __PRETTY_FUNCTION__);
 
@@ -116,7 +116,7 @@
     NSIndexPath *indexPath = [self.remakesCView indexPathForItemAtPoint:tapLocation];
     if (indexPath)
     {
-        HMGRemake *remake = self.remakesArray[indexPath.item];
+        HMGRemakeVideo *remake = self.remakesArray[indexPath.item];
         NSURL *videoURL = remake.video;
         HMGLogInfo(@"the user selected to play remake at index: @d" , indexPath.item);
         [self playMovieWithURL:videoURL];

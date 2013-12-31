@@ -109,6 +109,10 @@
 		F165B80717EEE6C100647AF7 /* HMGImageSegmentRemake.m in Sources */ = {isa = PBXBuildFile; fileRef = F165B7FF17EED24B00647AF7 /* HMGImageSegmentRemake.m */; };
 		F165B80817EEE6C100647AF7 /* HMGTextSegmentRemake.m in Sources */ = {isa = PBXBuildFile; fileRef = F165B80217EED26B00647AF7 /* HMGTextSegmentRemake.m */; };
 		F16804261872F9B200637C46 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16804251872F9B200637C46 /* FacebookSDK.framework */; };
+		F16804291872FB2600637C46 /* HMGStory.m in Sources */ = {isa = PBXBuildFile; fileRef = F16804281872FB2600637C46 /* HMGStory.m */; };
+		F168042C1872FF0C00637C46 /* HMGScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F168042B1872FF0C00637C46 /* HMGScene.m */; };
+		F168042F1873128A00637C46 /* HMGText.m in Sources */ = {isa = PBXBuildFile; fileRef = F168042E1873128A00637C46 /* HMGText.m */; };
+		F16804321873147C00637C46 /* HMGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F16804311873147C00637C46 /* HMGUser.m */; };
 		F1687D9217EEEE43009214FA /* RemakeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1687D9117EEEE43009214FA /* RemakeProjectTests.m */; };
 		F17B3C4118058F45007FA7A4 /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F17B3C4018058F45007FA7A4 /* wood.jpg */; };
 		F17B3C471806A673007FA7A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F17B3C491806A673007FA7A4 /* Localizable.strings */; };
@@ -184,7 +188,7 @@
 		F1C8EEF917CF38420093DB0A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1C8EEF717CF38420093DB0A /* InfoPlist.strings */; };
 		F1C8EEFC17CF38420093DB0A /* HomagePrototypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C8EEFB17CF38420093DB0A /* HomagePrototypeTests.m */; };
 		F1C8EF0717CF3A230093DB0A /* HMGTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C8EF0617CF3A230093DB0A /* HMGTemplate.m */; };
-		F1C8EF0B17CF3ADC0093DB0A /* HMGRemake.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C8EF0A17CF3ADC0093DB0A /* HMGRemake.m */; };
+		F1C8EF0B17CF3ADC0093DB0A /* HMGRemakeVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C8EF0A17CF3ADC0093DB0A /* HMGRemakeVideo.m */; };
 		F1C8EF0E17CF40280093DB0A /* HMGTemplateIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C8EF0D17CF40280093DB0A /* HMGTemplateIterator.m */; };
 		F1CBC47617E4958700167772 /* finish.mov in Resources */ = {isa = PBXBuildFile; fileRef = F1CBC47517E4958700167772 /* finish.mov */; };
 		F1CBC47817E495DE00167772 /* he_told_me_enough.mov in Resources */ = {isa = PBXBuildFile; fileRef = F1CBC47717E495DE00167772 /* he_told_me_enough.mov */; };
@@ -222,7 +226,7 @@
 		F1D42E9217D4915F00802D7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1D42E9017D4915F00802D7C /* InfoPlist.strings */; };
 		F1D42E9C17D4BDF700802D7C /* TemplatesIteratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D42E9B17D4BDF700802D7C /* TemplatesIteratorTests.m */; };
 		F1D42E9D17D4CE0800802D7C /* HMGTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C8EF0617CF3A230093DB0A /* HMGTemplate.m */; };
-		F1D42E9E17D4CE0800802D7C /* HMGRemake.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C8EF0A17CF3ADC0093DB0A /* HMGRemake.m */; };
+		F1D42E9E17D4CE0800802D7C /* HMGRemakeVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C8EF0A17CF3ADC0093DB0A /* HMGRemakeVideo.m */; };
 		F1D42E9F17D4CE0800802D7C /* HMGTemplateIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C8EF0D17CF40280093DB0A /* HMGTemplateIterator.m */; };
 		F1E4AD5C17E4923900FDBC5A /* falling.mov in Resources */ = {isa = PBXBuildFile; fileRef = F1E4AD5917E4923800FDBC5A /* falling.mov */; };
 		F1F04AE817E1AEBD00720C5C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F04AE717E1AEBD00720C5C /* CoreMedia.framework */; };
@@ -390,6 +394,14 @@
 		F165B80117EED26B00647AF7 /* HMGTextSegmentRemake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMGTextSegmentRemake.h; path = Model/HMGTextSegmentRemake.h; sourceTree = "<group>"; };
 		F165B80217EED26B00647AF7 /* HMGTextSegmentRemake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGTextSegmentRemake.m; path = Model/HMGTextSegmentRemake.m; sourceTree = "<group>"; };
 		F16804251872F9B200637C46 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		F16804271872FB2600637C46 /* HMGStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGStory.h; sourceTree = "<group>"; };
+		F16804281872FB2600637C46 /* HMGStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGStory.m; sourceTree = "<group>"; };
+		F168042A1872FF0C00637C46 /* HMGScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGScene.h; sourceTree = "<group>"; };
+		F168042B1872FF0C00637C46 /* HMGScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGScene.m; sourceTree = "<group>"; };
+		F168042D1873128A00637C46 /* HMGText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGText.h; sourceTree = "<group>"; };
+		F168042E1873128A00637C46 /* HMGText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGText.m; sourceTree = "<group>"; };
+		F16804301873147C00637C46 /* HMGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGUser.h; sourceTree = "<group>"; };
+		F16804311873147C00637C46 /* HMGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGUser.m; sourceTree = "<group>"; };
 		F1687D9017EEEE43009214FA /* RemakeProjectTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemakeProjectTests.h; sourceTree = "<group>"; };
 		F1687D9117EEEE43009214FA /* RemakeProjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemakeProjectTests.m; sourceTree = "<group>"; };
 		F17B3C4018058F45007FA7A4 /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood.jpg; sourceTree = "<group>"; };
@@ -453,8 +465,8 @@
 		F1C8EEFB17CF38420093DB0A /* HomagePrototypeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomagePrototypeTests.m; sourceTree = "<group>"; };
 		F1C8EF0517CF3A230093DB0A /* HMGTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMGTemplate.h; path = Model/HMGTemplate.h; sourceTree = "<group>"; };
 		F1C8EF0617CF3A230093DB0A /* HMGTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGTemplate.m; path = Model/HMGTemplate.m; sourceTree = "<group>"; };
-		F1C8EF0917CF3ADC0093DB0A /* HMGRemake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMGRemake.h; path = Model/HMGRemake.h; sourceTree = "<group>"; };
-		F1C8EF0A17CF3ADC0093DB0A /* HMGRemake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGRemake.m; path = Model/HMGRemake.m; sourceTree = "<group>"; };
+		F1C8EF0917CF3ADC0093DB0A /* HMGRemakeVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMGRemakeVideo.h; path = Model/HMGRemakeVideo.h; sourceTree = "<group>"; };
+		F1C8EF0A17CF3ADC0093DB0A /* HMGRemakeVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGRemakeVideo.m; path = Model/HMGRemakeVideo.m; sourceTree = "<group>"; };
 		F1C8EF0C17CF40280093DB0A /* HMGTemplateIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMGTemplateIterator.h; path = Model/HMGTemplateIterator.h; sourceTree = "<group>"; };
 		F1C8EF0D17CF40280093DB0A /* HMGTemplateIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGTemplateIterator.m; path = Model/HMGTemplateIterator.m; sourceTree = "<group>"; };
 		F1CBC47517E4958700167772 /* finish.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = finish.mov; path = Model/TemplateLoader/Resources/finish.mov; sourceTree = "<group>"; };
@@ -866,8 +878,8 @@
 				F1C8EF0617CF3A230093DB0A /* HMGTemplate.m */,
 				260683AC181D5E2600D390DA /* HMGTake.h */,
 				260683AD181D5E2600D390DA /* HMGTake.m */,
-				F1C8EF0917CF3ADC0093DB0A /* HMGRemake.h */,
-				F1C8EF0A17CF3ADC0093DB0A /* HMGRemake.m */,
+				F1C8EF0917CF3ADC0093DB0A /* HMGRemakeVideo.h */,
+				F1C8EF0A17CF3ADC0093DB0A /* HMGRemakeVideo.m */,
 				F1C8EF0C17CF40280093DB0A /* HMGTemplateIterator.h */,
 				F1C8EF0D17CF40280093DB0A /* HMGTemplateIterator.m */,
 				F1F04AE917E1AFF500720C5C /* HMGVideoSegment.h */,
@@ -891,6 +903,14 @@
 				F165B7FF17EED24B00647AF7 /* HMGImageSegmentRemake.m */,
 				F165B80117EED26B00647AF7 /* HMGTextSegmentRemake.h */,
 				F165B80217EED26B00647AF7 /* HMGTextSegmentRemake.m */,
+				F16804271872FB2600637C46 /* HMGStory.h */,
+				F16804281872FB2600637C46 /* HMGStory.m */,
+				F168042A1872FF0C00637C46 /* HMGScene.h */,
+				F168042B1872FF0C00637C46 /* HMGScene.m */,
+				F168042D1873128A00637C46 /* HMGText.h */,
+				F168042E1873128A00637C46 /* HMGText.m */,
+				F16804301873147C00637C46 /* HMGUser.h */,
+				F16804311873147C00637C46 /* HMGUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1238,23 +1258,26 @@
 				F1C8EED717CF38420093DB0A /* main.m in Sources */,
 				F1F930A11845E83100F6FBA7 /* HMGNetworkManager.m in Sources */,
 				F1C8EEDB17CF38420093DB0A /* HomageAppDelegate.m in Sources */,
+				F16804321873147C00637C46 /* HMGUser.m in Sources */,
 				260683B1181D67F300D390DA /* HMGtakeCVCell.m in Sources */,
 				F1C8EEE717CF38420093DB0A /* HMGExploreTemplatesViewController.m in Sources */,
 				2672147417D2261500B89FB0 /* HMGTemplateDetailedViewController.m in Sources */,
 				267607EA17D7542200FEC5C3 /* HMGTemplateCVCell.m in Sources */,
 				F1C8EF0717CF3A230093DB0A /* HMGTemplate.m in Sources */,
-				F1C8EF0B17CF3ADC0093DB0A /* HMGRemake.m in Sources */,
+				F1C8EF0B17CF3ADC0093DB0A /* HMGRemakeVideo.m in Sources */,
 				F1C8EF0E17CF40280093DB0A /* HMGTemplateIterator.m in Sources */,
 				F19123CD17DE0C8900DE85DB /* CHCSVParser.m in Sources */,
 				F19123E117DE157100DE85DB /* HMGTemplateCSVLoader.m in Sources */,
 				F1F04AEB17E1AFF500720C5C /* HMGVideoSegment.m in Sources */,
 				F1A1EEDA17F85BEB008FDE54 /* HMGLog.m in Sources */,
+				F168042F1873128A00637C46 /* HMGText.m in Sources */,
 				6554A18E17F0351100706D4D /* HMGRecordSegmentViewConroller.m in Sources */,
 				65215F8517F8685C00AB95F0 /* HMGFileManager.m in Sources */,
 				F1F04AEE17E1B02600720C5C /* HMGSegment.m in Sources */,
 				F1F04AF117E1B13800720C5C /* HMGImageSegment.m in Sources */,
 				F1F04AF417E1B36F00720C5C /* HMGTextSegment.m in Sources */,
 				F1F04AF717E1B39700720C5C /* HMGFixedSegment.m in Sources */,
+				F16804291872FB2600637C46 /* HMGStory.m in Sources */,
 				2655874A17E618E40086D936 /* HMGRemakeCVCell.m in Sources */,
 				F165B7F717EED1DE00647AF7 /* HMGRemakeProject.m in Sources */,
 				6554A19617F052FD00706D4D /* HMGRecordButton.m in Sources */,
@@ -1269,6 +1292,7 @@
 				26C0860818670079007D2B8D /* HMGShareViewController.m in Sources */,
 				26508A2817EF274100728528 /* HMGReviewSegmentsViewController.m in Sources */,
 				26508A4317EF620500728528 /* HMGsegmentCVCell.m in Sources */,
+				F168042C1872FF0C00637C46 /* HMGScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1314,7 +1338,7 @@
 				F19123E617DE813F00DE85DB /* CHCSVParser.m in Sources */,
 				F19123E517DE812900DE85DB /* HMGTemplateCSVLoader.m in Sources */,
 				F1D42E9D17D4CE0800802D7C /* HMGTemplate.m in Sources */,
-				F1D42E9E17D4CE0800802D7C /* HMGRemake.m in Sources */,
+				F1D42E9E17D4CE0800802D7C /* HMGRemakeVideo.m in Sources */,
 				F1D42E9F17D4CE0800802D7C /* HMGTemplateIterator.m in Sources */,
 				F1D42E9C17D4BDF700802D7C /* TemplatesIteratorTests.m in Sources */,
 				F19123E417DE7EB800DE85DB /* TemplateCSVLoaderTests.m in Sources */,

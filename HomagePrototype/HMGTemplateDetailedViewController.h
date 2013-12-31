@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HMGTemplate.h"
-#import "HMGRemake.h"
+#import "HMGRemakeVideo.h"
 #import "HMGRemakeCVCell.h"
 #import "HMGReviewSegmentsViewController.h"
 #import <MediaPlayer/MediaPlayer.h>

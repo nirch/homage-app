@@ -9,7 +9,7 @@
 #import "TemplateCSVLoaderTests.h"
 #import "HMGTemplateCSVLoader.h"
 #import "HMGTemplate.h"
-#import "HMGRemake.h"
+#import "HMGRemakeVideo.h"
 #import "HMGSegment.h"
 #import "HMGVideoSegment.h"
 #import "HMGTextSegment.h"

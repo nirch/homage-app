@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Homage. All rights reserved.
 //
 
-#import "HMGRemake.h"
+#import "HMGRemakeVideo.h"
 
-@implementation HMGRemake
+@implementation HMGRemakeVideo
 
 #pragma mark NSCoding
 
