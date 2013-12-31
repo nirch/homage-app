@@ -28,6 +28,8 @@
 #pragma mark FBshare
 
 - (IBAction)FacebookShare:(id)sender {
+    
+
     // Check if the Facebook app is installed and we can present the share dialog
     FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
     params.link = [NSURL URLWithString:self.URLToShare];
@@ -85,6 +87,7 @@
                                                       }
                                                   }];
     }
+ 
 
 }
 

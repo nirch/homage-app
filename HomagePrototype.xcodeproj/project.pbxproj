@@ -61,7 +61,6 @@
 		26A0088E183D111B00E6AC34 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A0088D183D111B00E6AC34 /* Toast+UIView.m */; };
 		26C0860818670079007D2B8D /* HMGShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C0860718670079007D2B8D /* HMGShareViewController.m */; };
 		26C0860A186709EA007D2B8D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C08609186709EA007D2B8D /* MessageUI.framework */; };
-		26F72FBF1863486E002AB09F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F72FBE1863486E002AB09F /* FacebookSDK.framework */; };
 		65215F8517F8685C00AB95F0 /* HMGFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65215F8417F8685C00AB95F0 /* HMGFileManager.m */; };
 		6554A18E17F0351100706D4D /* HMGRecordSegmentViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A18D17F0351100706D4D /* HMGRecordSegmentViewConroller.m */; };
 		6554A19617F052FD00706D4D /* HMGRecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A19517F052FD00706D4D /* HMGRecordButton.m */; };
@@ -84,6 +83,7 @@
 		F122EC5B1858D89000AAB697 /* Year.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F122EC511858D89000AAB697 /* Year.jpg */; };
 		F122EC5C1858D89000AAB697 /* Year.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F122EC511858D89000AAB697 /* Year.jpg */; };
 		F122EC5D1858D89000AAB697 /* Year.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F122EC511858D89000AAB697 /* Year.jpg */; };
+		F13CC7571872ECC9001445D9 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13CC7561872ECC9001445D9 /* FacebookSDK.framework */; };
 		F1605B0B18604B1E0039D55F /* silo.png in Resources */ = {isa = PBXBuildFile; fileRef = F1605B0A18604B1E0039D55F /* silo.png */; };
 		F163101F17DFCD6700A2F361 /* BT_meeting_gone_wrong.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F163101817DFCD6700A2F361 /* BT_meeting_gone_wrong.mp4 */; };
 		F163102017DFCD6700A2F361 /* BT_meeting_gone_wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = F163101917DFCD6700A2F361 /* BT_meeting_gone_wrong.png */; };
@@ -354,7 +354,6 @@
 		26C0860618670079007D2B8D /* HMGShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGShareViewController.h; sourceTree = "<group>"; };
 		26C0860718670079007D2B8D /* HMGShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGShareViewController.m; sourceTree = "<group>"; };
 		26C08609186709EA007D2B8D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		26F72FBE1863486E002AB09F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		65215F8317F8685C00AB95F0 /* HMGFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGFileManager.h; sourceTree = "<group>"; };
 		65215F8417F8685C00AB95F0 /* HMGFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGFileManager.m; sourceTree = "<group>"; };
 		6554A18C17F0351100706D4D /* HMGRecordSegmentViewConroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGRecordSegmentViewConroller.h; sourceTree = "<group>"; };
@@ -371,6 +370,7 @@
 		F122EC4F1858D89000AAB697 /* Name.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Name.jpg; path = Model/TemplateLoader/Resources/Name.jpg; sourceTree = "<group>"; };
 		F122EC501858D89000AAB697 /* Today.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Today.jpg; path = Model/TemplateLoader/Resources/Today.jpg; sourceTree = "<group>"; };
 		F122EC511858D89000AAB697 /* Year.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Year.jpg; path = Model/TemplateLoader/Resources/Year.jpg; sourceTree = "<group>"; };
+		F13CC7561872ECC9001445D9 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		F149B4C417F034CB0031E288 /* HMGLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGLog.h; sourceTree = "<group>"; };
 		F1605B0A18604B1E0039D55F /* silo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = silo.png; sourceTree = "<group>"; };
 		F163101817DFCD6700A2F361 /* BT_meeting_gone_wrong.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = BT_meeting_gone_wrong.mp4; path = Model/TemplateLoader/Resources/BT_meeting_gone_wrong.mp4; sourceTree = "<group>"; };
@@ -513,6 +513,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F13CC7571872ECC9001445D9 /* FacebookSDK.framework in Frameworks */,
 				26C0860A186709EA007D2B8D /* MessageUI.framework in Frameworks */,
 				2687FF56180EC4A100727DD7 /* MobileCoreServices.framework in Frameworks */,
 				F1A2EC64180551740067DD0A /* CoreVideo.framework in Frameworks */,
@@ -522,7 +523,6 @@
 				2655874717E0D0910086D936 /* MediaPlayer.framework in Frameworks */,
 				267607EC17DB51B200FEC5C3 /* AVFoundation.framework in Frameworks */,
 				F1C8EECB17CF38420093DB0A /* UIKit.framework in Frameworks */,
-				26F72FBF1863486E002AB09F /* FacebookSDK.framework in Frameworks */,
 				F1C8EECD17CF38420093DB0A /* Foundation.framework in Frameworks */,
 				F1C8EECF17CF38420093DB0A /* CoreGraphics.framework in Frameworks */,
 			);
@@ -737,8 +737,8 @@
 		F1C8EEC917CF38420093DB0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F13CC7561872ECC9001445D9 /* FacebookSDK.framework */,
 				26C08609186709EA007D2B8D /* MessageUI.framework */,
-				26F72FBE1863486E002AB09F /* FacebookSDK.framework */,
 				2687FF55180EC4A100727DD7 /* MobileCoreServices.framework */,
 				F1A2EC63180551740067DD0A /* CoreVideo.framework */,
 				F1A2EC6118017C240067DD0A /* AssetsLibrary.framework */,
@@ -1451,7 +1451,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/yoavcaspin/Documents/homage-prototype",
+					"/Users/tomer/Desktop/homage-app",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HomagePrototype/HomagePrototype-Prefix.pch";
@@ -1467,7 +1467,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/yoavcaspin/Documents/homage-prototype",
+					"/Users/tomer/Desktop/homage-app",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HomagePrototype/HomagePrototype-Prefix.pch";
