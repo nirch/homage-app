@@ -17,7 +17,7 @@
 @end
 
 @implementation TemplatesViewControllerTests
-
+/*
 - (void)setUp
 {
     [super setUp];

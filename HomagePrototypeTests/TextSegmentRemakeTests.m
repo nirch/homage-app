@@ -25,7 +25,7 @@ static NSString * const videoBackgroundName = @"Red.mov";
 
 
 @implementation TextSegmentRemakeTests
-
+/*
 - (void)setUp
 {
     [super setUp];
@@ -116,6 +116,6 @@ static NSString * const videoBackgroundName = @"Red.mov";
     
     WAIT_WHILE(!jobDone, 3);
 }
-
+*/
 
 @end

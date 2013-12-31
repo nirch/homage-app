@@ -17,6 +17,7 @@
 
 @implementation TemplatesIteratorTests
 
+/*
 - (void)setUp
 {
     [super setUp];
@@ -102,7 +103,7 @@
     STAssertNil(templates, @"templates was supposed to be nil but it is not");
 
 }
-
+*/
 
 
 

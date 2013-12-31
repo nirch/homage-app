@@ -46,6 +46,7 @@ static NSString * const backgroundImageName = @"wood.jpg";
 
 @implementation AVUtilsTests
 
+/*
 - (void)setUp
 {
     [super setUp];
@@ -615,5 +616,5 @@ static NSString * const backgroundImageName = @"wood.jpg";
     [self.resourcesToDelete addObject:jpgFilePath];
 }
 
-
+*/
 @end

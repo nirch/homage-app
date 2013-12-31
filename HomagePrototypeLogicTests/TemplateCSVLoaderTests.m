@@ -17,6 +17,7 @@
 
 @implementation TemplateCSVLoaderTests
 
+/*
 - (void)testLoadTemplate
 {
     HMGTemplateCSVLoader *templateLoader = [[HMGTemplateCSVLoader alloc] init];
@@ -86,5 +87,6 @@
     STAssertTrue(videoSegment.recordDuration.value == 16000, @"Tikim template record duration for the first video segment should be 16000, but it is %d", videoSegment.recordDuration);
     
 }
+*/
 
 @end

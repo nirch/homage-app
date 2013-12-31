@@ -27,6 +27,7 @@
 
 @implementation RemakeProjectTests
 
+/*
 
 - (void)setUp
 {
@@ -73,6 +74,6 @@
     STAssertTrue([[self.tikimRemakeProject.segmentRemakes[2] segment] isKindOfClass:[HMGVideoSegment class]], @"Tikim template third segment should be a video segment, but it is %@", [[[self.tikimRemakeProject.segmentRemakes[2] segment] class] description]);
 }
 
-
+*/
 
 @end

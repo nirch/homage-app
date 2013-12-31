@@ -17,7 +17,7 @@
 @end
 
 @implementation TemplateModelTests
-
+/*
 - (void)setUp
 {
     [super setUp];
@@ -49,5 +49,5 @@
     // Put teardown code here; it will be run once, after the last test case.
     [super tearDown];
 }
-
+*/
 @end

@@ -38,6 +38,7 @@ static NSString * const tikim8VideoName = @"Tikim_Sigh_Export.mp4";
 
 @implementation RemakeProjectTests
 
+/*
 - (void)setUp
 {
     [super setUp];
@@ -96,5 +97,5 @@ static NSString * const tikim8VideoName = @"Tikim_Sigh_Export.mp4";
     // Waiting 30 seconds for the above block to complete
     WAIT_WHILE(!jobDone, 30);
 }
-
+*/
 @end

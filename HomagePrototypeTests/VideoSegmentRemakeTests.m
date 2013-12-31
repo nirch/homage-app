@@ -33,6 +33,7 @@ static NSString * const tikimTextVideoName = @"Tikim_Text.mp4";
 
 @implementation VideoSegmentRemakeTests
 
+/*
 - (void)setUp
 {
     [super setUp];
@@ -376,6 +377,6 @@ static NSString * const tikimTextVideoName = @"Tikim_Text.mp4";
     
     STAssertTrue(self.videoSegmentRemake.selectedTakeIndex == -1, @"The selected takes index should be -1, but it is %d", self.videoSegmentRemake.selectedTakeIndex);
 }
-
+*/
 
 @end

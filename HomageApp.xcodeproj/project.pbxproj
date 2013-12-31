@@ -83,7 +83,6 @@
 		F122EC5B1858D89000AAB697 /* Year.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F122EC511858D89000AAB697 /* Year.jpg */; };
 		F122EC5C1858D89000AAB697 /* Year.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F122EC511858D89000AAB697 /* Year.jpg */; };
 		F122EC5D1858D89000AAB697 /* Year.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F122EC511858D89000AAB697 /* Year.jpg */; };
-		F13CC7571872ECC9001445D9 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13CC7561872ECC9001445D9 /* FacebookSDK.framework */; };
 		F1605B0B18604B1E0039D55F /* silo.png in Resources */ = {isa = PBXBuildFile; fileRef = F1605B0A18604B1E0039D55F /* silo.png */; };
 		F163101F17DFCD6700A2F361 /* BT_meeting_gone_wrong.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F163101817DFCD6700A2F361 /* BT_meeting_gone_wrong.mp4 */; };
 		F163102017DFCD6700A2F361 /* BT_meeting_gone_wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = F163101917DFCD6700A2F361 /* BT_meeting_gone_wrong.png */; };
@@ -109,6 +108,7 @@
 		F165B80617EEE6C100647AF7 /* HMGVideoSegmentRemake.m in Sources */ = {isa = PBXBuildFile; fileRef = F165B7FC17EED22C00647AF7 /* HMGVideoSegmentRemake.m */; };
 		F165B80717EEE6C100647AF7 /* HMGImageSegmentRemake.m in Sources */ = {isa = PBXBuildFile; fileRef = F165B7FF17EED24B00647AF7 /* HMGImageSegmentRemake.m */; };
 		F165B80817EEE6C100647AF7 /* HMGTextSegmentRemake.m in Sources */ = {isa = PBXBuildFile; fileRef = F165B80217EED26B00647AF7 /* HMGTextSegmentRemake.m */; };
+		F16804261872F9B200637C46 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16804251872F9B200637C46 /* FacebookSDK.framework */; };
 		F1687D9217EEEE43009214FA /* RemakeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1687D9117EEEE43009214FA /* RemakeProjectTests.m */; };
 		F17B3C4118058F45007FA7A4 /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F17B3C4018058F45007FA7A4 /* wood.jpg */; };
 		F17B3C471806A673007FA7A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F17B3C491806A673007FA7A4 /* Localizable.strings */; };
@@ -370,7 +370,6 @@
 		F122EC4F1858D89000AAB697 /* Name.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Name.jpg; path = Model/TemplateLoader/Resources/Name.jpg; sourceTree = "<group>"; };
 		F122EC501858D89000AAB697 /* Today.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Today.jpg; path = Model/TemplateLoader/Resources/Today.jpg; sourceTree = "<group>"; };
 		F122EC511858D89000AAB697 /* Year.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Year.jpg; path = Model/TemplateLoader/Resources/Year.jpg; sourceTree = "<group>"; };
-		F13CC7561872ECC9001445D9 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		F149B4C417F034CB0031E288 /* HMGLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGLog.h; sourceTree = "<group>"; };
 		F1605B0A18604B1E0039D55F /* silo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = silo.png; sourceTree = "<group>"; };
 		F163101817DFCD6700A2F361 /* BT_meeting_gone_wrong.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = BT_meeting_gone_wrong.mp4; path = Model/TemplateLoader/Resources/BT_meeting_gone_wrong.mp4; sourceTree = "<group>"; };
@@ -390,6 +389,7 @@
 		F165B7FF17EED24B00647AF7 /* HMGImageSegmentRemake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGImageSegmentRemake.m; path = Model/HMGImageSegmentRemake.m; sourceTree = "<group>"; };
 		F165B80117EED26B00647AF7 /* HMGTextSegmentRemake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMGTextSegmentRemake.h; path = Model/HMGTextSegmentRemake.h; sourceTree = "<group>"; };
 		F165B80217EED26B00647AF7 /* HMGTextSegmentRemake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGTextSegmentRemake.m; path = Model/HMGTextSegmentRemake.m; sourceTree = "<group>"; };
+		F16804251872F9B200637C46 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		F1687D9017EEEE43009214FA /* RemakeProjectTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemakeProjectTests.h; sourceTree = "<group>"; };
 		F1687D9117EEEE43009214FA /* RemakeProjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemakeProjectTests.m; sourceTree = "<group>"; };
 		F17B3C4018058F45007FA7A4 /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood.jpg; sourceTree = "<group>"; };
@@ -429,14 +429,14 @@
 		F1C57B9217FAC17900158EC3 /* HMGSegmentRemakeProtectedMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HMGSegmentRemakeProtectedMethods.h; path = Model/HMGSegmentRemakeProtectedMethods.h; sourceTree = "<group>"; };
 		F1C57B9717FACB4400158EC3 /* VideoSegmentRemakeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoSegmentRemakeTests.m; sourceTree = "<group>"; };
 		F1C57B9917FB105800158EC3 /* AGWaitForAsyncTestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGWaitForAsyncTestHelper.h; sourceTree = "<group>"; };
-		F1C8EEC717CF38420093DB0A /* HomagePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomagePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C8EEC717CF38420093DB0A /* HomageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C8EECA17CF38420093DB0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F1C8EECC17CF38420093DB0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1C8EECE17CF38420093DB0A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F1C8EED217CF38420093DB0A /* HomagePrototype-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomagePrototype-Info.plist"; sourceTree = "<group>"; };
+		F1C8EED217CF38420093DB0A /* HomageApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomageApp-Info.plist"; sourceTree = "<group>"; };
 		F1C8EED417CF38420093DB0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F1C8EED617CF38420093DB0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F1C8EED817CF38420093DB0A /* HomagePrototype-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomagePrototype-Prefix.pch"; sourceTree = "<group>"; };
+		F1C8EED817CF38420093DB0A /* HomageApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomageApp-Prefix.pch"; sourceTree = "<group>"; };
 		F1C8EED917CF38420093DB0A /* HomageAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomageAppDelegate.h; sourceTree = "<group>"; };
 		F1C8EEDA17CF38420093DB0A /* HomageAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomageAppDelegate.m; sourceTree = "<group>"; };
 		F1C8EEDC17CF38420093DB0A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -445,9 +445,9 @@
 		F1C8EEE317CF38420093DB0A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F1C8EEE517CF38420093DB0A /* HMGExploreTemplatesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMGExploreTemplatesViewController.h; sourceTree = "<group>"; };
 		F1C8EEE617CF38420093DB0A /* HMGExploreTemplatesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMGExploreTemplatesViewController.m; sourceTree = "<group>"; };
-		F1C8EEED17CF38420093DB0A /* HomagePrototypeApplicationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomagePrototypeApplicationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C8EEED17CF38420093DB0A /* HomageAppApplicationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomageAppApplicationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C8EEEE17CF38420093DB0A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		F1C8EEF617CF38420093DB0A /* HomagePrototypeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomagePrototypeTests-Info.plist"; sourceTree = "<group>"; };
+		F1C8EEF617CF38420093DB0A /* HomageAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomageAppTests-Info.plist"; sourceTree = "<group>"; };
 		F1C8EEF817CF38420093DB0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F1C8EEFA17CF38420093DB0A /* HomagePrototypeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomagePrototypeTests.h; sourceTree = "<group>"; };
 		F1C8EEFB17CF38420093DB0A /* HomagePrototypeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomagePrototypeTests.m; sourceTree = "<group>"; };
@@ -459,10 +459,10 @@
 		F1C8EF0D17CF40280093DB0A /* HMGTemplateIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGTemplateIterator.m; path = Model/HMGTemplateIterator.m; sourceTree = "<group>"; };
 		F1CBC47517E4958700167772 /* finish.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = finish.mov; path = Model/TemplateLoader/Resources/finish.mov; sourceTree = "<group>"; };
 		F1CBC47717E495DE00167772 /* he_told_me_enough.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = he_told_me_enough.mov; path = Model/TemplateLoader/Resources/he_told_me_enough.mov; sourceTree = "<group>"; };
-		F1D42E8917D4915F00802D7C /* HomagePrototypeLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomagePrototypeLogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1D42E8F17D4915F00802D7C /* HomagePrototypeLogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomagePrototypeLogicTests-Info.plist"; sourceTree = "<group>"; };
+		F1D42E8917D4915F00802D7C /* HomageAppLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomageAppLogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1D42E8F17D4915F00802D7C /* HomageAppLogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomageAppLogicTests-Info.plist"; sourceTree = "<group>"; };
 		F1D42E9117D4915F00802D7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F1D42E9617D4915F00802D7C /* HomagePrototypeLogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomagePrototypeLogicTests-Prefix.pch"; sourceTree = "<group>"; };
+		F1D42E9617D4915F00802D7C /* HomageAppLogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomageAppLogicTests-Prefix.pch"; sourceTree = "<group>"; };
 		F1D42E9A17D4BDF700802D7C /* TemplatesIteratorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplatesIteratorTests.h; sourceTree = "<group>"; };
 		F1D42E9B17D4BDF700802D7C /* TemplatesIteratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplatesIteratorTests.m; sourceTree = "<group>"; };
 		F1E4AD5917E4923800FDBC5A /* falling.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = falling.mov; path = Model/TemplateLoader/Resources/falling.mov; sourceTree = "<group>"; };
@@ -513,7 +513,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F13CC7571872ECC9001445D9 /* FacebookSDK.framework in Frameworks */,
+				F16804261872F9B200637C46 /* FacebookSDK.framework in Frameworks */,
 				26C0860A186709EA007D2B8D /* MessageUI.framework in Frameworks */,
 				2687FF56180EC4A100727DD7 /* MobileCoreServices.framework in Frameworks */,
 				F1A2EC64180551740067DD0A /* CoreVideo.framework in Frameworks */,
@@ -727,9 +727,9 @@
 		F1C8EEC817CF38420093DB0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1C8EEC717CF38420093DB0A /* HomagePrototype.app */,
-				F1C8EEED17CF38420093DB0A /* HomagePrototypeApplicationTests.octest */,
-				F1D42E8917D4915F00802D7C /* HomagePrototypeLogicTests.octest */,
+				F1C8EEC717CF38420093DB0A /* HomageApp.app */,
+				F1C8EEED17CF38420093DB0A /* HomageAppApplicationTests.octest */,
+				F1D42E8917D4915F00802D7C /* HomageAppLogicTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -737,7 +737,7 @@
 		F1C8EEC917CF38420093DB0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F13CC7561872ECC9001445D9 /* FacebookSDK.framework */,
+				F16804251872F9B200637C46 /* FacebookSDK.framework */,
 				26C08609186709EA007D2B8D /* MessageUI.framework */,
 				2687FF55180EC4A100727DD7 /* MobileCoreServices.framework */,
 				F1A2EC63180551740067DD0A /* CoreVideo.framework */,
@@ -816,10 +816,10 @@
 				262A2C8D17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.11.28 PM.png */,
 				F1C8EED917CF38420093DB0A /* HomageAppDelegate.h */,
 				F1C8EEDA17CF38420093DB0A /* HomageAppDelegate.m */,
-				F1C8EED217CF38420093DB0A /* HomagePrototype-Info.plist */,
+				F1C8EED217CF38420093DB0A /* HomageApp-Info.plist */,
 				F1C8EED317CF38420093DB0A /* InfoPlist.strings */,
 				F1C8EED617CF38420093DB0A /* main.m */,
-				F1C8EED817CF38420093DB0A /* HomagePrototype-Prefix.pch */,
+				F1C8EED817CF38420093DB0A /* HomageApp-Prefix.pch */,
 				F1C8EEDC17CF38420093DB0A /* Default.png */,
 				F1C8EEDE17CF38420093DB0A /* Default@2x.png */,
 				F1C8EEE017CF38420093DB0A /* Default-568h@2x.png */,
@@ -852,7 +852,7 @@
 		F1C8EEF517CF38420093DB0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F1C8EEF617CF38420093DB0A /* HomagePrototypeTests-Info.plist */,
+				F1C8EEF617CF38420093DB0A /* HomageAppTests-Info.plist */,
 				F1C8EEF717CF38420093DB0A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -914,9 +914,9 @@
 		F1D42E8E17D4915F00802D7C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F1D42E8F17D4915F00802D7C /* HomagePrototypeLogicTests-Info.plist */,
+				F1D42E8F17D4915F00802D7C /* HomageAppLogicTests-Info.plist */,
 				F1D42E9017D4915F00802D7C /* InfoPlist.strings */,
-				F1D42E9617D4915F00802D7C /* HomagePrototypeLogicTests-Prefix.pch */,
+				F1D42E9617D4915F00802D7C /* HomageAppLogicTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -924,9 +924,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F1C8EEC617CF38420093DB0A /* HomagePrototype */ = {
+		F1C8EEC617CF38420093DB0A /* HomageApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1C8EEFF17CF38420093DB0A /* Build configuration list for PBXNativeTarget "HomagePrototype" */;
+			buildConfigurationList = F1C8EEFF17CF38420093DB0A /* Build configuration list for PBXNativeTarget "HomageApp" */;
 			buildPhases = (
 				F1C8EEC317CF38420093DB0A /* Sources */,
 				F1C8EEC417CF38420093DB0A /* Frameworks */,
@@ -936,14 +936,14 @@
 			);
 			dependencies = (
 			);
-			name = HomagePrototype;
+			name = HomageApp;
 			productName = HomagePrototype;
-			productReference = F1C8EEC717CF38420093DB0A /* HomagePrototype.app */;
+			productReference = F1C8EEC717CF38420093DB0A /* HomageApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F1C8EEEC17CF38420093DB0A /* HomagePrototypeApplicationTests */ = {
+		F1C8EEEC17CF38420093DB0A /* HomageAppApplicationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1C8EF0217CF38420093DB0A /* Build configuration list for PBXNativeTarget "HomagePrototypeApplicationTests" */;
+			buildConfigurationList = F1C8EF0217CF38420093DB0A /* Build configuration list for PBXNativeTarget "HomageAppApplicationTests" */;
 			buildPhases = (
 				F1C8EEE817CF38420093DB0A /* Sources */,
 				F1C8EEE917CF38420093DB0A /* Frameworks */,
@@ -955,14 +955,14 @@
 			dependencies = (
 				F1C8EEF317CF38420093DB0A /* PBXTargetDependency */,
 			);
-			name = HomagePrototypeApplicationTests;
+			name = HomageAppApplicationTests;
 			productName = HomagePrototypeTests;
-			productReference = F1C8EEED17CF38420093DB0A /* HomagePrototypeApplicationTests.octest */;
+			productReference = F1C8EEED17CF38420093DB0A /* HomageAppApplicationTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		F1D42E8817D4915F00802D7C /* HomagePrototypeLogicTests */ = {
+		F1D42E8817D4915F00802D7C /* HomageAppLogicTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1D42E9917D4915F00802D7C /* Build configuration list for PBXNativeTarget "HomagePrototypeLogicTests" */;
+			buildConfigurationList = F1D42E9917D4915F00802D7C /* Build configuration list for PBXNativeTarget "HomageAppLogicTests" */;
 			buildPhases = (
 				F1D42E8417D4915F00802D7C /* Sources */,
 				F1D42E8517D4915F00802D7C /* Frameworks */,
@@ -974,9 +974,9 @@
 			dependencies = (
 				F1D42EA117D4CE1600802D7C /* PBXTargetDependency */,
 			);
-			name = HomagePrototypeLogicTests;
+			name = HomageAppLogicTests;
 			productName = HomagePrototypeLogicTests;
-			productReference = F1D42E8917D4915F00802D7C /* HomagePrototypeLogicTests.octest */;
+			productReference = F1D42E8917D4915F00802D7C /* HomageAppLogicTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -994,7 +994,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F1C8EEC217CF38420093DB0A /* Build configuration list for PBXProject "HomagePrototype" */;
+			buildConfigurationList = F1C8EEC217CF38420093DB0A /* Build configuration list for PBXProject "HomageApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1006,9 +1006,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F1C8EEC617CF38420093DB0A /* HomagePrototype */,
-				F1C8EEEC17CF38420093DB0A /* HomagePrototypeApplicationTests */,
-				F1D42E8817D4915F00802D7C /* HomagePrototypeLogicTests */,
+				F1C8EEC617CF38420093DB0A /* HomageApp */,
+				F1C8EEEC17CF38420093DB0A /* HomageAppApplicationTests */,
+				F1D42E8817D4915F00802D7C /* HomageAppLogicTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1327,12 +1327,12 @@
 /* Begin PBXTargetDependency section */
 		F1C8EEF317CF38420093DB0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F1C8EEC617CF38420093DB0A /* HomagePrototype */;
+			target = F1C8EEC617CF38420093DB0A /* HomageApp */;
 			targetProxy = F1C8EEF217CF38420093DB0A /* PBXContainerItemProxy */;
 		};
 		F1D42EA117D4CE1600802D7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F1C8EEC617CF38420093DB0A /* HomagePrototype */;
+			target = F1C8EEC617CF38420093DB0A /* HomageApp */;
 			targetProxy = F1D42EA017D4CE1600802D7C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1451,12 +1451,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/tomer/Desktop/homage-app",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HomagePrototype/HomagePrototype-Prefix.pch";
-				INFOPLIST_FILE = "HomagePrototype/HomagePrototype-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HomagePrototype/HomageApp-Prefix.pch";
+				INFOPLIST_FILE = "HomagePrototype/HomageApp-Info.plist";
+				PRODUCT_NAME = HomageApp;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1467,12 +1467,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/tomer/Desktop/homage-app",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HomagePrototype/HomagePrototype-Prefix.pch";
-				INFOPLIST_FILE = "HomagePrototype/HomagePrototype-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HomagePrototype/HomageApp-Prefix.pch";
+				INFOPLIST_FILE = "HomagePrototype/HomageApp-Info.plist";
+				PRODUCT_NAME = HomageApp;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1480,15 +1480,15 @@
 		F1C8EF0317CF38420093DB0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HomagePrototype.app/HomagePrototype";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HomageApp.app/HomageApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HomagePrototype/HomagePrototype-Prefix.pch";
-				INFOPLIST_FILE = "HomagePrototypeTests/HomagePrototypeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HomagePrototype/HomageApp-Prefix.pch";
+				INFOPLIST_FILE = "HomagePrototypeTests/HomageAppTests-Info.plist";
+				PRODUCT_NAME = HomageAppApplicationTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1497,15 +1497,15 @@
 		F1C8EF0417CF38420093DB0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HomagePrototype.app/HomagePrototype";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HomageApp.app/HomageApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HomagePrototype/HomagePrototype-Prefix.pch";
-				INFOPLIST_FILE = "HomagePrototypeTests/HomagePrototypeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HomagePrototype/HomageApp-Prefix.pch";
+				INFOPLIST_FILE = "HomagePrototypeTests/HomageAppTests-Info.plist";
+				PRODUCT_NAME = HomageAppApplicationTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1519,9 +1519,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HomagePrototypeLogicTests/HomagePrototypeLogicTests-Prefix.pch";
-				INFOPLIST_FILE = "HomagePrototypeLogicTests/HomagePrototypeLogicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HomagePrototypeLogicTests/HomageAppLogicTests-Prefix.pch";
+				INFOPLIST_FILE = "HomagePrototypeLogicTests/HomageAppLogicTests-Info.plist";
+				PRODUCT_NAME = HomageAppLogicTests;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -1534,9 +1534,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HomagePrototypeLogicTests/HomagePrototypeLogicTests-Prefix.pch";
-				INFOPLIST_FILE = "HomagePrototypeLogicTests/HomagePrototypeLogicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HomagePrototypeLogicTests/HomageAppLogicTests-Prefix.pch";
+				INFOPLIST_FILE = "HomagePrototypeLogicTests/HomageAppLogicTests-Info.plist";
+				PRODUCT_NAME = HomageAppLogicTests;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -1544,7 +1544,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F1C8EEC217CF38420093DB0A /* Build configuration list for PBXProject "HomagePrototype" */ = {
+		F1C8EEC217CF38420093DB0A /* Build configuration list for PBXProject "HomageApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1C8EEFD17CF38420093DB0A /* Debug */,
@@ -1553,7 +1553,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F1C8EEFF17CF38420093DB0A /* Build configuration list for PBXNativeTarget "HomagePrototype" */ = {
+		F1C8EEFF17CF38420093DB0A /* Build configuration list for PBXNativeTarget "HomageApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1C8EF0017CF38420093DB0A /* Debug */,
@@ -1562,7 +1562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F1C8EF0217CF38420093DB0A /* Build configuration list for PBXNativeTarget "HomagePrototypeApplicationTests" */ = {
+		F1C8EF0217CF38420093DB0A /* Build configuration list for PBXNativeTarget "HomageAppApplicationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1C8EF0317CF38420093DB0A /* Debug */,
@@ -1571,7 +1571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F1D42E9917D4915F00802D7C /* Build configuration list for PBXNativeTarget "HomagePrototypeLogicTests" */ = {
+		F1D42E9917D4915F00802D7C /* Build configuration list for PBXNativeTarget "HomageAppLogicTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1D42E9717D4915F00802D7C /* Debug */,
