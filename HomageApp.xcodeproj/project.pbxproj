@@ -113,6 +113,9 @@
 		F168042C1872FF0C00637C46 /* HMGScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F168042B1872FF0C00637C46 /* HMGScene.m */; };
 		F168042F1873128A00637C46 /* HMGText.m in Sources */ = {isa = PBXBuildFile; fileRef = F168042E1873128A00637C46 /* HMGText.m */; };
 		F16804321873147C00637C46 /* HMGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F16804311873147C00637C46 /* HMGUser.m */; };
+		F16804351873178100637C46 /* HMGRemake.m in Sources */ = {isa = PBXBuildFile; fileRef = F16804341873178100637C46 /* HMGRemake.m */; };
+		F16804381873193E00637C46 /* HMGFootage.m in Sources */ = {isa = PBXBuildFile; fileRef = F16804371873193E00637C46 /* HMGFootage.m */; };
+		F168043B18731AF900637C46 /* HMGHomage.m in Sources */ = {isa = PBXBuildFile; fileRef = F168043A18731AF900637C46 /* HMGHomage.m */; };
 		F1687D9217EEEE43009214FA /* RemakeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1687D9117EEEE43009214FA /* RemakeProjectTests.m */; };
 		F17B3C4118058F45007FA7A4 /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F17B3C4018058F45007FA7A4 /* wood.jpg */; };
 		F17B3C471806A673007FA7A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F17B3C491806A673007FA7A4 /* Localizable.strings */; };
@@ -402,6 +405,12 @@
 		F168042E1873128A00637C46 /* HMGText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGText.m; sourceTree = "<group>"; };
 		F16804301873147C00637C46 /* HMGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGUser.h; sourceTree = "<group>"; };
 		F16804311873147C00637C46 /* HMGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGUser.m; sourceTree = "<group>"; };
+		F16804331873178100637C46 /* HMGRemake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGRemake.h; sourceTree = "<group>"; };
+		F16804341873178100637C46 /* HMGRemake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGRemake.m; sourceTree = "<group>"; };
+		F16804361873193E00637C46 /* HMGFootage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGFootage.h; sourceTree = "<group>"; };
+		F16804371873193E00637C46 /* HMGFootage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGFootage.m; sourceTree = "<group>"; };
+		F168043918731AF900637C46 /* HMGHomage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGHomage.h; sourceTree = "<group>"; };
+		F168043A18731AF900637C46 /* HMGHomage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGHomage.m; sourceTree = "<group>"; };
 		F1687D9017EEEE43009214FA /* RemakeProjectTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemakeProjectTests.h; sourceTree = "<group>"; };
 		F1687D9117EEEE43009214FA /* RemakeProjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemakeProjectTests.m; sourceTree = "<group>"; };
 		F17B3C4018058F45007FA7A4 /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood.jpg; sourceTree = "<group>"; };
@@ -911,6 +920,12 @@
 				F168042E1873128A00637C46 /* HMGText.m */,
 				F16804301873147C00637C46 /* HMGUser.h */,
 				F16804311873147C00637C46 /* HMGUser.m */,
+				F16804331873178100637C46 /* HMGRemake.h */,
+				F16804341873178100637C46 /* HMGRemake.m */,
+				F16804361873193E00637C46 /* HMGFootage.h */,
+				F16804371873193E00637C46 /* HMGFootage.m */,
+				F168043918731AF900637C46 /* HMGHomage.h */,
+				F168043A18731AF900637C46 /* HMGHomage.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1256,6 +1271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1C8EED717CF38420093DB0A /* main.m in Sources */,
+				F168043B18731AF900637C46 /* HMGHomage.m in Sources */,
 				F1F930A11845E83100F6FBA7 /* HMGNetworkManager.m in Sources */,
 				F1C8EEDB17CF38420093DB0A /* HomageAppDelegate.m in Sources */,
 				F16804321873147C00637C46 /* HMGUser.m in Sources */,
@@ -1287,8 +1303,10 @@
 				260683AE181D5E2600D390DA /* HMGTake.m in Sources */,
 				F165B7FD17EED22C00647AF7 /* HMGVideoSegmentRemake.m in Sources */,
 				F1A1EEDE17F864B5008FDE54 /* HMGAVUtils.m in Sources */,
+				F16804381873193E00637C46 /* HMGFootage.m in Sources */,
 				F165B80017EED24B00647AF7 /* HMGImageSegmentRemake.m in Sources */,
 				F165B80317EED26B00647AF7 /* HMGTextSegmentRemake.m in Sources */,
+				F16804351873178100637C46 /* HMGRemake.m in Sources */,
 				26C0860818670079007D2B8D /* HMGShareViewController.m in Sources */,
 				26508A2817EF274100728528 /* HMGReviewSegmentsViewController.m in Sources */,
 				26508A4317EF620500728528 /* HMGsegmentCVCell.m in Sources */,
