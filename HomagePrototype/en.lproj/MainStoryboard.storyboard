@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="s17-GV-Dnk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Wr9-7c-0fA">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -241,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Af7-Uy-RYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="114"/>
+            <point key="canvasLocation" x="1798" y="118"/>
         </scene>
         <!--Record Segment View Conroller - record view controller-->
         <scene sceneID="rMq-St-2Sh">
@@ -383,6 +383,113 @@
             </objects>
             <point key="canvasLocation" x="481" y="118"/>
         </scene>
+        <!--Me TabVC - Me-->
+        <scene sceneID="pRW-da-mZh">
+            <objects>
+                <viewController id="0vs-aC-dy7" customClass="HMGMeTabVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zzw-7U-xRt"/>
+                        <viewControllerLayoutGuide type="bottom" id="NKC-jO-gbb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MX9-n3-8K3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="467-wc-US8">
+                                <rect key="frame" x="0.0" y="66" width="320" height="91"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="0.06587612323" blue="0.036397943770000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5N8-nF-avd">
+                                <rect key="frame" x="0.0" y="157" width="320" height="91"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.41763966105087846" green="0.65941275852963788" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Kb-rU-9nE">
+                                <rect key="frame" x="0.0" y="247" width="320" height="183"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IKg-P7-3Lc">
+                                    <size key="itemSize" width="319" height="82"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RemakeCell" id="RcF-j0-tUs" customClass="HMGUserRemakeCVCell">
+                                        <rect key="frame" x="1" y="0.0" width="319" height="82"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="82"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMF-0a-RA4">
+                                                    <rect key="frame" x="20" y="10" width="255" height="61"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.92978616585642815" blue="0.069341445274114455" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="thumbnail" destination="nMF-0a-RA4" id="lwC-9H-EYJ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Me" image="legs.png" id="68G-K7-iTU"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="moviePlaceHolder" destination="467-wc-US8" id="gyp-Xc-FCg"/>
+                        <outlet property="userImagePlaceHolder" destination="5N8-nF-avd" id="e40-dw-Th4"/>
+                        <outlet property="userRemakesCV" destination="6Kb-rU-9nE" id="9C3-Q6-uWm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aYt-iB-v6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="1229"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="luP-o8-WVt">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="Wr9-7c-0fA" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="C4f-6t-iJl">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0vs-aC-dy7" kind="relationship" relationship="viewControllers" id="UsW-NC-uR7"/>
+                        <segue destination="U9J-8c-hUB" kind="relationship" relationship="viewControllers" id="5XP-Ro-Lwh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ae2-St-IPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-58" y="1541"/>
+        </scene>
+        <!--View Controller - Stories-->
+        <scene sceneID="4oq-o3-nVk">
+            <objects>
+                <viewController id="U9J-8c-hUB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sCm-fe-pBH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qls-AJ-3iG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aIb-e6-pyn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stories" image="silo.png" id="ckA-Fa-Vgh"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zdX-Nm-CYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="1816"/>
+        </scene>
         <!--Template Detailed View Controller-->
         <scene sceneID="oeV-8i-ute">
             <objects>
@@ -516,8 +623,10 @@
     <resources>
         <image name="camera_bezel.png" width="92" height="320"/>
         <image name="camera_button_background.png" width="82" height="42"/>
+        <image name="legs.png" width="1194" height="669"/>
         <image name="pb_play_icon.png" width="72" height="72"/>
         <image name="record_indicator_on.png" width="29" height="29"/>
+        <image name="silo.png" width="1280" height="720"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

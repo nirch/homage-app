@@ -59,6 +59,8 @@
 		2687FF56180EC4A100727DD7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2687FF55180EC4A100727DD7 /* MobileCoreServices.framework */; };
 		268C9D1F183689DE00A169F8 /* HMGMyNavControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268C9D1E183689DE00A169F8 /* HMGMyNavControllerViewController.m */; };
 		26A0088E183D111B00E6AC34 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A0088D183D111B00E6AC34 /* Toast+UIView.m */; };
+		26A2A2CE18795BEE00F35870 /* HMGMeTabVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A2A2CD18795BEE00F35870 /* HMGMeTabVC.m */; };
+		26A2A2D41879934300F35870 /* HMGUserRemakeCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A2A2D31879934300F35870 /* HMGUserRemakeCVCell.m */; };
 		26C0860818670079007D2B8D /* HMGShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C0860718670079007D2B8D /* HMGShareViewController.m */; };
 		26C0860A186709EA007D2B8D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C08609186709EA007D2B8D /* MessageUI.framework */; };
 		65215F8517F8685C00AB95F0 /* HMGFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65215F8417F8685C00AB95F0 /* HMGFileManager.m */; };
@@ -358,6 +360,10 @@
 		268C9D1E183689DE00A169F8 /* HMGMyNavControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGMyNavControllerViewController.m; sourceTree = "<group>"; };
 		26A0088C183D111B00E6AC34 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
 		26A0088D183D111B00E6AC34 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		26A2A2CC18795BEE00F35870 /* HMGMeTabVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGMeTabVC.h; sourceTree = "<group>"; };
+		26A2A2CD18795BEE00F35870 /* HMGMeTabVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGMeTabVC.m; sourceTree = "<group>"; };
+		26A2A2D21879934300F35870 /* HMGUserRemakeCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMGUserRemakeCVCell.h; path = ../HMGUserRemakeCVCell.h; sourceTree = "<group>"; };
+		26A2A2D31879934300F35870 /* HMGUserRemakeCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGUserRemakeCVCell.m; path = ../HMGUserRemakeCVCell.m; sourceTree = "<group>"; };
 		26C0860618670079007D2B8D /* HMGShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGShareViewController.h; sourceTree = "<group>"; };
 		26C0860718670079007D2B8D /* HMGShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGShareViewController.m; sourceTree = "<group>"; };
 		26C08609186709EA007D2B8D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -787,7 +793,11 @@
 				267607E917D7542100FEC5C3 /* HMGTemplateCVCell.m */,
 				2655874817E618E30086D936 /* HMGRemakeCVCell.h */,
 				2655874917E618E30086D936 /* HMGRemakeCVCell.m */,
+				26A2A2D21879934300F35870 /* HMGUserRemakeCVCell.h */,
+				26A2A2D31879934300F35870 /* HMGUserRemakeCVCell.m */,
 				F1C8EEE217CF38420093DB0A /* MainStoryboard.storyboard */,
+				26A2A2CC18795BEE00F35870 /* HMGMeTabVC.h */,
+				26A2A2CD18795BEE00F35870 /* HMGMeTabVC.m */,
 				26C0860618670079007D2B8D /* HMGShareViewController.h */,
 				26C0860718670079007D2B8D /* HMGShareViewController.m */,
 				26508A4117EF620400728528 /* HMGsegmentCVCell.h */,
@@ -1275,12 +1285,14 @@
 				F1F930A11845E83100F6FBA7 /* HMGNetworkManager.m in Sources */,
 				F1C8EEDB17CF38420093DB0A /* HomageAppDelegate.m in Sources */,
 				F16804321873147C00637C46 /* HMGUser.m in Sources */,
+				26A2A2D41879934300F35870 /* HMGUserRemakeCVCell.m in Sources */,
 				260683B1181D67F300D390DA /* HMGtakeCVCell.m in Sources */,
 				F1C8EEE717CF38420093DB0A /* HMGExploreTemplatesViewController.m in Sources */,
 				2672147417D2261500B89FB0 /* HMGTemplateDetailedViewController.m in Sources */,
 				267607EA17D7542200FEC5C3 /* HMGTemplateCVCell.m in Sources */,
 				F1C8EF0717CF3A230093DB0A /* HMGTemplate.m in Sources */,
 				F1C8EF0B17CF3ADC0093DB0A /* HMGRemakeVideo.m in Sources */,
+				26A2A2CE18795BEE00F35870 /* HMGMeTabVC.m in Sources */,
 				F1C8EF0E17CF40280093DB0A /* HMGTemplateIterator.m in Sources */,
 				F19123CD17DE0C8900DE85DB /* CHCSVParser.m in Sources */,
 				F19123E117DE157100DE85DB /* HMGTemplateCSVLoader.m in Sources */,
