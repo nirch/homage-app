@@ -15,4 +15,7 @@
 @property (strong, nonatomic) NSArray *myRemakes; // Array of HMGRemake
 @property (strong, nonatomic) HMGUser *me;
 
+// Singleton
++ (id)sharedHomage;
+
 @end

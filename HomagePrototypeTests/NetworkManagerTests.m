@@ -11,6 +11,10 @@
 #import "AGWaitForAsyncTestHelper.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "HMGFileManager.h"
+#import "HMGStory.h"
+#import "HMGScene.h"
+#import "HMGText.h"
+#import "HMGHomage.h"
 
 @interface NetworkManagerTests : SenTestCase
 
@@ -18,13 +22,14 @@
 @property (strong, nonatomic) NSURL *serverUpdateTextURL;
 @property (strong, nonatomic) NSURL *redVideo;
 @property (strong, nonatomic) NSURL *finishLineVideo;
+@property (strong, nonatomic) NSURLSession *session;
 
 
 @end
 
 static NSString * const redVideoName = @"Red.mov";
 static NSString * const finishLineVideoName = @"Tikim_FinishLine_Export.mp4";
-
+static NSString * const server = @"http://54.204.34.168:4567/";
 
 @implementation NetworkManagerTests
 
@@ -41,6 +46,8 @@ static NSString * const finishLineVideoName = @"Tikim_FinishLine_Export.mp4";
     
     NSString *finishLinePath = [[NSBundle bundleForClass:[self class]] pathForResource:finishLineVideoName ofType:nil];
     self.finishLineVideo = [NSURL fileURLWithPath:finishLinePath];
+    
+    self.session = [NSURLSession sharedSession];
 }
 
 - (void)tearDown
@@ -67,6 +74,99 @@ static NSString * const finishLineVideoName = @"Tikim_FinishLine_Export.mp4";
 }
 
 /*
+- (void)testGetStories
+{
+    HMGHomage *homage = [HMGHomage sharedHomage];
+    
+    NSArray *stories = homage.stories;
+    
+    NSLog(@"#storeis: %d", stories.count);
+}
+
+- (void)testGetStoriesNSURLSession
+{
+    NSURL *storiesURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/stories", server]];
+    __block BOOL jobDone = NO;
+    
+    [[self.session dataTaskWithURL:storiesURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"dataString: %@", dataString);
+        
+        NSError *jsonError = nil;
+        id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+        NSLog(@"json class: %@", [[json class] description]);
+        NSLog(@"json: %@", json);
+        if (jsonError)
+        {
+            NSLog(@"json error: %@", jsonError.description);
+        }
+        jobDone = YES;
+    }] resume];
+    
+    // Waiting 30 seconds for the above block to complete
+    WAIT_WHILE(!jobDone, 60);
+}
+
+- (void)testGetStoriesWithoutNSURLSession
+{
+    NSURL *storiesURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/stories", server]];
+    
+    // Getting the stories Data from the server
+    NSData *storiesData = [NSData dataWithContentsOfURL:storiesURL];
+    
+    // Converting data to JSON
+    NSError *error;
+    NSArray *jsonStoryArray = [NSJSONSerialization JSONObjectWithData:storiesData options:kNilOptions error:&error];
+    
+    // Creating stories
+    NSMutableArray *storyArray = [[NSMutableArray alloc] init];
+    for (NSDictionary *jsonStory in jsonStoryArray) {
+       
+        HMGStory *story = [[HMGStory alloc] init];
+        story.name = [jsonStory objectForKey:@"name"];
+        story.description = [jsonStory objectForKey:@"description"];
+        story.video = [jsonStory objectForKey:@"video"];
+        story.thumbnailPath = [jsonStory objectForKey:@"thumbnail"];
+        
+        // Creating the scenes of the Story
+        NSMutableArray *sceneArray = [[NSMutableArray alloc] init];
+        NSArray *scenesJSON = [jsonStory objectForKey:@"scenes"];
+        for (NSDictionary *sceneJSON in scenesJSON) {
+            
+            HMGScene *scene = [[HMGScene alloc] init];
+            scene.sceneID = [[sceneJSON objectForKey:@"id"] stringValue];
+            scene.context = [sceneJSON objectForKey:@"context"];
+            scene.script = [sceneJSON objectForKey:@"script"];
+            scene.duration = CMTimeMake([[sceneJSON objectForKey:@"duration"] intValue], 1000);
+            scene.video = [sceneJSON objectForKey:@"video"];
+            scene.thumbnailPath = [sceneJSON objectForKey:@"thumbnail"];
+            scene.silhouettePath = [sceneJSON objectForKey:@"silhouette"];
+            scene.selfie = [[sceneJSON objectForKey:@"selfie"] boolValue];
+            
+            [sceneArray addObject:scene];
+        }
+        story.scenes = sceneArray;
+        
+        // Creating the dynamic texts of the Story
+        NSMutableArray *textArray = [[NSMutableArray alloc] init];
+        NSArray *textsJSON = [jsonStory objectForKey:@"texts"];
+        for (NSDictionary *textJSON in textsJSON) {
+            
+            HMGText *text = [[HMGText alloc] init];
+            text.textID = [[textJSON objectForKey:@"id"] stringValue];
+            text.maxCharacters = [[textJSON objectForKey:@"max_chars"] intValue];
+            text.name = [textJSON objectForKey:@"name"];
+            text.description = [textJSON objectForKey:@"description"];
+            
+            [textArray addObject:text];
+        }
+        story.texts = textArray;
+        
+        [storyArray addObject:story];
+    }
+}
+
+
 - (void)testDownload
 {
     NSURL *serverDownload = [NSURL URLWithString:@"http://54.204.34.168:4567/download/output.mp4"];
