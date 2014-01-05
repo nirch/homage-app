@@ -8,11 +8,6 @@
 
 #import "HMGHomage.h"
 #import "HMGLog.h"
-#import "HMGStory.h"
-#import "HMGUser.h"
-#import "HMGRemake.h"
-#import "HMGScene.h"
-#import "HMGText.h"
 
 @implementation HMGHomage
 
@@ -80,6 +75,7 @@ static NSString * const server = @"http://54.204.34.168:4567";
             HMGStory *story = [[HMGStory alloc] init];
             story.name = [jsonStory objectForKey:@"name"];
             story.description = [jsonStory objectForKey:@"description"];
+            story.level = [[jsonStory objectForKey:@"level"] intValue];
             story.video = [jsonStory objectForKey:@"video"];
             story.thumbnailPath = [jsonStory objectForKey:@"thumbnail"];
             
@@ -127,6 +123,43 @@ static NSString * const server = @"http://54.204.34.168:4567";
     HMGLogDebug(@"%s ended", __PRETTY_FUNCTION__);
 
     return _stories;
+}
+
+- (HMGUser *)me
+{
+    HMGUser *dummyUser = [[HMGUser alloc] init];
+    
+    dummyUser.userName = @"yoavca";
+    dummyUser.email = @"yoav@homage.it";
+    dummyUser.firstUse = NO;
+    dummyUser.publicUser = YES;
+    NSString *imagePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"pb_ap_button_background.png" ofType:nil];
+    dummyUser.image = [UIImage imageWithContentsOfFile:imagePath];
+    
+    return dummyUser;
+}
+
+- (NSArray *)myRemakes
+{
+    NSMutableArray *remakes = [[NSMutableArray alloc] init];
+    
+    HMGRemake *remake1 = [[HMGRemake alloc] init];
+    HMGRemake *remake2 = [[HMGRemake alloc] init];
+    
+    NSString *video1Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Wrong_meeting.mp4" ofType:nil];
+    NSString *image1Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"wrong_meeting.png" ofType:nil];
+    remake1.video = [NSURL fileURLWithPath:video1Path];
+    remake1.thumbnail = [UIImage imageWithContentsOfFile:image1Path];
+    
+    NSString *video2Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Family_Guy_Wrong_Meeting.mp4" ofType:nil];
+    NSString *image2Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Family_Guy_Wrong_Meeting.png" ofType:nil];
+    remake2.video = [NSURL fileURLWithPath:video2Path];
+    remake2.thumbnail = [UIImage imageWithContentsOfFile:image2Path];
+    
+    [remakes addObject:remake1];
+    [remakes addObject:remake2];
+    
+    return remakes;
 }
 
 @end

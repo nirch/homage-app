@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "HMGUser.h"
+#import "HMGStory.h"
+#import "HMGUser.h"
+#import "HMGRemake.h"
+#import "HMGScene.h"
+#import "HMGText.h"
+
 
 @interface HMGHomage : NSObject
 

@@ -80,7 +80,25 @@ static NSString * const server = @"http://54.204.34.168:4567/";
     
     NSArray *stories = homage.stories;
     
-    NSLog(@"#storeis: %d", stories.count);
+    NSLog(@"#stories: %d", stories.count);
+}
+
+- (void)testGetMe
+{
+    HMGHomage *homage = [HMGHomage sharedHomage];
+    
+    HMGUser *user = homage.me;
+    
+    NSLog(@"user mail: %@", user.email);
+}
+
+- (void)testGetRemakes
+{
+    HMGHomage *homage = [HMGHomage sharedHomage];
+    
+    NSArray *remakes = homage.myRemakes;
+    
+    NSLog(@"remakes: %d", remakes.count);
 }
 
 - (void)testGetStoriesNSURLSession

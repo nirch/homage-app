@@ -10,9 +10,17 @@
 
 @interface HMGStory : NSObject
 
+typedef enum {
+    StoryEasy = 1,
+    StoryMedium,
+    StoryHard
+} HMGStoryLevel;
+
+
 @property (strong, nonatomic) NSString *storyID;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *description;
+@property (nonatomic) HMGStoryLevel level;
 @property (strong, nonatomic) NSURL *video;
 @property (strong, nonatomic) NSString *thumbnailPath;
 @property (strong, nonatomic) UIImage *thumbnail;

@@ -11,6 +11,7 @@
 @interface HMGUser : NSObject
 
 @property (strong, nonatomic) NSString *userID;
+@property (strong, nonatomic) NSString *userName;
 @property (strong, nonatomic) NSString *email;
 @property (nonatomic) BOOL firstUse;
 @property (nonatomic) BOOL publicUser;
