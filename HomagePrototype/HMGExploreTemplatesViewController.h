@@ -10,6 +10,7 @@
 
 @interface HMGExploreTemplatesViewController : UIViewController
 
-@property (strong,nonatomic) NSArray *templatesArray;
+//@property (strong,nonatomic) NSArray *templatesArray;
+@property (strong,nonatomic) NSArray *stories;
 
 @end

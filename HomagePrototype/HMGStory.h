@@ -22,7 +22,7 @@ typedef enum {
 @property (strong, nonatomic) NSString *description;
 @property (nonatomic) HMGStoryLevel level;
 @property (strong, nonatomic) NSURL *video;
-@property (strong, nonatomic) NSString *thumbnailPath;
+@property (strong, nonatomic) NSURL *thumbnailURL;
 @property (strong, nonatomic) UIImage *thumbnail;
 @property (strong, nonatomic) NSArray *scenes;
 @property (strong, nonatomic) NSArray *texts;

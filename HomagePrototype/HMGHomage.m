@@ -77,7 +77,8 @@ static NSString * const server = @"http://54.204.34.168:4567";
             story.description = [jsonStory objectForKey:@"description"];
             story.level = [[jsonStory objectForKey:@"level"] intValue];
             story.video = [jsonStory objectForKey:@"video"];
-            story.thumbnailPath = [jsonStory objectForKey:@"thumbnail"];
+            NSString *thumbnailPath = [jsonStory objectForKey:@"thumbnail"];
+            story.thumbnailURL = [NSURL URLWithString:thumbnailPath];
             
             // Creating the scenes of the Story
             NSMutableArray *sceneArray = [[NSMutableArray alloc] init];
