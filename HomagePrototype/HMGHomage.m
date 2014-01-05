@@ -76,7 +76,8 @@ static NSString * const server = @"http://54.204.34.168:4567";
             story.name = [jsonStory objectForKey:@"name"];
             story.description = [jsonStory objectForKey:@"description"];
             story.level = [[jsonStory objectForKey:@"level"] intValue];
-            story.video = [jsonStory objectForKey:@"video"];
+            NSString *videoPath = [jsonStory objectForKey:@"video"];
+            story.video = [NSURL URLWithString:videoPath];
             NSString *thumbnailPath = [jsonStory objectForKey:@"thumbnail"];
             story.thumbnailURL = [NSURL URLWithString:thumbnailPath];
             

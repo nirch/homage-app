@@ -115,6 +115,9 @@
             HMGTemplateDetailedViewController *destController = (HMGTemplateDetailedViewController *)segue.destinationViewController;
             //HMGTemplate *templateToDisplay = self.templatesArray[self.selectedTemplateIndex];
             //destController.templateToDisplay = templateToDisplay;
+            
+            HMGStory *selectedStory = self.stories[self.selectedStoryIndex];
+            destController.storyToDisplay = selectedStory;
         }
     }
 }
