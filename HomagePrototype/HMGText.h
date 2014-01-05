@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *textID;
 @property (nonatomic) NSUInteger maxCharacters;
+@property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *description;
 
 @end
