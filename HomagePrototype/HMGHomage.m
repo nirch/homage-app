@@ -91,9 +91,15 @@ static NSString * const server = @"http://54.204.34.168:4567";
                 scene.context = [sceneJSON objectForKey:@"context"];
                 scene.script = [sceneJSON objectForKey:@"script"];
                 scene.duration = CMTimeMake([[sceneJSON objectForKey:@"duration"] intValue], 1000);
-                scene.video = [sceneJSON objectForKey:@"video"];
-                scene.thumbnailPath = [sceneJSON objectForKey:@"thumbnail"];
-                scene.silhouettePath = [sceneJSON objectForKey:@"silhouette"];
+                NSString *videoPath = [sceneJSON objectForKey:@"video"];
+                scene.video = [NSURL URLWithString:videoPath];
+                NSString *thumbnailPath = [sceneJSON objectForKey:@"thumbnail"];
+                scene.thumbnailURL = [NSURL URLWithString:thumbnailPath];
+                NSString *silhouettePath = [sceneJSON objectForKey:@"silhouette"];
+                if (silhouettePath && silhouettePath != (id)[NSNull null])
+                {
+                    scene.silhouetteURL = [NSURL URLWithString:silhouettePath];
+                }
                 scene.selfie = [[sceneJSON objectForKey:@"selfie"] boolValue];
                 
                 [sceneArray addObject:scene];

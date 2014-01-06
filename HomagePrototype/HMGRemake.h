@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HMGFootage.h"
 
 @interface HMGRemake : NSObject
 

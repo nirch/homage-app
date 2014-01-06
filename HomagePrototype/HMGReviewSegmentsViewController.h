@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "HMGsegmentCVCell.h"
-#import "HMGTemplate.h"
-#import "HMGSegment.h"
-#import "HMGRemakeProject.h"
+//#import "HMGTemplate.h"
+//#import "HMGSegment.h"
+//#import "HMGRemakeProject.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import "HMGSegmentRemake.h"
-#import "HMGVideoSegment.h"
-#import "HMGTextSegment.h"
-#import "HMGImageSegment.h"
-#import "HMGImageSegmentRemake.h"
-#import "HMGTextSegmentRemake.h"
+//#import "HMGSegmentRemake.h"
+//#import "HMGVideoSegment.h"
+//#import "HMGTextSegment.h"
+//#import "HMGImageSegment.h"
+//#import "HMGImageSegmentRemake.h"
+//#import "HMGTextSegmentRemake.h"
 #import "HMGLog.h"
 #import "HMGTake.h"
 #import "HMGtakeCVCell.h"
@@ -26,10 +26,13 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "Toast+UIView.h"
 #import "HMGFileManager.h"
+#import "HMGStory.h"
 
 
 @interface HMGReviewSegmentsViewController : UIViewController <videoPassingDelegate>;
 
-@property (strong,nonatomic) HMGTemplate *templateToDisplay;
+//@property (strong,nonatomic) HMGTemplate *templateToDisplay;
+@property (strong,nonatomic) HMGStory *storyToDisplay;
+
 
 @end

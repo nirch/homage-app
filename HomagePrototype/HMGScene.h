@@ -16,9 +16,9 @@
 @property (strong, nonatomic) NSString *script;
 @property (nonatomic) CMTime duration;
 @property (strong, nonatomic) NSURL *video;
-@property (strong, nonatomic) NSString *thumbnailPath;
+@property (strong, nonatomic) NSURL *thumbnailURL;
 @property (strong, nonatomic) UIImage *thumbnail;
-@property (strong, nonatomic) NSString *silhouettePath;
+@property (strong, nonatomic) NSURL *silhouetteURL;
 @property (strong, nonatomic) UIImage *silhouette;
 @property (nonatomic) BOOL selfie;
 

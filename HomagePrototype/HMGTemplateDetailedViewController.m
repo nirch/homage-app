@@ -126,8 +126,8 @@
         if ([segue.destinationViewController isKindOfClass:[HMGReviewSegmentsViewController class]])
         {
             HMGReviewSegmentsViewController *destController = (HMGReviewSegmentsViewController *)segue.destinationViewController;
-            //destController.templateToDisplay = self.templateToDisplay;
-            //HMGLogInfo(@"user selected to remake template: %@" , self.templateToDisplay.name);
+            destController.storyToDisplay = self.storyToDisplay;
+            HMGLogInfo(@"user selected to remake story: %@" , self.storyToDisplay.name);
         }
         
     }
