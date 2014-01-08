@@ -49,14 +49,22 @@
 			<string>READ</string>
 		</dict>
 		<dict>
+			<key>IASKViewControllerSelector</key>
+			<string>init</string>
+			<key>IASKViewControllerClass</key>
+			<string>customSubviewController</string>
 			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
+			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
 			<string>TERMS_OF_SERVICE</string>
 			<key>Key</key>
 			<string>termsofservice</string>
 		</dict>
 		<dict>
+			<key>IASKViewControllerClass</key>
+			<string>customSubviewController</string>
+			<key>IASKViewControllerSelector</key>
+			<string>init</string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
