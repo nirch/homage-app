@@ -54,7 +54,7 @@ const NSInteger SINGLE_SEGMENT_TAKES_CV_TAG = 20;
         self.remakeProject = [[HMGRemakeProject alloc] initWithTemplate: self.templateToDisplay];
     }
 */
-    self.remake = [[HMGRemake alloc] init];
+    self.remake = [[HMGRemake alloc] initWithStory:self.storyToDisplay];
     
     self.imageSelection = NO;
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
@@ -367,6 +367,10 @@ const NSInteger SINGLE_SEGMENT_TAKES_CV_TAG = 20;
         HMGsegmentCVCell *cell = (HMGsegmentCVCell *)sender;
         NSIndexPath *indexPath = [self.segmentsCView indexPathForCell:cell];
         NSInteger index = indexPath.item;
+        HMGScene *scene = self.storyToDisplay.scenes[index];
+        HMGLogInfo(@"user selected to segue to view controller: %@ and to remake scene: %@. index of scene in story is: %d" , destController.class ,  scene.context, index );
+        destController.scene = scene;
+        
         //HMGSegmentRemake *segmentRemake = self.remakeProject.segmentRemakes[index];
         //HMGLogInfo(@"user selected to segue to view controller: %@ and to remake segment: %@. index of segment in remake project is: %d" , destController.class , segmentRemake.segment.name , index );
         //destController.videoSegmentRemake = (HMGVideoSegmentRemake *)segmentRemake;
@@ -378,14 +382,18 @@ const NSInteger SINGLE_SEGMENT_TAKES_CV_TAG = 20;
 
 #pragma mark video segment control and process methods
 
-- (void)didFinishGeneratingVideo:(NSURL *)video forVideoSegmentRemake:(HMGVideoSegmentRemake *)videoSegmentRemake {
+- (void)didFinishGeneratingVideo:(NSURL *)video forVideoSegmentRemake:(HMGScene *)scene {
     
     HMGLogDebug(@"%s started", __PRETTY_FUNCTION__);
     HMGLogDebug(@"video that was passed is: %s" , video.path);
-    videoSegmentRemake.video = video;
-    [videoSegmentRemake processVideoAsynchronouslyWithCompletionHandler:^(NSURL *videoURL, NSError *error) {
-        [self videoProcessDidFinish:videoURL withError:error];
-    }];
+    
+    // Creating the new footage based on the recorded video, and adding it to the remake
+    [self.remake addFootage:video withSceneID:scene.sceneID];
+    
+    //videoSegmentRemake.video = video;
+    //[videoSegmentRemake processVideoAsynchronouslyWithCompletionHandler:^(NSURL *videoURL, NSError *error) {
+    //    [self videoProcessDidFinish:videoURL withError:error];
+    //}];
     
     HMGLogDebug(@"%s finished", __PRETTY_FUNCTION__);
 }
@@ -707,7 +715,7 @@ const NSInteger SINGLE_SEGMENT_TAKES_CV_TAG = 20;
 
 //convert from cmtime structure to MIN:SEC format
 //TBD - this Function shoule not be here
--(NSString *)formatToTimeString:(CMTime)duration
+- (NSString *)formatToTimeString:(CMTime)duration
 {
     HMGLogDebug(@"%s started" , __PRETTY_FUNCTION__);
     NSUInteger dTotalSeconds = CMTimeGetSeconds(duration);

@@ -11,8 +11,6 @@
 
 @implementation HMGHomage
 
-static NSString * const server = @"http://54.204.34.168:4567";
-
 // Singleton - returns a shared instance of the Homage object
 + (id)sharedHomage
 {
@@ -34,7 +32,7 @@ static NSString * const server = @"http://54.204.34.168:4567";
     {
         HMGLogDebug(@"Fetching stories from server");
         
-        NSURL *storiesURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/stories", server]];
+        NSURL *storiesURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/stories", SERVER]];
         
         // Getting the stories Data from the server
         NSError *serverError;
@@ -73,6 +71,7 @@ static NSString * const server = @"http://54.204.34.168:4567";
         for (NSDictionary *jsonStory in jsonStoryArray) {
             
             HMGStory *story = [[HMGStory alloc] init];
+            story.storyID = [[jsonStory objectForKey:@"_id"] objectForKey:@"$oid"];
             story.name = [jsonStory objectForKey:@"name"];
             story.description = [jsonStory objectForKey:@"description"];
             story.level = [[jsonStory objectForKey:@"level"] intValue];

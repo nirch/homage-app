@@ -13,6 +13,7 @@
 #import "HMGRemake.h"
 #import "HMGScene.h"
 #import "HMGText.h"
+#import "HMGNetworkManager.h"
 
 
 @interface HMGHomage : NSObject

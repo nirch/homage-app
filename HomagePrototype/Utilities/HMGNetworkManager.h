@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define SERVER @"http://54.204.34.168:4567"
+
 @interface HMGNetworkManager : NSObject
 
 // This method returns an NSURLRequest that will be used for uploading a file with parameters
