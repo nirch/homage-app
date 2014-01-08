@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "HMGLog.h"
-#import "HMGRemakeVideo.h"
-#import "HMGRemakeCVCell.h"
+#import "HMGUserRemakeCVCell.h"
+#import "HMGHomage.h"
 
-@interface HMGMeTabVC : UIViewController
+#if USES_IASK_STATIC_LIBRARY
+#import "InAppSettingsKit/IASKAppSettingsViewController.h"
+#else
+#import "IASKAppSettingsViewController.h"
+#endif
+
+
+@interface HMGMeTabVC : UIViewController <IASKSettingsDelegate, UITextViewDelegate> {
+    IASKAppSettingsViewController *appSettingsViewController;
+}
 
 @end

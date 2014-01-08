@@ -10,5 +10,12 @@
 
 @interface HMGUserRemakeCVCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
+@property (weak, nonatomic) IBOutlet UIImageView *moreView;
+@property (weak, nonatomic) IBOutlet UIView *expandedView;
+
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (weak, nonatomic) IBOutlet UIButton *completeButton;
+@property (weak, nonatomic) IBOutlet UIButton *remakeButton;
 
 @end

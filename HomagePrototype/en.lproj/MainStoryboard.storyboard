@@ -386,7 +386,7 @@
         <!--Me TabVC - Me-->
         <scene sceneID="pRW-da-mZh">
             <objects>
-                <viewController id="0vs-aC-dy7" customClass="HMGMeTabVC" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" id="0vs-aC-dy7" customClass="HMGMeTabVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zzw-7U-xRt"/>
                         <viewControllerLayoutGuide type="bottom" id="NKC-jO-gbb"/>
@@ -395,59 +395,142 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="467-wc-US8">
-                                <rect key="frame" x="0.0" y="66" width="320" height="91"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="467-wc-US8" customClass="HMGMePlayerView">
+                                <rect key="frame" x="0.0" y="66" width="320" height="115"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="0.06587612323" blue="0.036397943770000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5N8-nF-avd">
-                                <rect key="frame" x="0.0" y="157" width="320" height="91"/>
+                            <view tag="60" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5N8-nF-avd">
+                                <rect key="frame" x="0.0" y="184" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DkM-mW-rb1">
+                                        <rect key="frame" x="76" y="8" width="66" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TU-PW-Tnf">
+                                        <rect key="frame" x="152" y="18" width="103" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.41763966105087846" green="0.65941275852963788" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Kb-rU-9nE">
-                                <rect key="frame" x="0.0" y="247" width="320" height="183"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="70" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Kb-rU-9nE">
+                                <rect key="frame" x="0.0" y="247" width="320" height="182"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IKg-P7-3Lc">
-                                    <size key="itemSize" width="319" height="82"/>
+                                    <size key="itemSize" width="319" height="154"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RemakeCell" id="RcF-j0-tUs" customClass="HMGUserRemakeCVCell">
-                                        <rect key="frame" x="1" y="0.0" width="319" height="82"/>
+                                        <rect key="frame" x="1" y="0.0" width="319" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMF-0a-RA4">
-                                                    <rect key="frame" x="20" y="10" width="255" height="61"/>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMF-0a-RA4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="321" height="101"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="CxP-Sv-uY9" appends="YES" id="Kjm-xA-Tau"/>
+                                                    </connections>
                                                 </imageView>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tp_transport_base.png" translatesAutoresizingMaskIntoConstraints="NO" id="iDz-qS-ZQw">
+                                                    <rect key="frame" x="2" y="99" width="317" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkO-6S-uK8">
+                                                    <rect key="frame" x="1" y="99" width="317" height="55"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hI9-Sz-cf2">
+                                                            <rect key="frame" x="9" y="13" width="43" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="delete">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wS-RV-vGj">
+                                                            <rect key="frame" x="76" y="13" width="38" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="share">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1V-cU-RkX">
+                                                            <rect key="frame" x="147" y="13" width="64" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="complete">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ML-Gx-4Ky">
+                                                            <rect key="frame" x="240" y="13" width="51" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="remake">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.92978616585642815" blue="0.069341445274114455" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="completeButton" destination="P1V-cU-RkX" id="Smg-4b-Y4V"/>
+                                            <outlet property="deleteButton" destination="hI9-Sz-cf2" id="45K-w4-R0J"/>
+                                            <outlet property="expandedView" destination="dkO-6S-uK8" id="NRq-xP-w9z"/>
+                                            <outlet property="moreView" destination="iDz-qS-ZQw" id="I6e-Vs-EE3"/>
+                                            <outlet property="remakeButton" destination="4ML-Gx-4Ky" id="syB-wk-DbQ"/>
+                                            <outlet property="shareButton" destination="6wS-RV-vGj" id="npg-tQ-poe"/>
                                             <outlet property="thumbnail" destination="nMF-0a-RA4" id="lwC-9H-EYJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="0vs-aC-dy7" id="Wn7-qb-r18"/>
+                                    <outlet property="delegate" destination="0vs-aC-dy7" id="dgV-cx-JeG"/>
+                                </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeH-kJ-781">
+                                <rect key="frame" x="244" y="28" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="settings">
+                                    <color key="titleColor" red="0.95053800810973188" green="0.22344042123227259" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showSettingModal:" destination="0vs-aC-dy7" eventType="touchUpInside" id="F4h-0p-u4r"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="legs.png" id="68G-K7-iTU"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="moviePlaceHolder" destination="467-wc-US8" id="gyp-Xc-FCg"/>
-                        <outlet property="userImagePlaceHolder" destination="5N8-nF-avd" id="e40-dw-Th4"/>
+                        <outlet property="userImage" destination="DkM-mW-rb1" id="YZa-is-c7C"/>
+                        <outlet property="userName" destination="1TU-PW-Tnf" id="6Vc-oK-2tV"/>
                         <outlet property="userRemakesCV" destination="6Kb-rU-9nE" id="9C3-Q6-uWm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYt-iB-v6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="CxP-Sv-uY9">
+                    <connections>
+                        <action selector="playRemake:" destination="0vs-aC-dy7" id="kmJ-RX-tOr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="481" y="1229"/>
         </scene>
@@ -595,7 +678,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYP-2N-jPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="cbH-3h-fH9">
                     <connections>
-                        <action selector="playRemake:" destination="I5b-4E-MQk" id="FfR-i0-a8W"/>
+                        <action selector="playRemake:" destination="I5b-4E-MQk" id="Y4E-qu-gt7"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -627,6 +710,7 @@
         <image name="pb_play_icon.png" width="72" height="72"/>
         <image name="record_indicator_on.png" width="29" height="29"/>
         <image name="silo.png" width="1280" height="720"/>
+        <image name="tp_transport_base.png" width="407" height="47"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
