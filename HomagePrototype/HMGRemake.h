@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HMGFootage.h"
+#import "HMGStory.h"
 
 @interface HMGRemake : NSObject
 
@@ -18,6 +20,7 @@
 @property (strong, nonatomic) NSURL *video;
 @property (strong, nonatomic) UIImage *thumbnail;
 
+- (id)initWithStory:(HMGStory *)story;
 - (void)addFootage:(NSURL *)video withSceneID:(NSString *)sceneID;
 - (void)addText:(NSString *)text withTextID:(NSString *)textID;
 

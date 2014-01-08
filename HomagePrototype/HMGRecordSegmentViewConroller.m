@@ -38,8 +38,8 @@ static NSString * const VIDEO_FILE_TYPE = @"mov";
     HMGLogDebug(@"%s started" , __PRETTY_FUNCTION__);
     [super viewDidLoad];
 	[self setUpCaptureSession];
-    self.segmentDurationInSeconds = CMTimeGetSeconds(self.videoSegmentRemake.segment.duration);
-    self.RemainingRecordTime.text = [self formatToTimeString:self.videoSegmentRemake.segment.duration];
+    self.segmentDurationInSeconds = CMTimeGetSeconds(self.scene.duration);
+    self.RemainingRecordTime.text = [self formatToTimeString:self.scene.duration];
     HMGLogDebug(@"%s finished", __PRETTY_FUNCTION__);
 }
 
@@ -213,7 +213,7 @@ static NSString * const VIDEO_FILE_TYPE = @"mov";
     {
         //calling delegate function to pass data back to reviewSegmentsViewController
         NSURL *videoToPassBack = outputFileURL;
-        [self.delegate didFinishGeneratingVideo:videoToPassBack forVideoSegmentRemake:self.videoSegmentRemake];
+        [self.delegate didFinishGeneratingVideo:videoToPassBack forVideoSegmentRemake:self.scene];
         //only when the recoder has succesfuly finished passing the output to reviewSegmentsViewController, we can dissmiss the recorder modal window and go back
         [self dismissViewControllerAnimated:YES completion:nil];
         

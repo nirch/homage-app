@@ -13,9 +13,11 @@
 #import "HMGReviewSegmentsViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "HMGLog.h"
+#import "HMGStory.h"
 
 @interface HMGTemplateDetailedViewController : UIViewController
 
-@property (strong,nonatomic) HMGTemplate *templateToDisplay;
+//@property (strong,nonatomic) HMGTemplate *templateToDisplay;
+@property (strong,nonatomic) HMGStory *storyToDisplay;
 
 @end

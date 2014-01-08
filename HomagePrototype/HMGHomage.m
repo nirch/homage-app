@@ -11,8 +11,6 @@
 
 @implementation HMGHomage
 
-static NSString * const server = @"http://54.204.34.168:4567";
-
 // Singleton - returns a shared instance of the Homage object
 + (id)sharedHomage
 {
@@ -34,7 +32,7 @@ static NSString * const server = @"http://54.204.34.168:4567";
     {
         HMGLogDebug(@"Fetching stories from server");
         
-        NSURL *storiesURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/stories", server]];
+        NSURL *storiesURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/stories", SERVER]];
         
         // Getting the stories Data from the server
         NSError *serverError;
@@ -73,11 +71,14 @@ static NSString * const server = @"http://54.204.34.168:4567";
         for (NSDictionary *jsonStory in jsonStoryArray) {
             
             HMGStory *story = [[HMGStory alloc] init];
+            story.storyID = [[jsonStory objectForKey:@"_id"] objectForKey:@"$oid"];
             story.name = [jsonStory objectForKey:@"name"];
             story.description = [jsonStory objectForKey:@"description"];
             story.level = [[jsonStory objectForKey:@"level"] intValue];
-            story.video = [jsonStory objectForKey:@"video"];
-            story.thumbnailPath = [jsonStory objectForKey:@"thumbnail"];
+            NSString *videoPath = [jsonStory objectForKey:@"video"];
+            story.video = [NSURL URLWithString:videoPath];
+            NSString *thumbnailPath = [jsonStory objectForKey:@"thumbnail"];
+            story.thumbnailURL = [NSURL URLWithString:thumbnailPath];
             
             // Creating the scenes of the Story
             NSMutableArray *sceneArray = [[NSMutableArray alloc] init];
@@ -89,9 +90,15 @@ static NSString * const server = @"http://54.204.34.168:4567";
                 scene.context = [sceneJSON objectForKey:@"context"];
                 scene.script = [sceneJSON objectForKey:@"script"];
                 scene.duration = CMTimeMake([[sceneJSON objectForKey:@"duration"] intValue], 1000);
-                scene.video = [sceneJSON objectForKey:@"video"];
-                scene.thumbnailPath = [sceneJSON objectForKey:@"thumbnail"];
-                scene.silhouettePath = [sceneJSON objectForKey:@"silhouette"];
+                NSString *videoPath = [sceneJSON objectForKey:@"video"];
+                scene.video = [NSURL URLWithString:videoPath];
+                NSString *thumbnailPath = [sceneJSON objectForKey:@"thumbnail"];
+                scene.thumbnailURL = [NSURL URLWithString:thumbnailPath];
+                NSString *silhouettePath = [sceneJSON objectForKey:@"silhouette"];
+                if (silhouettePath && silhouettePath != (id)[NSNull null])
+                {
+                    scene.silhouetteURL = [NSURL URLWithString:silhouettePath];
+                }
                 scene.selfie = [[sceneJSON objectForKey:@"selfie"] boolValue];
                 
                 [sceneArray addObject:scene];

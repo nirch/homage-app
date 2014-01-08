@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "HMGVideoSegmentRemake.h"
 #import "HMGVideoSegment.h"
+#import "HMGHomage.h"
 
 
 //delegeate for passing data back to HMGReviewSegmentsViewController
@@ -22,7 +23,10 @@
 @interface HMGRecordSegmentViewConroller : UIViewController<AVCaptureFileOutputRecordingDelegate>
 @property (nonatomic, weak) id <videoPassingDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIView *previewView;
-@property(nonatomic) HMGVideoSegmentRemake *videoSegmentRemake;
+
+//@property(nonatomic) HMGVideoSegmentRemake *videoSegmentRemake;
+@property (strong, nonatomic) HMGScene *scene;
+
 - (IBAction)startRecording:(id)sender;
 
 @end

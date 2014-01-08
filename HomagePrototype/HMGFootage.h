@@ -11,5 +11,7 @@
 @interface HMGFootage : NSObject
 
 @property (strong, nonatomic) NSURL *rawVideo;
+@property (nonatomic, getter = isUploaded) BOOL uploaded;
+@property (nonatomic, getter = isProcessed) BOOL processed;
 
 @end

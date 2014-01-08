@@ -30,27 +30,19 @@
     HMGLogDebug(@"%s started" , __PRETTY_FUNCTION__);
     
     //template player
-    [self.templatePlayButton setBackgroundImage:[UIImage imageWithContentsOfFile:self.templateToDisplay.thumbnailPath] forState:UIControlStateNormal];
+    //[self.templatePlayButton setBackgroundImage:[UIImage imageWithContentsOfFile:self.templateToDisplay.thumbnailPath] forState:UIControlStateNormal];
+    //[self.templatePlayButton setBackgroundImage:self.storyToDisplay.thumbnail forState:UIControlStateNormal];
     
-    // Since getting the thumbnail might take time (network), doing this on a different thread
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        UIImage *thumbnail = self.templateToDisplay.thumbnail;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // Update the UI
-            self.templatethumbnailImageView.image = thumbnail;
-        });
-    });
-    
+    self.templatethumbnailImageView.image = self.storyToDisplay.thumbnail;
     
     //self.templatethumbnailImageView.image = [UIImage imageWithContentsOfFile:self.templateToDisplay.thumbnailPath];
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"pb_play_icon" ofType:@"png"];
     UIImage *playButtonImage = [UIImage imageWithContentsOfFile:imagePath];
     [self.templatePlayButton setImage:playButtonImage forState:UIControlStateNormal];
-    self.templateName.text = self.templateToDisplay.name;
+    self.templateName.text = self.storyToDisplay.name;
     
     //remakes
-    self.remakesArray = self.templateToDisplay.remakes;
+    //self.remakesArray = self.templateToDisplay.remakes;
     
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
 }
@@ -59,7 +51,7 @@
 - (IBAction)playTemplate:(id)sender {
     
     HMGLogDebug(@"%s started" , __PRETTY_FUNCTION__);
-    NSURL *videoURL = self.templateToDisplay.video;
+    NSURL *videoURL = self.storyToDisplay.video;
     [self playMovieWithURL:videoURL];
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
 }
@@ -134,8 +126,8 @@
         if ([segue.destinationViewController isKindOfClass:[HMGReviewSegmentsViewController class]])
         {
             HMGReviewSegmentsViewController *destController = (HMGReviewSegmentsViewController *)segue.destinationViewController;
-            destController.templateToDisplay = self.templateToDisplay;
-            HMGLogInfo(@"user selected to remake template: %@" , self.templateToDisplay.name);
+            destController.storyToDisplay = self.storyToDisplay;
+            HMGLogInfo(@"user selected to remake story: %@" , self.storyToDisplay.name);
         }
         
     }
