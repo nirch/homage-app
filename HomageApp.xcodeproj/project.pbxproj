@@ -71,6 +71,7 @@
 		2672147417D2261500B89FB0 /* HMGTemplateDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2672147317D2261500B89FB0 /* HMGTemplateDetailedViewController.m */; };
 		267607EA17D7542200FEC5C3 /* HMGTemplateCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 267607E917D7542100FEC5C3 /* HMGTemplateCVCell.m */; };
 		267607EC17DB51B200FEC5C3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267607EB17DB51B200FEC5C3 /* AVFoundation.framework */; };
+		2684E7F4187DC0FC00006A75 /* UITabBarController+autorotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2684E7F3187DC0FC00006A75 /* UITabBarController+autorotation.m */; };
 		2686997A1879C37100689594 /* HMGMePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 268699791879C37100689594 /* HMGMePlayerView.m */; };
 		2687FF56180EC4A100727DD7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2687FF55180EC4A100727DD7 /* MobileCoreServices.framework */; };
 		268C9D1F183689DE00A169F8 /* HMGMyNavControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268C9D1E183689DE00A169F8 /* HMGMyNavControllerViewController.m */; };
@@ -401,6 +402,8 @@
 		267607E817D7542100FEC5C3 /* HMGTemplateCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGTemplateCVCell.h; sourceTree = "<group>"; };
 		267607E917D7542100FEC5C3 /* HMGTemplateCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGTemplateCVCell.m; sourceTree = "<group>"; };
 		267607EB17DB51B200FEC5C3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2684E7F2187DC0FC00006A75 /* UITabBarController+autorotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+autorotation.h"; sourceTree = "<group>"; };
+		2684E7F3187DC0FC00006A75 /* UITabBarController+autorotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+autorotation.m"; sourceTree = "<group>"; };
 		268699781879C37100689594 /* HMGMePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMGMePlayerView.h; path = ../HMGMePlayerView.h; sourceTree = "<group>"; };
 		268699791879C37100689594 /* HMGMePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGMePlayerView.m; path = ../HMGMePlayerView.m; sourceTree = "<group>"; };
 		2687FF55180EC4A100727DD7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -851,6 +854,8 @@
 		F1C8EEBE17CF38420093DB0A = {
 			isa = PBXGroup;
 			children = (
+				2684E7F2187DC0FC00006A75 /* UITabBarController+autorotation.h */,
+				2684E7F3187DC0FC00006A75 /* UITabBarController+autorotation.m */,
 				F1C8EED017CF38420093DB0A /* HomagePrototype */,
 				F1C8EEF417CF38420093DB0A /* HomagePrototypeApplicationTests */,
 				F1D42E8D17D4915F00802D7C /* HomagePrototypeLogicTests */,
@@ -1397,6 +1402,7 @@
 				F1C8EED717CF38420093DB0A /* main.m in Sources */,
 				26034A18187C4E07002938B0 /* IASKPSTextFieldSpecifierViewCell.m in Sources */,
 				F168043B18731AF900637C46 /* HMGHomage.m in Sources */,
+				2684E7F4187DC0FC00006A75 /* UITabBarController+autorotation.m in Sources */,
 				F1F930A11845E83100F6FBA7 /* HMGNetworkManager.m in Sources */,
 				F1C8EEDB17CF38420093DB0A /* HomageAppDelegate.m in Sources */,
 				F16804321873147C00637C46 /* HMGUser.m in Sources */,

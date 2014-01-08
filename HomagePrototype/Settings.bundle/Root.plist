@@ -16,7 +16,7 @@
 			<key>Title</key>
 			<string>NAME</string>
 			<key>Key</key>
-			<string></string>
+			<string>username</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -24,7 +24,7 @@
 			<key>Title</key>
 			<string>EMAIL</string>
 			<key>Key</key>
-			<string></string>
+			<string>useremail</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -38,7 +38,7 @@
 			<key>Title</key>
 			<string>HOMAGE_SHARE</string>
 			<key>Key</key>
-			<string></string>
+			<string>privacy</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
@@ -54,7 +54,7 @@
 			<key>Title</key>
 			<string>TERMS_OF_SERVICE</string>
 			<key>Key</key>
-			<string></string>
+			<string>termsofservice</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -62,7 +62,7 @@
 			<key>Title</key>
 			<string>PRIVACY_POLICY</string>
 			<key>Key</key>
-			<string></string>
+			<string>privacypolicy</string>
 		</dict>
 	</array>
 	<key>StringsTable</key>

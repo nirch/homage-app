@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Wr9-7c-0fA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Wr9-7c-0fA">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Review Segments View Controller - Remaking the video-->
@@ -143,7 +143,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-yA-dxd">
-                                <rect key="frame" x="116" y="430" width="91" height="30"/>
+                                <rect key="frame" x="122" y="386" width="91" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Make video!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,7 +153,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNr-ty-PGv">
-                                <rect key="frame" x="14" y="430" width="42" height="30"/>
+                                <rect key="frame" x="20" y="386" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="share ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -308,8 +308,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RNU-l4-hGy">
-                                <rect key="frame" x="20" y="20" width="271" height="440"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RNU-l4-hGy">
+                                <rect key="frame" x="10" y="10" width="291" height="494"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="271" id="Izw-cW-MnC"/>
                                 </constraints>
@@ -321,7 +321,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TemplateCell" id="B75-cN-Rjx" customClass="HMGTemplateCVCell">
-                                        <rect key="frame" x="8" y="64" width="255" height="172"/>
+                                        <rect key="frame" x="18" y="64" width="255" height="172"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="255" height="172"/>
@@ -374,6 +374,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IwI-Ct-2gr"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="templateCView" destination="RNU-l4-hGy" id="lOG-Di-u4h"/>
                         <segue destination="I5b-4E-MQk" kind="push" identifier="showTemplate" id="4s3-dO-3zZ"/>
@@ -516,7 +517,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Me" image="legs.png" id="68G-K7-iTU"/>
+                    <tabBarItem key="tabBarItem" title="Me" id="68G-K7-iTU"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="moviePlaceHolder" destination="467-wc-US8" id="gyp-Xc-FCg"/>
@@ -532,46 +533,28 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="481" y="1229"/>
+            <point key="canvasLocation" x="28" y="901"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="luP-o8-WVt">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="Wr9-7c-0fA" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="C4f-6t-iJl">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="s17-GV-Dnk" kind="relationship" relationship="viewControllers" id="4Oi-pL-x2v"/>
                         <segue destination="0vs-aC-dy7" kind="relationship" relationship="viewControllers" id="UsW-NC-uR7"/>
-                        <segue destination="U9J-8c-hUB" kind="relationship" relationship="viewControllers" id="5XP-Ro-Lwh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ae2-St-IPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="1541"/>
-        </scene>
-        <!--View Controller - Stories-->
-        <scene sceneID="4oq-o3-nVk">
-            <objects>
-                <viewController id="U9J-8c-hUB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sCm-fe-pBH"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qls-AJ-3iG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aIb-e6-pyn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Stories" image="silo.png" id="ckA-Fa-Vgh"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zdX-Nm-CYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="481" y="1816"/>
+            <point key="canvasLocation" x="-510" y="467"/>
         </scene>
         <!--Template Detailed View Controller-->
         <scene sceneID="oeV-8i-ute">
@@ -585,8 +568,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRC-FC-7J3">
-                                <rect key="frame" x="25" y="11" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRC-FC-7J3">
+                                <rect key="frame" x="25" y="38" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -684,11 +667,14 @@
             </objects>
             <point key="canvasLocation" x="927" y="118"/>
         </scene>
-        <!--My Nav Controller View Controller-->
+        <!--Navigation Controller - stories-->
         <scene sceneID="GaX-Lf-aw4">
             <objects>
-                <navigationController id="s17-GV-Dnk" customClass="HMGMyNavControllerViewController" sceneMemberID="viewController">
+                <navigationController id="s17-GV-Dnk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="stories" image="First.png" id="UMB-Cm-PV2"/>
                     <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tca-1Q-cHg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -704,12 +690,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="First.png" width="637" height="478"/>
         <image name="camera_bezel.png" width="92" height="320"/>
         <image name="camera_button_background.png" width="82" height="42"/>
-        <image name="legs.png" width="1194" height="669"/>
         <image name="pb_play_icon.png" width="72" height="72"/>
         <image name="record_indicator_on.png" width="29" height="29"/>
-        <image name="silo.png" width="1280" height="720"/>
         <image name="tp_transport_base.png" width="407" height="47"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
