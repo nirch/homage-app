@@ -10,4 +10,17 @@
 
 @implementation HMGFootage
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.uploaded = NO;
+        self.processed = NO;
+    }
+    
+    return self;
+}
+
 @end

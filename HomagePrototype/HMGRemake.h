@@ -23,5 +23,6 @@
 - (id)initWithStory:(HMGStory *)story;
 - (void)addFootage:(NSURL *)video withSceneID:(NSString *)sceneID;
 - (void)addText:(NSString *)text withTextID:(NSString *)textID;
+- (void)render;
 
 @end

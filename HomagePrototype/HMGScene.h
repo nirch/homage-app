@@ -22,4 +22,6 @@
 @property (strong, nonatomic) UIImage *silhouette;
 @property (nonatomic) BOOL selfie;
 
+- (BOOL)isGreenScreenScene;
+
 @end

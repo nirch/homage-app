@@ -10,4 +10,17 @@
 
 @implementation HMGScene
 
+
+- (BOOL)isGreenScreenScene
+{
+    if (self.silhouetteURL == nil || self.silhouetteURL == (id)[NSNull null])
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
+
 @end

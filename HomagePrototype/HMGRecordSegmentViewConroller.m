@@ -107,9 +107,14 @@ static NSString * const VIDEO_FILE_TYPE = @"mov";
     // Set up image layer (silhouette)
     self.imageLayer = [[CALayer alloc] init];
     self.imageLayer.frame = self.previewView.frame;
-    NSString *siloPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"silo" ofType:@"png"];
-    self.imageLayer.contents = (id)[UIImage imageWithContentsOfFile:siloPath].CGImage;
-    [self.previewView.layer addSublayer:self.imageLayer];
+    
+    //NSString *siloPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"silo" ofType:@"png"];
+    if (self.scene.silhouetteURL)
+    {
+        UIImage *silo = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.scene.silhouetteURL]];
+        self.imageLayer.contents = (id)silo.CGImage;
+        [self.previewView.layer addSublayer:self.imageLayer];
+    }
     
      
     self.captureOutput = [[AVCaptureMovieFileOutput alloc] init];

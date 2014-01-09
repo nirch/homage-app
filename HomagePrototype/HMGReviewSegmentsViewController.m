@@ -400,6 +400,8 @@ const NSInteger SINGLE_SEGMENT_TAKES_CV_TAG = 20;
 
 //this action will be called when the user wants to render the final product from the remakes
 - (IBAction)renderFinal:(id)sender {
+    
+    [self.remake render];
 
 /*
     NSArray *noRemakeSegments = [self segmentsWithNoRemakes];
