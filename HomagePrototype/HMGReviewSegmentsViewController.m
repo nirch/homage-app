@@ -41,6 +41,7 @@ const NSInteger SINGLE_SEGMENT_TAKES_CV_TAG = 20;
 
 @implementation HMGReviewSegmentsViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
