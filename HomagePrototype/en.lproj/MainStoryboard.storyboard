@@ -444,37 +444,33 @@
                                                         <outletCollection property="gestureRecognizers" destination="CxP-Sv-uY9" appends="YES" id="Kjm-xA-Tau"/>
                                                     </connections>
                                                 </imageView>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tp_transport_base.png" translatesAutoresizingMaskIntoConstraints="NO" id="iDz-qS-ZQw">
-                                                    <rect key="frame" x="2" y="99" width="317" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkO-6S-uK8">
-                                                    <rect key="frame" x="1" y="99" width="317" height="55"/>
+                                                    <rect key="frame" x="0.0" y="99" width="321" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hI9-Sz-cf2">
-                                                            <rect key="frame" x="9" y="13" width="43" height="30"/>
+                                                            <rect key="frame" x="10" y="13" width="43" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" title="delete">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wS-RV-vGj">
-                                                            <rect key="frame" x="76" y="13" width="38" height="30"/>
+                                                            <rect key="frame" x="77" y="13" width="38" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" title="share">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1V-cU-RkX">
-                                                            <rect key="frame" x="147" y="13" width="64" height="30"/>
+                                                            <rect key="frame" x="148" y="13" width="64" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" title="complete">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ML-Gx-4Ky">
-                                                            <rect key="frame" x="240" y="13" width="51" height="30"/>
+                                                            <rect key="frame" x="241" y="13" width="51" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" title="remake">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -483,10 +479,18 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tp_transport_base.png" translatesAutoresizingMaskIntoConstraints="NO" id="iDz-qS-ZQw">
+                                                    <rect key="frame" x="-8" y="99" width="329" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="NRW-NG-hNf" appends="YES" id="KVb-Ix-cWP"/>
+                                                    </connections>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.92978616585642815" blue="0.069341445274114455" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="completeButton" destination="P1V-cU-RkX" id="Smg-4b-Y4V"/>
                                             <outlet property="deleteButton" destination="hI9-Sz-cf2" id="45K-w4-R0J"/>
@@ -529,7 +533,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYt-iB-v6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="CxP-Sv-uY9">
                     <connections>
-                        <action selector="playRemake:" destination="0vs-aC-dy7" id="kmJ-RX-tOr"/>
+                        <action selector="playRemake:" destination="0vs-aC-dy7" id="idY-Mj-Uxv"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="NRW-NG-hNf">
+                    <connections>
+                        <action selector="expandRemakeCell:" destination="0vs-aC-dy7" id="lUE-w0-EVb"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

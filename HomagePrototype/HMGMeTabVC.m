@@ -16,7 +16,6 @@
 #import "IASKSettingsReader.h"
 #endif
 
-
 @interface HMGMeTabVC () <UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet HMGMePlayerView *moviePlaceHolder;
 @property (strong,nonatomic) MPMoviePlayerController *movieplayer;
@@ -26,6 +25,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *userRemakesCV;
 @property (strong,nonatomic) NSArray *userRemakes;
+@property (strong,nonatomic) NSIndexPath *expandedCellIndexPath;
 
 @end
 
@@ -49,10 +49,23 @@
     self.userName.text = homageCore.me.userName;
     self.userImage.image = homageCore.me.image;
     self.userRemakes = homageCore.myRemakes;
+    self.expandedCellIndexPath = nil;
     
 }
 
 -(void)viewDidAppear:(BOOL)animated
+{
+    [self.moviePlaceHolder startPosition];
+    self.expandedCellIndexPath = nil;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.moviePlaceHolder startPosition];
+    self.expandedCellIndexPath = nil;
+}
+
+-(void)viewDidDisappear:(BOOL)animated
 {
     [self.moviePlaceHolder startPosition];
 }
@@ -83,6 +96,24 @@
     return cell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Return the size of each cell to draw
+    CGSize cellSize = (CGSize) { .width = 319, .height = [self heightForCellAtIndexPath:indexPath]};
+    return cellSize;
+}
+
+-(CGFloat)heightForCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath isEqual:self.expandedCellIndexPath])
+    {
+        return 154;
+    } else {
+        return 121;
+    }
+
+}
+
 
 - (void)updateCell:(UICollectionViewCell *)cell withRemake:(HMGRemake *)remake
 {
@@ -91,12 +122,13 @@
     if ([cell isKindOfClass: [HMGUserRemakeCVCell class]]) {
         HMGUserRemakeCVCell *remakeCell = (HMGUserRemakeCVCell *) cell;
         //remakeCell.thumbnail.userInteractionEnabled = YES;
-        //[remakeCell.expandedView removeFromSuperview];
+        NSLog(@"item size is: %f,%f" , remakeCell.intrinsicContentSize.height , remakeCell.intrinsicContentSize.width);
         remakeCell.thumbnail.image = remake.thumbnail;
     }
     
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
 }
+
 
 -(IBAction)playRemake:(UITapGestureRecognizer *)gesture
 {
@@ -115,13 +147,40 @@
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
 }
 
+
+- (IBAction)expandRemakeCell:(UITapGestureRecognizer *)gesture
+{
+    CGPoint tapLocation = [gesture locationInView:self.userRemakesCV];
+    NSIndexPath *indexPath = [self.userRemakesCV indexPathForItemAtPoint:tapLocation];
+    if (indexPath)
+    {
+        [self collapseCellAtIndexPath:self.expandedCellIndexPath];
+        self.expandedCellIndexPath = indexPath;
+        HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
+        [cell.moreView setHidden:YES];
+        [cell.expandedView setHidden:NO];
+        [self.userRemakesCV performBatchUpdates:nil completion:nil];
+    }
+    
+}
+
+-(void)collapseCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath == nil) return;
+    HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
+    [cell.expandedView setHidden:YES];
+    [cell.moreView setHidden:NO];
+}
+
+
+
 -(void)playRemakeVideoWithURL:(NSURL *)videoURL
 {
     self.movieplayer = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
     self.movieplayer.controlStyle = MPMovieControlStyleEmbedded;
     self.movieplayer.shouldAutoplay = YES;
     [self.movieplayer.view setFrame: self.moviePlaceHolder.bounds];
-    self.movieplayer.scalingMode = MPMovieScalingModeAspectFill;
+    self.movieplayer.scalingMode = MPMovieScalingModeFill;
     [self.moviePlaceHolder addSubview:self.movieplayer.view];
     [self.movieplayer setFullscreen:NO animated:YES];
 }

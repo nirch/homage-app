@@ -20,7 +20,10 @@
 }
 
 - (void)awakeFromNib {
-    //[self.expandedView removeFromSuperview];
+    [self.expandedView setHidden:YES];
+    CGRect frame = self.bounds;
+    frame.size.width = 121;
+    self.bounds = frame;
 }
 
 /*
