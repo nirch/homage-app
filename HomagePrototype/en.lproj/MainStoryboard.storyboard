@@ -256,14 +256,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cOF-98-wWj">
-                                <rect key="frame" x="0.0" y="0.0" width="391" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_bezel.png" translatesAutoresizingMaskIntoConstraints="NO" id="KJU-be-J5r">
-                                <rect key="frame" x="385" y="0.0" width="95" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhI-9K-bMN" customClass="HMGRecordButton">
                                 <rect key="frame" x="390" y="244" width="84" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -490,7 +486,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.92978616585642815" blue="0.069341445274114455" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="completeButton" destination="P1V-cU-RkX" id="Smg-4b-Y4V"/>
                                             <outlet property="deleteButton" destination="hI9-Sz-cf2" id="45K-w4-R0J"/>
@@ -700,7 +696,6 @@
     </scenes>
     <resources>
         <image name="First.png" width="637" height="478"/>
-        <image name="camera_bezel.png" width="92" height="320"/>
         <image name="camera_button_background.png" width="82" height="42"/>
         <image name="pb_play_icon.png" width="72" height="72"/>
         <image name="record_indicator_on.png" width="29" height="29"/>
