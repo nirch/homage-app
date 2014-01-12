@@ -10,7 +10,16 @@
 
 @interface HMGFootage : NSObject
 
+typedef enum {
+    HMGFootageStatusStatusOpen,
+    HMGFootageStatusStatusUploading,
+    HMGFootageStatusStatusProcessing,
+    HMGFootageStatusStatusReady
+} HMGFootageStatus;
+
+
 @property (strong, nonatomic) NSURL *rawVideo;
+@property (nonatomic) HMGFootageStatus status;
 @property (nonatomic, getter = isUploaded) BOOL uploaded;
 @property (nonatomic, getter = isProcessed) BOOL processed;
 

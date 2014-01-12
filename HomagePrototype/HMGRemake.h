@@ -12,9 +12,19 @@
 
 @interface HMGRemake : NSObject
 
+typedef enum {
+    HMGRemakeStatusNew,
+    HMGRemakeStatusInProgress,
+    HMGRemakeStatusRendering,
+    HMGRemakeStatusDone
+} HMGRemakeStatus;
+
+
+
 @property (strong, nonatomic) NSString *remakeID;
 @property (strong, nonatomic) NSString *storyID;
 @property (strong, nonatomic) NSString *userID;
+@property (nonatomic) HMGRemakeStatus status;
 @property (strong, nonatomic) NSDictionary *footages;
 @property (strong, nonatomic) NSDictionary *texts;
 @property (strong, nonatomic) NSURL *video;
