@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMGMePlayerView : UIView
+@interface HMGResizeableView : UIView
 
 - (void) collapse;
 - (void) expand;
-- (void) startPosition;
+- (void) Position:(NSString *)command;
 
 @property (nonatomic, assign) CGRect expandedFrame;
 @property (nonatomic, assign) CGRect collapsedFrame;

@@ -9,7 +9,6 @@
 #import "HMGShareViewController.h"
 
 @interface HMGShareViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *linkName;
 @property (weak, nonatomic) IBOutlet UIButton *EmailShareButton;
 
 @end
@@ -20,10 +19,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.URLToShare = self.linkName.text;
     self.EmailShareButton.enabled = NO;
     if ([MFMailComposeViewController canSendMail]) self.EmailShareButton.enabled = YES;
 }
+
+-(id)initWithDefaultNibInParentVC:(UIViewController *)parentVC
+{
+    
+    self.delegate = parentVC;
+    [self.delegate addChildViewController:self];
+    self = [super initWithNibName:@"shareView" bundle:nil];
+    if (self) {
+        [self.delegate.view addSubview:self.view];
+    }
+    return self;
+}
+
+- (IBAction)backgroundTouched:(UITapGestureRecognizer *)sender
+{
+    [self.view removeFromSuperview];
+    [self removeFromParentViewController];
+}
+
 
 #pragma mark FBshare
 
@@ -130,7 +147,7 @@
 
 - (IBAction)copyURL:(id)sender {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = self.linkName.text;
+    pasteboard.string = self.URLToShare;
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "HMGMeTabVC.h"
-#import "HMGMePlayerView.h"
+#import "HMGResizeableView.h"
 #import <MediaPlayer/MediaPlayer.h>
 
 #ifdef USES_IASK_STATIC_LIBRARY
@@ -17,15 +17,16 @@
 #endif
 
 @interface HMGMeTabVC () <UICollectionViewDataSource,UICollectionViewDelegate>
-@property (weak, nonatomic) IBOutlet HMGMePlayerView *moviePlaceHolder;
+@property (weak, nonatomic) IBOutlet HMGResizeableView *moviePlaceHolder;
 @property (strong,nonatomic) MPMoviePlayerController *movieplayer;
 
-@property (weak, nonatomic) IBOutlet UIImageView *userImage;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *userRemakesCV;
 @property (strong,nonatomic) NSArray *userRemakes;
 @property (strong,nonatomic) NSIndexPath *expandedCellIndexPath;
+@property (weak, nonatomic) IBOutlet UIButton *closeMovieView;
+@property (weak,nonatomic) HMGShareViewController *shareVC;
 
 @end
 
@@ -45,29 +46,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     HMGHomage *homageCore = [HMGHomage sharedHomage];
     self.userName.text = homageCore.me.userName;
-    self.userImage.image = homageCore.me.image;
     self.userRemakes = homageCore.myRemakes;
     self.expandedCellIndexPath = nil;
+    [self.moviePlaceHolder Position:@"init"];
     
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self.moviePlaceHolder startPosition];
     self.expandedCellIndexPath = nil;
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self.moviePlaceHolder startPosition];
+    [self.moviePlaceHolder Position:@"align"];
     self.expandedCellIndexPath = nil;
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    [self.moviePlaceHolder startPosition];
+    [self.movieplayer stop];
 }
 
 
@@ -91,7 +92,7 @@
     UICollectionViewCell *cell = [self.userRemakesCV dequeueReusableCellWithReuseIdentifier:@"RemakeCell"
                                                                               forIndexPath:indexPath];
     HMGRemake *remake = self.userRemakes[indexPath.item];
-    [self updateCell:cell withRemake:remake];
+    [self updateCell:cell withRemake:remake withIndexPath:indexPath];
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
     return cell;
 }
@@ -115,7 +116,7 @@
 }
 
 
-- (void)updateCell:(UICollectionViewCell *)cell withRemake:(HMGRemake *)remake
+- (void)updateCell:(UICollectionViewCell *)cell withRemake:(HMGRemake *)remake withIndexPath:(NSIndexPath *)indexPath
 {
     HMGLogDebug(@"%s started" , __PRETTY_FUNCTION__);
     
@@ -124,6 +125,7 @@
         //remakeCell.thumbnail.userInteractionEnabled = YES;
         NSLog(@"item size is: %f,%f" , remakeCell.intrinsicContentSize.height , remakeCell.intrinsicContentSize.width);
         remakeCell.thumbnail.image = remake.thumbnail;
+        remakeCell.shareButton.tag = indexPath.item;
     }
     
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
@@ -164,6 +166,13 @@
     
 }
 
+
+- (IBAction)collapseMovieView:(id)sender
+{
+    [self.moviePlaceHolder collapse];
+    [self.movieplayer stop];
+}
+
 -(void)collapseCellAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath == nil) return;
@@ -182,6 +191,7 @@
     [self.movieplayer.view setFrame: self.moviePlaceHolder.bounds];
     self.movieplayer.scalingMode = MPMovieScalingModeFill;
     [self.moviePlaceHolder addSubview:self.movieplayer.view];
+    [self.moviePlaceHolder addSubview:self.closeMovieView];
     [self.movieplayer setFullscreen:NO animated:YES];
 }
 
@@ -202,6 +212,17 @@
 - (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController*)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 	// your code here to reconfigure the app for changed settings
+}
+
+#pragma mark sharing
+- (IBAction)shareButtonPushed:(UIButton *)button
+{
+    HMGShareViewController *vc = [[HMGShareViewController alloc] initWithDefaultNibInParentVC:self];
+    self.shareVC = vc;
+    NSInteger index = button.tag;
+    HMGRemake *remake = self.userRemakes[index];
+    NSURL *videoURL = remake.video;
+    self.shareVC.URLToShare = [videoURL absoluteString];
 }
 
 @end

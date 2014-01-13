@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Homage. All rights reserved.
 //
 
-#import "HMGMePlayerView.h"
+#import "HMGResizeableView.h"
 
-@implementation HMGMePlayerView
+@implementation HMGResizeableView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -46,12 +46,46 @@
     return frame;
 }
 
--(void)startPosition
+-(void)Position:(NSString *)command
 {
+    if ([command isEqualToString:@"align"] && (CGRectEqualToRect(self.frame, self.collapsedFrame))) return;
+    
     self.frame = self.collapsedFrame;
     for (UIView* view in self.superview.subviews) {
         if (CGRectGetMinY(view.frame) > CGRectGetMaxY(self.frame))
+        {
+            CGPoint selfFrameOrigin = self.frame.origin;
+            CGSize selfFrameSize = self.frame.size;
+            CGFloat selforiginX = selfFrameOrigin.x;
+            CGFloat selforiginY = selfFrameOrigin.y;
+            CGFloat selfheight = selfFrameSize.height;
+            CGFloat selfwidth = selfFrameSize.width;
+            
+            CGPoint viewFrameOrigin = view.frame.origin;
+            CGSize viewFrameSize = view.frame.size;
+            CGFloat vieworiginX = viewFrameOrigin.x;
+            CGFloat vieworiginY = viewFrameOrigin.y;
+            CGFloat viewheight = viewFrameSize.height;
+            CGFloat viewwidth = viewFrameSize.width;
+            
+            CGFloat viewMinY = CGRectGetMinY(view.frame);
+            CGFloat selfMaxY = CGRectGetMaxY(self.frame);
+            
+            NSLog(@"self.frame geos: %f,%f,%f,%f. max Y of self: %f", selforiginX , selforiginY , selfwidth , selfheight , selfMaxY);
+            NSLog(@"view.frame geos: %f,%f,%f,%f. min Y of view: %f", vieworiginX , vieworiginY , viewwidth , viewheight,  viewMinY);
+        
             view.frame = [self raiseFrame:view.frame withTag: view.tag];
+            
+            viewFrameOrigin = view.frame.origin;
+            viewFrameSize = view.frame.size;
+            vieworiginX = viewFrameOrigin.x;
+            vieworiginY = viewFrameOrigin.y;
+            viewheight = viewFrameSize.height;
+            viewwidth = viewFrameSize.width;
+            viewMinY = CGRectGetMinY(view.frame);
+            
+            NSLog(@"view.frame after raise geos after raise: %f,%f,%f,%f. min Y of view: %f", vieworiginX , vieworiginY , viewwidth , viewheight,  viewMinY);
+        }
     }
     
     for (UIView* view in self.subviews) {

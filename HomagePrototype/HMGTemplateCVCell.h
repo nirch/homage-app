@@ -12,8 +12,8 @@
 @interface HMGTemplateCVCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel     *templateName;
 @property (weak, nonatomic) IBOutlet UIImageView *templatePreviewImageView;
-@property (weak, nonatomic) IBOutlet UILabel     *difficulty;
 @property (weak, nonatomic) IBOutlet UILabel     *numOfRemakes;
-//@property (weak, nonatomic) IBOutlet UILabel     *totalViews;
+@property (weak, nonatomic) IBOutlet UIImageView *difficultyIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *shotModeIcon;
 
 @end

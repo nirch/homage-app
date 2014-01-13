@@ -9,9 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <MessageUI/MessageUI.h>
+#import "HMGVCDismissProtocol.h"
+
 
 @interface HMGShareViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (strong,nonatomic) NSString *URLToShare;
+@property (weak,nonatomic) UIViewController *delegate;
+
+-(id)initWithDefaultNibInParentVC:(UIViewController *)parentVC;
 
 @end

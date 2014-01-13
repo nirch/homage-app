@@ -10,6 +10,7 @@
 #import "HMGLog.h"
 #import "HMGUserRemakeCVCell.h"
 #import "HMGHomage.h"
+#import "HMGShareViewController.h"
 
 #if USES_IASK_STATIC_LIBRARY
 #import "InAppSettingsKit/IASKAppSettingsViewController.h"

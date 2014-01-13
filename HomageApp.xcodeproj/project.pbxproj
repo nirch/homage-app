@@ -27,6 +27,7 @@
 		260683AE181D5E2600D390DA /* HMGTake.m in Sources */ = {isa = PBXBuildFile; fileRef = 260683AD181D5E2600D390DA /* HMGTake.m */; };
 		260683B1181D67F300D390DA /* HMGtakeCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 260683B0181D67F300D390DA /* HMGtakeCVCell.m */; };
 		260683B2181FE05600D390DA /* HMGTake.m in Sources */ = {isa = PBXBuildFile; fileRef = 260683AD181D5E2600D390DA /* HMGTake.m */; };
+		26092CF51882D5BA001132B2 /* shareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26092CF41882D5BA001132B2 /* shareView.xib */; };
 		262A2C8E17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.05.22 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 262A2C8B17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.05.22 PM.png */; };
 		262A2C8F17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.09.25 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 262A2C8C17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.09.25 PM.png */; };
 		262A2C9017DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.11.28 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 262A2C8D17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.11.28 PM.png */; };
@@ -72,7 +73,7 @@
 		267607EA17D7542200FEC5C3 /* HMGTemplateCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 267607E917D7542100FEC5C3 /* HMGTemplateCVCell.m */; };
 		267607EC17DB51B200FEC5C3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267607EB17DB51B200FEC5C3 /* AVFoundation.framework */; };
 		2684E7F4187DC0FC00006A75 /* UITabBarController+autorotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2684E7F3187DC0FC00006A75 /* UITabBarController+autorotation.m */; };
-		2686997A1879C37100689594 /* HMGMePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 268699791879C37100689594 /* HMGMePlayerView.m */; };
+		2686997A1879C37100689594 /* HMGResizeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 268699791879C37100689594 /* HMGResizeableView.m */; };
 		2687FF56180EC4A100727DD7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2687FF55180EC4A100727DD7 /* MobileCoreServices.framework */; };
 		268C9D1F183689DE00A169F8 /* HMGMyNavControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268C9D1E183689DE00A169F8 /* HMGMyNavControllerViewController.m */; };
 		26A0088E183D111B00E6AC34 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A0088D183D111B00E6AC34 /* Toast+UIView.m */; };
@@ -353,6 +354,8 @@
 		260683AD181D5E2600D390DA /* HMGTake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGTake.m; path = Model/HMGTake.m; sourceTree = "<group>"; };
 		260683AF181D67F300D390DA /* HMGtakeCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGtakeCVCell.h; sourceTree = "<group>"; };
 		260683B0181D67F300D390DA /* HMGtakeCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGtakeCVCell.m; sourceTree = "<group>"; };
+		26092CF41882D5BA001132B2 /* shareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shareView.xib; sourceTree = "<group>"; };
+		26092CF61882DE66001132B2 /* HMGVCDismissProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGVCDismissProtocol.h; sourceTree = "<group>"; };
 		262A2C8B17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.05.22 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2013-08-26 at 9.05.22 PM.png"; sourceTree = "<group>"; };
 		262A2C8C17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.09.25 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2013-08-26 at 9.09.25 PM.png"; sourceTree = "<group>"; };
 		262A2C8D17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.11.28 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2013-08-26 at 9.11.28 PM.png"; sourceTree = "<group>"; };
@@ -404,8 +407,8 @@
 		267607EB17DB51B200FEC5C3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2684E7F2187DC0FC00006A75 /* UITabBarController+autorotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+autorotation.h"; sourceTree = "<group>"; };
 		2684E7F3187DC0FC00006A75 /* UITabBarController+autorotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+autorotation.m"; sourceTree = "<group>"; };
-		268699781879C37100689594 /* HMGMePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMGMePlayerView.h; path = ../HMGMePlayerView.h; sourceTree = "<group>"; };
-		268699791879C37100689594 /* HMGMePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGMePlayerView.m; path = ../HMGMePlayerView.m; sourceTree = "<group>"; };
+		268699781879C37100689594 /* HMGResizeableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMGResizeableView.h; path = ../HMGResizeableView.h; sourceTree = "<group>"; };
+		268699791879C37100689594 /* HMGResizeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMGResizeableView.m; path = ../HMGResizeableView.m; sourceTree = "<group>"; };
 		2687FF55180EC4A100727DD7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		268C9D1D183689DE00A169F8 /* HMGMyNavControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGMyNavControllerViewController.h; sourceTree = "<group>"; };
 		268C9D1E183689DE00A169F8 /* HMGMyNavControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGMyNavControllerViewController.m; sourceTree = "<group>"; };
@@ -854,6 +857,7 @@
 		F1C8EEBE17CF38420093DB0A = {
 			isa = PBXGroup;
 			children = (
+				26092CF61882DE66001132B2 /* HMGVCDismissProtocol.h */,
 				2684E7F2187DC0FC00006A75 /* UITabBarController+autorotation.h */,
 				2684E7F3187DC0FC00006A75 /* UITabBarController+autorotation.m */,
 				F1C8EED017CF38420093DB0A /* HomagePrototype */,
@@ -899,8 +903,8 @@
 			children = (
 				260349EC187C48EE002938B0 /* Settings.bundle */,
 				260349EE187C4E07002938B0 /* InAppSettingsKit */,
-				268699781879C37100689594 /* HMGMePlayerView.h */,
-				268699791879C37100689594 /* HMGMePlayerView.m */,
+				268699781879C37100689594 /* HMGResizeableView.h */,
+				268699791879C37100689594 /* HMGResizeableView.m */,
 				26A0088C183D111B00E6AC34 /* Toast+UIView.h */,
 				26A0088D183D111B00E6AC34 /* Toast+UIView.m */,
 				268C9D1D183689DE00A169F8 /* HMGMyNavControllerViewController.h */,
@@ -913,6 +917,7 @@
 				26A2A2D21879934300F35870 /* HMGUserRemakeCVCell.h */,
 				26A2A2D31879934300F35870 /* HMGUserRemakeCVCell.m */,
 				F1C8EEE217CF38420093DB0A /* MainStoryboard.storyboard */,
+				26092CF41882D5BA001132B2 /* shareView.xib */,
 				26A2A2CC18795BEE00F35870 /* HMGMeTabVC.h */,
 				26A2A2CD18795BEE00F35870 /* HMGMeTabVC.m */,
 				26C0860618670079007D2B8D /* HMGShareViewController.h */,
@@ -1225,6 +1230,7 @@
 				F163101F17DFCD6700A2F361 /* BT_meeting_gone_wrong.mp4 in Resources */,
 				F1C57B8C17F8A51C00158EC3 /* Tikim_Text.mp4 in Resources */,
 				F163102017DFCD6700A2F361 /* BT_meeting_gone_wrong.png in Resources */,
+				26092CF51882D5BA001132B2 /* shareView.xib in Resources */,
 				F163102117DFCD6700A2F361 /* Family_Guy_Wrong_Meeting.mp4 in Resources */,
 				F163102217DFCD6700A2F361 /* Family_Guy_Wrong_Meeting.png in Resources */,
 				F163102317DFCD6700A2F361 /* I_am_yor_father-Tomer.mp4 in Resources */,
@@ -1429,7 +1435,7 @@
 				65215F8517F8685C00AB95F0 /* HMGFileManager.m in Sources */,
 				26034A1A187C4E07002938B0 /* IASKSlider.m in Sources */,
 				F1F04AEE17E1B02600720C5C /* HMGSegment.m in Sources */,
-				2686997A1879C37100689594 /* HMGMePlayerView.m in Sources */,
+				2686997A1879C37100689594 /* HMGResizeableView.m in Sources */,
 				F1F04AF117E1B13800720C5C /* HMGImageSegment.m in Sources */,
 				26034A12187C4E07002938B0 /* IASKSettingsReader.m in Sources */,
 				F1F04AF417E1B36F00720C5C /* HMGTextSegment.m in Sources */,
