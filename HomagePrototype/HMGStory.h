@@ -11,9 +11,9 @@
 @interface HMGStory : NSObject
 
 typedef enum {
-    StoryEasy = 1,
-    StoryMedium,
-    StoryHard
+    HMGStoryLevelEasy,
+    HMGStoryLevelMedium,
+    HMGStoryLevelHard
 } HMGStoryLevel;
 
 
