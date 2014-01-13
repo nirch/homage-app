@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HMGShareViewController">
             <connections>
+                <outlet property="FBshareButton" destination="fCB-z0-Ggj" id="y9c-Gy-K4g"/>
+                <outlet property="copyURLButton" destination="ww0-6R-L0d" id="x0Q-wg-XiS"/>
                 <outlet property="view" destination="1" id="lbv-uh-2qx"/>
             </connections>
         </placeholder>
@@ -31,9 +33,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ww0-6R-L0d">
-                            <rect key="frame" x="12" y="133" width="218" height="49"/>
+                            <rect key="frame" x="85" y="205" width="89" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="copy URL">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>

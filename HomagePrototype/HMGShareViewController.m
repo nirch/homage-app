@@ -7,9 +7,12 @@
 //
 
 #import "HMGShareViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface HMGShareViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *EmailShareButton;
+@property (weak, nonatomic) IBOutlet UIButton *FBshareButton;
+@property (weak, nonatomic) IBOutlet UIButton *CopyURLButton;
 
 @end
 
@@ -20,6 +23,13 @@
 {
     [super viewDidLoad];
     self.EmailShareButton.enabled = NO;
+    NSArray *buttonArray = [NSArray arrayWithObjects:self.EmailShareButton,self.FBshareButton,self.CopyURLButton,nil];
+    for (UIButton *button in buttonArray)
+    {
+        button.layer.borderWidth=1.0;
+        button.layer.borderColor=[[UIColor blackColor] CGColor];
+        button.layer.cornerRadius = 10;
+    }
     if ([MFMailComposeViewController canSendMail]) self.EmailShareButton.enabled = YES;
 }
 

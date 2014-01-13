@@ -153,14 +153,16 @@
     HMGRemake *remake1 = [[HMGRemake alloc] init];
     HMGRemake *remake2 = [[HMGRemake alloc] init];
     
-    NSString *video1Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Wrong_meeting.mp4" ofType:nil];
+    //NSString *video1Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Wrong_meeting.mp4" ofType:nil];
     NSString *image1Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"wrong_meeting.png" ofType:nil];
-    remake1.video = [NSURL fileURLWithPath:video1Path];
+    //remake1.video = [NSURL fileURLWithPath:video1Path];
+    remake1.video = [NSURL URLWithString:@"https://s3.amazonaws.com/homageapp/Final+Videos/final_Star+Wars_52ceacccdb25450c2c000001.mp4"];
     remake1.thumbnail = [UIImage imageWithContentsOfFile:image1Path];
     
-    NSString *video2Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Family_Guy_Wrong_Meeting.mp4" ofType:nil];
+    //NSString *video2Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Family_Guy_Wrong_Meeting.mp4" ofType:nil];
     NSString *image2Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Family_Guy_Wrong_Meeting.png" ofType:nil];
-    remake2.video = [NSURL fileURLWithPath:video2Path];
+    //remake2.video = [NSURL fileURLWithPath:video2Path];
+    remake2.video = [NSURL URLWithString:@"https://s3.amazonaws.com/homageapp/Final+Videos/final_Star+Wars_52cedc28db254513fc000004.mp4"];
     remake2.thumbnail = [UIImage imageWithContentsOfFile:image2Path];
     
     [remakes addObject:remake1];

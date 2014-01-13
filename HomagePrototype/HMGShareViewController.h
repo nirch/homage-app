@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <MessageUI/MessageUI.h>
-#import "HMGVCDismissProtocol.h"
 
 
 @interface HMGShareViewController : UIViewController <MFMailComposeViewControllerDelegate>
