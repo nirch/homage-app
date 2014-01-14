@@ -9,6 +9,7 @@
 #import "HMGRemake.h"
 #import "HMGLog.h"
 #import "HMGNetworkManager.h"
+#import "HMGHomage.h"
 
 @implementation HMGRemake
 
@@ -19,7 +20,7 @@
     if (self)
     {
         self.storyID = story.storyID;
-        self.userID = @"app@homage.it";
+        self.userID = [[HMGHomage sharedHomage] me].email;
         
         // Posting the new Remake
         NSURL *remakePostURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/remake", SERVER]];

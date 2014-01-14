@@ -221,7 +221,10 @@
             NSString *text_id = [[textJSON objectForKey:@"text_id"] stringValue];
             NSString *text = [textJSON objectForKey:@"text"];
             
-            [texts setObject:text forKey:text_id];
+            if (text)
+            {
+                [texts setObject:text forKey:text_id];
+            }
         }
         remake.texts = texts;
         
