@@ -152,7 +152,7 @@
 
     HMGLogDebug(@"Fetching my remakes from server");
     
-    NSURL *myRemakesURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/remakes/user/%@", SERVER, self.me.userID]];
+    NSURL *myRemakesURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/remakes/user/%@", SERVER, self.me.email]];
     
     // Getting the remakes Data from the server
     NSError *serverError;

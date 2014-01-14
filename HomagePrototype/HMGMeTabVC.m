@@ -75,7 +75,7 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
- return 1;
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
@@ -123,8 +123,40 @@
     
     if ([cell isKindOfClass: [HMGUserRemakeCVCell class]]) {
         HMGUserRemakeCVCell *remakeCell = (HMGUserRemakeCVCell *) cell;
-        remakeCell.thumbnail.image = remake.thumbnail;
         remakeCell.shareButton.tag = indexPath.item;
+        
+        if (remake.thumbnail)
+        {
+            remakeCell.thumbnail.image = remake.thumbnail;
+        } else
+        {
+            if (remake.thumbnailURL)
+            {
+                // Loading the thumbnail (doing this on a different thread)
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                    
+                    // Downloading the thumbnail from URL
+                    NSError *thumbnailDownloadError;
+                    remake.thumbnail = [UIImage imageWithData:[NSData dataWithContentsOfURL:remake.thumbnailURL options:NSDataReadingMappedAlways error:&thumbnailDownloadError]];
+                    if (thumbnailDownloadError)
+                    {
+                        NSString *errorDescription = [NSString stringWithFormat:@"Trying to download image from: %@, resulted with the following error: %@", remake.thumbnailURL.path, thumbnailDownloadError.description];
+                        HMGLogError(errorDescription);
+                        [NSException raise:@"ConnectivityException" format:@"%@", errorDescription];
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        // Update the UI
+                        remakeCell.thumbnail.image = remake.thumbnail;
+                    });
+                });
+            } else
+            {
+                // Error - No URL
+                HMGLogError(@"story <%@> has no thumbnail URL", remake.remakeID);
+            }
+        }
+        
         if (![indexPath isEqual:self.expandedCellIndexPath])
         {
             [self collapseCellAtIndexPath:indexPath];
@@ -277,6 +309,8 @@
 
 - (IBAction)reloadDataPushed:(id)sender
 {
+    HMGHomage *homageCore = [HMGHomage sharedHomage];
+    self.userRemakes = homageCore.myRemakes;
     [self.userRemakesCV reloadData];
 }
 
