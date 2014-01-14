@@ -16,8 +16,8 @@
     
     if (self)
     {
-        self.uploaded = NO;
-        self.processed = NO;
+        //self.uploaded = NO;
+        //self.processed = NO;
     }
     
     return self;

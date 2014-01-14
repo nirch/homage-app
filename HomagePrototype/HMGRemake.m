@@ -97,7 +97,7 @@
         else
         {
             HMGLogDebug(@"Video Successfully uploaded");
-            footage.uploaded = YES;
+            //footage.uploaded = YES;
             
             // Starting the Foreground Extraction on the Server
             NSURL *foregroundURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/foreground", SERVER]];
@@ -111,7 +111,7 @@
                 }
                 else
                 {
-                    footage.processed = YES;
+                    //footage.processed = YES;
                 }
             }] resume];
 

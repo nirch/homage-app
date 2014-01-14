@@ -148,6 +148,91 @@
 
 - (NSArray *)myRemakes
 {
+    HMGLogDebug(@"%s started", __PRETTY_FUNCTION__);
+
+    HMGLogDebug(@"Fetching my remakes from server");
+    
+    NSURL *myRemakesURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/remakes/user/%@", SERVER, self.me.userID]];
+    
+    // Getting the remakes Data from the server
+    NSError *serverError;
+    NSData *remakesData = [NSData dataWithContentsOfURL:myRemakesURL options:NSDataReadingMappedAlways error:&serverError];
+    if (serverError)
+    {
+        NSString *errorDescription = [NSString stringWithFormat:@"Trying to fetch data from: %@, resulted with the following error: %@", myRemakesURL.path, serverError.description];
+        HMGLogError(errorDescription);
+        [NSException raise:@"ConnectivityException" format:@"%@", errorDescription];
+    }
+    
+    // Converting data to JSON
+    NSError *jsonError;
+    id myRemakesJSON = [NSJSONSerialization JSONObjectWithData:remakesData options:kNilOptions error:&jsonError];
+    if (jsonError)
+    {
+        NSString *dataString = [[NSString alloc] initWithData:remakesData encoding:NSUTF8StringEncoding];
+        NSString *errorDescription = [NSString stringWithFormat:@"Trying to parse the following string to json: %@, resulted with the following error: %@", dataString, jsonError.description];
+        HMGLogError(errorDescription);
+        [NSException raise:@"JSONParserException" format:@"%@", errorDescription];
+    }
+    
+    // Parsing a JSON feed can result with a response of NSDictionary (in case of a single JSON object), or NSArray (in case of multiple JSON object, where each instance in the Array is an NSDictionary). Creating an Array in both Cases
+    NSArray *jsonRemakeArray;
+    if ([myRemakesJSON isKindOfClass:[NSDictionary class]])
+    {
+        jsonRemakeArray = @[myRemakesJSON];
+    }
+    else
+    {
+        jsonRemakeArray = myRemakesJSON;
+    }
+    
+    // Creating remakes (by parsing the remakes JSON)
+    NSMutableArray *myRemakes = [[NSMutableArray alloc] init];
+    for (NSDictionary *jsonRemake in jsonRemakeArray) {
+        
+        HMGRemake *remake = [[HMGRemake alloc] init];
+        
+        remake.remakeID = [[jsonRemake objectForKey:@"_id"] objectForKey:@"$oid"];
+        remake.storyID = [[jsonRemake objectForKey:@"story_id"] objectForKey:@"$oid"];
+        remake.userID = [jsonRemake objectForKey:@"user_id"];
+        remake.status = [[jsonRemake objectForKey:@"status"] intValue];
+        remake.video = [NSURL URLWithString:[jsonRemake objectForKey:@"video"]];
+        remake.thumbnailURL = [NSURL URLWithString:[jsonRemake objectForKey:@"thumbnail"]];
+        
+        // Parsing the footages
+        NSMutableDictionary *footages = [[NSMutableDictionary alloc] init];
+        NSArray *footagesJSON = [jsonRemake objectForKey:@"footages"];
+        for (NSDictionary *footageJSON in footagesJSON) {
+            HMGFootage *footage = [[HMGFootage alloc] init];
+            
+            NSString *sceneID = [[footageJSON objectForKey:@"scene_id"] stringValue];
+            footage.status = [[footageJSON objectForKey:@"status"] intValue];
+            //footage.rawVideo = [NSURL URLWithString:[footageJSON objectForKey:@"raw"]];
+            //footage.processedVideo = [NSURL URLWithString:[footageJSON objectForKey:@"processed"]];
+            
+            [footages setObject:footage forKey:sceneID];
+        }
+        remake.footages = footages;
+        
+        // Parsing the texts
+        NSMutableDictionary *texts = [[NSMutableDictionary alloc] init];
+        NSArray *textsJSON = [jsonRemake objectForKey:@"texts"];
+        for (NSDictionary *textJSON in textsJSON) {
+            NSString *text_id = [[textJSON objectForKey:@"text_id"] stringValue];
+            NSString *text = [textJSON objectForKey:@"text"];
+            
+            [texts setObject:text forKey:text_id];
+        }
+        remake.texts = texts;
+        
+        [myRemakes addObject:remake];
+    }
+    
+    return myRemakes;
+    
+    
+   /*
+    
     NSMutableArray *remakes = [[NSMutableArray alloc] init];
     
     HMGRemake *remake1 = [[HMGRemake alloc] init];
@@ -181,6 +266,7 @@
     [remakes addObject:remake4];
     
     return remakes;
+    */
 }
 
 @end
