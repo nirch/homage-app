@@ -307,4 +307,13 @@
     [self presentViewController:activityViewController animated:YES completion:^{}];
     
 }
+
+- (IBAction)reloadDataPushed:(id)sender
+{
+    HMGHomage *homageCore = [HMGHomage sharedHomage];
+    self.userRemakes = homageCore.myRemakes;
+    [self.userRemakesCV reloadData];
+}
+
+
 @end
