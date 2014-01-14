@@ -213,16 +213,18 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 	// your code here to reconfigure the app for changed settings
 }
-
 #pragma mark sharing
 - (IBAction)shareButtonPushed:(UIButton *)button
 {
-    HMGShareViewController *vc = [[HMGShareViewController alloc] initWithDefaultNibInParentVC:self];
-    self.shareVC = vc;
+    NSString *shareString = @"Check out the cool video i created with #Homage App";
     NSInteger index = button.tag;
     HMGRemake *remake = self.userRemakes[index];
-    NSURL *videoURL = remake.video;
-    self.shareVC.URLToShare = [videoURL absoluteString];
+    NSArray *activityItems = [NSArray arrayWithObjects:shareString, remake.thumbnail,remake.video , nil];
+   UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    [activityViewController setValue:shareString forKey:@"subject"];
+    activityViewController.excludedActivityTypes = @[UIActivityTypePostToTwitter,UIActivityTypeMessage,UIActivityTypePrint,UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,UIActivityTypeAddToReadingList];
+    //activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:activityViewController animated:YES completion:^{}];
+    
 }
-
 @end
