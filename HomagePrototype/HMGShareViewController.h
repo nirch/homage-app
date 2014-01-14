@@ -14,6 +14,8 @@
 @interface HMGShareViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (strong,nonatomic) NSString *URLToShare;
+@property (strong,nonatomic) NSString *storyID;
+@property (strong,nonatomic) UIImage *thumbnail;
 @property (weak,nonatomic) UIViewController *delegate;
 
 -(id)initWithDefaultNibInParentVC:(UIViewController *)parentVC;

@@ -152,21 +152,33 @@
     
     HMGRemake *remake1 = [[HMGRemake alloc] init];
     HMGRemake *remake2 = [[HMGRemake alloc] init];
+    HMGRemake *remake3 = [[HMGRemake alloc] init];
+    HMGRemake *remake4 = [[HMGRemake alloc] init];
     
-    //NSString *video1Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Wrong_meeting.mp4" ofType:nil];
     NSString *image1Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"wrong_meeting.png" ofType:nil];
-    //remake1.video = [NSURL fileURLWithPath:video1Path];
     remake1.video = [NSURL URLWithString:@"https://s3.amazonaws.com/homageapp/Final+Videos/final_Star+Wars_52ceacccdb25450c2c000001.mp4"];
     remake1.thumbnail = [UIImage imageWithContentsOfFile:image1Path];
+    remake1.status = HMGRemakeStatusInProgress;
     
-    //NSString *video2Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Family_Guy_Wrong_Meeting.mp4" ofType:nil];
     NSString *image2Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Family_Guy_Wrong_Meeting.png" ofType:nil];
-    //remake2.video = [NSURL fileURLWithPath:video2Path];
     remake2.video = [NSURL URLWithString:@"https://s3.amazonaws.com/homageapp/Final+Videos/final_Star+Wars_52cedc28db254513fc000004.mp4"];
     remake2.thumbnail = [UIImage imageWithContentsOfFile:image2Path];
+    remake2.status = HMGRemakeStatusRendering;
+    
+    NSString *image3Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"wrong_meeting.png" ofType:nil];
+    remake3.video = [NSURL URLWithString:@"https://s3.amazonaws.com/homageapp/Final+Videos/final_Star+Wars_52ceacccdb25450c2c000001.mp4"];
+    remake3.thumbnail = [UIImage imageWithContentsOfFile:image3Path];
+    remake3.status = HMGRemakeStatusDone;
+    
+    NSString *image4Path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Family_Guy_Wrong_Meeting.png" ofType:nil];
+    remake4.video = [NSURL URLWithString:@"https://s3.amazonaws.com/homageapp/Final+Videos/final_Star+Wars_52cedc28db254513fc000004.mp4"];
+    remake4.thumbnail = [UIImage imageWithContentsOfFile:image4Path];
+    remake4.status = HMGRemakeStatusNew;
     
     [remakes addObject:remake1];
     [remakes addObject:remake2];
+    [remakes addObject:remake3];
+    [remakes addObject:remake4];
     
     return remakes;
 }

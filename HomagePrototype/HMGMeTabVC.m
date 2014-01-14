@@ -64,6 +64,7 @@
 {
     [self.moviePlaceHolder Position:@"align"];
     self.expandedCellIndexPath = nil;
+    [self.userRemakesCV reloadData];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -108,9 +109,9 @@
 {
     if ([indexPath isEqual:self.expandedCellIndexPath])
     {
-        return 154;
+        return 235;
     } else {
-        return 121;
+        return 206;
     }
 
 }
@@ -122,13 +123,59 @@
     
     if ([cell isKindOfClass: [HMGUserRemakeCVCell class]]) {
         HMGUserRemakeCVCell *remakeCell = (HMGUserRemakeCVCell *) cell;
-        //remakeCell.thumbnail.userInteractionEnabled = YES;
-        NSLog(@"item size is: %f,%f" , remakeCell.intrinsicContentSize.height , remakeCell.intrinsicContentSize.width);
         remakeCell.thumbnail.image = remake.thumbnail;
         remakeCell.shareButton.tag = indexPath.item;
+        if (![indexPath isEqual:self.expandedCellIndexPath])
+        {
+            [self collapseCellAtIndexPath:indexPath];
+        }
+        [self setRemakeCell:remakeCell withStatus: remake.status];
     }
     
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
+}
+
+-(void)setRemakeCell:(HMGUserRemakeCVCell *)remakeCell withStatus:(HMGRemakeStatus)status
+{
+    switch (status)
+    {
+        case HMGRemakeStatusInProgress:
+            remakeCell.thumbnail.userInteractionEnabled = NO;
+            remakeCell.statusLabel.text = @"incomplete";
+            [remakeCell.shareButton setHidden:YES];
+            remakeCell.shareButton.enabled = NO;
+            remakeCell.remakeButton.enabled = YES;
+            remakeCell.completeButton.enabled = YES;
+            remakeCell.deleteButton.enabled = YES;
+            break;
+        case HMGRemakeStatusDone:
+            remakeCell.thumbnail.userInteractionEnabled = YES;
+            remakeCell.statusLabel.text = @"";
+            remakeCell.shareButton.enabled = YES;
+            [remakeCell.completeButton setHidden:YES];
+            remakeCell.completeButton.enabled = NO;
+            remakeCell.remakeButton.enabled = YES;
+            remakeCell.deleteButton.enabled = YES;
+            break;
+        case HMGRemakeStatusNew:
+            remakeCell.thumbnail.userInteractionEnabled = NO;
+            remakeCell.statusLabel.text = @"New";
+            remakeCell.shareButton.enabled = NO;
+            remakeCell.remakeButton.enabled = YES;
+            remakeCell.completeButton.enabled = YES;
+            remakeCell.deleteButton.enabled = YES;
+            break;
+        case HMGRemakeStatusRendering:
+            remakeCell.thumbnail.userInteractionEnabled = NO;
+            remakeCell.statusLabel.text = @"rendering";
+            remakeCell.shareButton.enabled = NO;
+            [remakeCell.completeButton setHidden:YES];
+            remakeCell.completeButton.enabled = NO;
+            remakeCell.remakeButton.enabled = YES;
+            remakeCell.deleteButton.enabled = NO;
+            break;
+            
+    }
 }
 
 
@@ -171,6 +218,7 @@
 {
     [self.moviePlaceHolder collapse];
     [self.movieplayer stop];
+    self.movieplayer = nil;
 }
 
 -(void)collapseCellAtIndexPath:(NSIndexPath *)indexPath
@@ -187,7 +235,7 @@
 {
     self.movieplayer = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
     self.movieplayer.controlStyle = MPMovieControlStyleEmbedded;
-    self.movieplayer.shouldAutoplay = YES;
+    self.movieplayer.shouldAutoplay = NO;
     [self.movieplayer.view setFrame: self.moviePlaceHolder.bounds];
     self.movieplayer.scalingMode = MPMovieScalingModeFill;
     [self.moviePlaceHolder addSubview:self.movieplayer.view];
@@ -223,6 +271,14 @@
     HMGRemake *remake = self.userRemakes[index];
     NSURL *videoURL = remake.video;
     self.shareVC.URLToShare = [videoURL absoluteString];
+    self.shareVC.storyID = remake.storyID;
+    self.shareVC.thumbnail = remake.thumbnail;
 }
+
+- (IBAction)reloadDataPushed:(id)sender
+{
+    [self.userRemakesCV reloadData];
+}
+
 
 @end
