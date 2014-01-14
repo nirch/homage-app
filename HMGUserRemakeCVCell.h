@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *completeButton;
 @property (weak, nonatomic) IBOutlet UIButton *remakeButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+
 @end

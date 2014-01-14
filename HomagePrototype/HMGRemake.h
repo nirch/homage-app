@@ -28,6 +28,7 @@ typedef enum {
 @property (strong, nonatomic) NSDictionary *footages;
 @property (strong, nonatomic) NSDictionary *texts;
 @property (strong, nonatomic) NSURL *video;
+@property (strong, nonatomic) NSURL *thumbnailURL;
 @property (strong, nonatomic) UIImage *thumbnail;
 
 - (id)initWithStory:(HMGStory *)story;

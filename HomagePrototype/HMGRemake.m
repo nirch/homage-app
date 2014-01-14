@@ -9,6 +9,7 @@
 #import "HMGRemake.h"
 #import "HMGLog.h"
 #import "HMGNetworkManager.h"
+#import "HMGHomage.h"
 
 @implementation HMGRemake
 
@@ -19,7 +20,7 @@
     if (self)
     {
         self.storyID = story.storyID;
-        self.userID = @"app@homage.it";
+        self.userID = [[HMGHomage sharedHomage] me].email;
         
         // Posting the new Remake
         NSURL *remakePostURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/remake", SERVER]];
@@ -97,7 +98,7 @@
         else
         {
             HMGLogDebug(@"Video Successfully uploaded");
-            footage.uploaded = YES;
+            //footage.uploaded = YES;
             
             // Starting the Foreground Extraction on the Server
             NSURL *foregroundURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/foreground", SERVER]];
@@ -111,7 +112,7 @@
                 }
                 else
                 {
-                    footage.processed = YES;
+                    //footage.processed = YES;
                 }
             }] resume];
 

@@ -14,7 +14,7 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>NAME</string>
+			<string>USERNAME</string>
 			<key>Key</key>
 			<string>username</string>
 		</dict>
