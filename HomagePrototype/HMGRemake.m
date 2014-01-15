@@ -37,8 +37,20 @@
             }
             else
             {
-                NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                self.remakeID = dataString;
+                // Getting the Remake ID from the response
+                NSError *jsonError;
+                NSDictionary *remakeJSON = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+                if (jsonError)
+                {
+                    NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                    NSString *errorDescription = [NSString stringWithFormat:@"Trying to parse the following string to json: %@, resulted with the following error: %@", dataString, jsonError.description];
+                    HMGLogError(errorDescription);
+                    [NSException raise:@"JSONParserException" format:@"%@", errorDescription];
+                }
+                
+                //NSDictionary *_id = [remakeJSON objectForKey:@"_id"];
+                //NSString *test = [_id objectForKey:@"$oid"];
+                self.remakeID = [[remakeJSON objectForKey:@"_id"] objectForKey:@"$oid"];
             }
         }] resume];
     }
