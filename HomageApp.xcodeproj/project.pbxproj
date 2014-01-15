@@ -77,11 +77,19 @@
 		2686997A1879C37100689594 /* HMGResizeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 268699791879C37100689594 /* HMGResizeableView.m */; };
 		2687FF56180EC4A100727DD7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2687FF55180EC4A100727DD7 /* MobileCoreServices.framework */; };
 		268C9D1F183689DE00A169F8 /* HMGMyNavControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268C9D1E183689DE00A169F8 /* HMGMyNavControllerViewController.m */; };
+		269EA02518854A8500F013F6 /* trash_recyclebin_empty_closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 269EA02318854A8500F013F6 /* trash_recyclebin_empty_closed.png */; };
+		269EA02618854A8500F013F6 /* under-construction.png in Resources */ = {isa = PBXBuildFile; fileRef = 269EA02418854A8500F013F6 /* under-construction.png */; };
+		269EA02818855B9500F013F6 /* settings_wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 269EA02718855B9500F013F6 /* settings_wheel.png */; };
 		26A0088E183D111B00E6AC34 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A0088D183D111B00E6AC34 /* Toast+UIView.m */; };
 		26A2A2CE18795BEE00F35870 /* HMGMeTabVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A2A2CD18795BEE00F35870 /* HMGMeTabVC.m */; };
 		26A2A2D41879934300F35870 /* HMGUserRemakeCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A2A2D31879934300F35870 /* HMGUserRemakeCVCell.m */; };
 		26C0860818670079007D2B8D /* HMGShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C0860718670079007D2B8D /* HMGShareViewController.m */; };
 		26C0860A186709EA007D2B8D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C08609186709EA007D2B8D /* MessageUI.framework */; };
+		26FC99DC18855E15005521B2 /* share_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 26FC99DB18855E15005521B2 /* share_orange.png */; };
+		26FC99E018856F39005521B2 /* backwardsR.png in Resources */ = {isa = PBXBuildFile; fileRef = 26FC99DF18856F39005521B2 /* backwardsR.png */; };
+		26FC99E318857F07005521B2 /* UIButton+indexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FC99E218857F07005521B2 /* UIButton+indexPath.m */; };
+		26FC99E51885AA0F005521B2 /* closeX.png in Resources */ = {isa = PBXBuildFile; fileRef = 26FC99E41885AA0F005521B2 /* closeX.png */; };
+		26FC99E9188692E3005521B2 /* closeX1.png in Resources */ = {isa = PBXBuildFile; fileRef = 26FC99E8188692E3005521B2 /* closeX1.png */; };
 		65215F8517F8685C00AB95F0 /* HMGFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65215F8417F8685C00AB95F0 /* HMGFileManager.m */; };
 		6554A18E17F0351100706D4D /* HMGRecordSegmentViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A18D17F0351100706D4D /* HMGRecordSegmentViewConroller.m */; };
 		6554A19617F052FD00706D4D /* HMGRecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A19517F052FD00706D4D /* HMGRecordButton.m */; };
@@ -414,6 +422,9 @@
 		2687FF55180EC4A100727DD7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		268C9D1D183689DE00A169F8 /* HMGMyNavControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGMyNavControllerViewController.h; sourceTree = "<group>"; };
 		268C9D1E183689DE00A169F8 /* HMGMyNavControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGMyNavControllerViewController.m; sourceTree = "<group>"; };
+		269EA02318854A8500F013F6 /* trash_recyclebin_empty_closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash_recyclebin_empty_closed.png; sourceTree = "<group>"; };
+		269EA02418854A8500F013F6 /* under-construction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "under-construction.png"; sourceTree = "<group>"; };
+		269EA02718855B9500F013F6 /* settings_wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_wheel.png; sourceTree = "<group>"; };
 		26A0088C183D111B00E6AC34 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
 		26A0088D183D111B00E6AC34 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		26A2A2CC18795BEE00F35870 /* HMGMeTabVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGMeTabVC.h; sourceTree = "<group>"; };
@@ -423,6 +434,12 @@
 		26C0860618670079007D2B8D /* HMGShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGShareViewController.h; sourceTree = "<group>"; };
 		26C0860718670079007D2B8D /* HMGShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGShareViewController.m; sourceTree = "<group>"; };
 		26C08609186709EA007D2B8D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		26FC99DB18855E15005521B2 /* share_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_orange.png; sourceTree = "<group>"; };
+		26FC99DF18856F39005521B2 /* backwardsR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backwardsR.png; sourceTree = "<group>"; };
+		26FC99E118857F07005521B2 /* UIButton+indexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+indexPath.h"; path = "HomagePrototype/UIButton+indexPath.h"; sourceTree = "<group>"; };
+		26FC99E218857F07005521B2 /* UIButton+indexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+indexPath.m"; path = "HomagePrototype/UIButton+indexPath.m"; sourceTree = "<group>"; };
+		26FC99E41885AA0F005521B2 /* closeX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeX.png; sourceTree = "<group>"; };
+		26FC99E8188692E3005521B2 /* closeX1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeX1.png; sourceTree = "<group>"; };
 		65215F8317F8685C00AB95F0 /* HMGFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGFileManager.h; sourceTree = "<group>"; };
 		65215F8417F8685C00AB95F0 /* HMGFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGFileManager.m; sourceTree = "<group>"; };
 		6554A18C17F0351100706D4D /* HMGRecordSegmentViewConroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGRecordSegmentViewConroller.h; sourceTree = "<group>"; };
@@ -860,6 +877,8 @@
 			isa = PBXGroup;
 			children = (
 				26092CF61882DE66001132B2 /* HMGVCDismissProtocol.h */,
+				26FC99E118857F07005521B2 /* UIButton+indexPath.h */,
+				26FC99E218857F07005521B2 /* UIButton+indexPath.m */,
 				2684E7F2187DC0FC00006A75 /* UITabBarController+autorotation.h */,
 				2684E7F3187DC0FC00006A75 /* UITabBarController+autorotation.m */,
 				F1C8EED017CF38420093DB0A /* HomagePrototype */,
@@ -944,11 +963,17 @@
 		F1C8EED117CF38420093DB0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				26FC99E41885AA0F005521B2 /* closeX.png */,
+				26FC99E8188692E3005521B2 /* closeX1.png */,
+				26FC99DF18856F39005521B2 /* backwardsR.png */,
+				26FC99DB18855E15005521B2 /* share_orange.png */,
 				2655873A17E0D0170086D936 /* pb_ap_button_background.png */,
 				2655873B17E0D0170086D936 /* pb_ap_button_background@2x.png */,
 				2655873C17E0D0170086D936 /* pb_charlie_button_background.png */,
 				2655873D17E0D0170086D936 /* pb_charlie_button_background@2x.png */,
 				2655873E17E0D0170086D936 /* pb_play_icon.png */,
+				269EA02318854A8500F013F6 /* trash_recyclebin_empty_closed.png */,
+				269EA02418854A8500F013F6 /* under-construction.png */,
 				2655873F17E0D0170086D936 /* pb_play_icon@2x.png */,
 				2655871A17DE3F970086D936 /* tp_info_popup.png */,
 				2655871B17DE3F970086D936 /* tp_info_popup@2x.png */,
@@ -958,6 +983,7 @@
 				2655871F17DE3F970086D936 /* tp_play_button@2x.png */,
 				2655872017DE3F970086D936 /* tp_scrubber_knob_highlighted.png */,
 				262BB18018845D96006E696A /* moreButton.png */,
+				269EA02718855B9500F013F6 /* settings_wheel.png */,
 				2655872117DE3F970086D936 /* tp_scrubber_knob_highlighted@2x.png */,
 				2655872217DE3F970086D936 /* tp_scrubber_knob.png */,
 				2655872317DE3F970086D936 /* tp_scrubber_knob@2x.png */,
@@ -1205,6 +1231,7 @@
 				F122EC581858D89000AAB697 /* Today.jpg in Resources */,
 				F10DBE4617FC5375000B69DB /* Tikim_Images.mp4 in Resources */,
 				F19123DA17DE140D00DE85DB /* I_am_yor_father-Ran.mp4 in Resources */,
+				269EA02618854A8500F013F6 /* under-construction.png in Resources */,
 				F19123DB17DE140D00DE85DB /* I_am_yor_father-Ran.png in Resources */,
 				F19123DC17DE140D00DE85DB /* Templates.csv in Resources */,
 				F19123DD17DE140D00DE85DB /* Wrong_meeting.mp4 in Resources */,
@@ -1217,6 +1244,7 @@
 				2655872B17DE3F970086D936 /* tp_info_popup@2x.png in Resources */,
 				F18DEF55183BC9B0003EBBFF /* Gal_Tikim_Thumbnail.png in Resources */,
 				2655872C17DE3F970086D936 /* tp_pause_button.png in Resources */,
+				269EA02818855B9500F013F6 /* settings_wheel.png in Resources */,
 				2655872D17DE3F970086D936 /* tp_pause_button@2x.png in Resources */,
 				2655872E17DE3F970086D936 /* tp_play_button.png in Resources */,
 				2655872F17DE3F970086D936 /* tp_play_button@2x.png in Resources */,
@@ -1225,6 +1253,7 @@
 				2655873217DE3F970086D936 /* tp_scrubber_knob.png in Resources */,
 				2655873317DE3F970086D936 /* tp_scrubber_knob@2x.png in Resources */,
 				2655873417DE3F970086D936 /* tp_track_flex.png in Resources */,
+				26FC99E51885AA0F005521B2 /* closeX.png in Resources */,
 				2655873517DE3F970086D936 /* tp_track_flex@2x.png in Resources */,
 				2655873617DE3F970086D936 /* tp_track_highlight_flex.png in Resources */,
 				2655873717DE3F970086D936 /* tp_track_highlight_flex@2x.png in Resources */,
@@ -1254,10 +1283,13 @@
 				F1F04B2A17E48EFB00720C5C /* finish.PNG in Resources */,
 				F1F04B2C17E48EFB00720C5C /* he_told_me_enough.PNG in Resources */,
 				F1F04B2D17E48EFB00720C5C /* legs.mov in Resources */,
+				269EA02518854A8500F013F6 /* trash_recyclebin_empty_closed.png in Resources */,
 				F1F04B2E17E48EFB00720C5C /* legs.png in Resources */,
 				F1F04B2F17E48EFB00720C5C /* letting_go.mov in Resources */,
 				F1F04B3017E48EFB00720C5C /* letting_go.PNG in Resources */,
 				F1F04B3117E48EFB00720C5C /* Neta_juice.mov in Resources */,
+				26FC99E9188692E3005521B2 /* closeX1.png in Resources */,
+				26FC99DC18855E15005521B2 /* share_orange.png in Resources */,
 				F1F04B3217E48EFB00720C5C /* Neta_juice.PNG in Resources */,
 				F1F04B3317E48EFB00720C5C /* never_join_you.mov in Resources */,
 				F1F04B3417E48EFB00720C5C /* never_join_you.PNG in Resources */,
@@ -1266,6 +1298,7 @@
 				F1F04B3717E48EFB00720C5C /* Race.mov in Resources */,
 				F1F04B3817E48EFB00720C5C /* Race.PNG in Resources */,
 				F1F04B3917E48EFB00720C5C /* Red.mov in Resources */,
+				26FC99E018856F39005521B2 /* backwardsR.png in Resources */,
 				260349ED187C48EE002938B0 /* Settings.bundle in Resources */,
 				F1F04B3A17E48EFB00720C5C /* Tikim_Images.mp4 in Resources */,
 				F1F04B3B17E48EFB00720C5C /* Tikim_Images.png in Resources */,
@@ -1445,6 +1478,7 @@
 				F1F04AF417E1B36F00720C5C /* HMGTextSegment.m in Sources */,
 				F1F04AF717E1B39700720C5C /* HMGFixedSegment.m in Sources */,
 				F16804291872FB2600637C46 /* HMGStory.m in Sources */,
+				26FC99E318857F07005521B2 /* UIButton+indexPath.m in Sources */,
 				2655874A17E618E40086D936 /* HMGRemakeCVCell.m in Sources */,
 				26034A16187C4E07002938B0 /* IASKSpecifier.m in Sources */,
 				26034A15187C4E07002938B0 /* IASKSettingsStoreUserDefaults.m in Sources */,

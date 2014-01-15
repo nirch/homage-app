@@ -7,7 +7,6 @@
 //
 
 #import "HMGMeTabVC.h"
-#import "HMGResizeableView.h"
 #import <MediaPlayer/MediaPlayer.h>
 
 #ifdef USES_IASK_STATIC_LIBRARY
@@ -17,16 +16,14 @@
 #endif
 
 @interface HMGMeTabVC () <UICollectionViewDataSource,UICollectionViewDelegate>
-@property (weak, nonatomic) IBOutlet HMGResizeableView *moviePlaceHolder;
+
 @property (strong,nonatomic) MPMoviePlayerController *movieplayer;
 
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *userRemakesCV;
 @property (strong,nonatomic) NSArray *userRemakes;
-@property (strong,nonatomic) NSIndexPath *expandedCellIndexPath;
-@property (weak, nonatomic) IBOutlet UIButton *closeMovieView;
-@property (weak,nonatomic) HMGShareViewController *shareVC;
+//@property (weak,nonatomic) HMGShareViewController *shareVC;
 
 @end
 
@@ -46,24 +43,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     HMGHomage *homageCore = [HMGHomage sharedHomage];
     self.userName.text = homageCore.me.userName;
     self.userRemakes = homageCore.myRemakes;
-    self.expandedCellIndexPath = nil;
-    [self.moviePlaceHolder Position:@"init"];
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    self.expandedCellIndexPath = nil;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self.moviePlaceHolder Position:@"align"];
-    self.expandedCellIndexPath = nil;
     [self.userRemakesCV reloadData];
 }
 
@@ -95,10 +86,20 @@
     HMGRemake *remake = self.userRemakes[indexPath.item];
     [self updateCell:cell withRemake:remake withIndexPath:indexPath];
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
+    
+    //border design
+    [cell.layer setBorderColor:[UIColor colorWithRed:213.0/255.0f green:210.0/255.0f blue:199.0/255.0f alpha:1.0f].CGColor];
+    [cell.layer setBorderWidth:1.0f];
+    [cell.layer setCornerRadius:7.5f];
+    [cell.layer setShadowOffset:CGSizeMake(0, 1)];
+    [cell.layer setShadowColor:[[UIColor darkGrayColor] CGColor]];
+    [cell.layer setShadowRadius:8.0];
+    [cell.layer setShadowOpacity:0.8];
+
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+/*- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //Return the size of each cell to draw
     CGSize cellSize = (CGSize) { .width = 319, .height = [self heightForCellAtIndexPath:indexPath]};
@@ -114,7 +115,7 @@
         return 206;
     }
 
-}
+}*/
 
 
 - (void)updateCell:(UICollectionViewCell *)cell withRemake:(HMGRemake *)remake withIndexPath:(NSIndexPath *)indexPath
@@ -124,6 +125,8 @@
     if ([cell isKindOfClass: [HMGUserRemakeCVCell class]]) {
         HMGUserRemakeCVCell *remakeCell = (HMGUserRemakeCVCell *) cell;
         remakeCell.shareButton.tag = indexPath.item;
+        remakeCell.actionButton.tag = indexPath.item;
+        remakeCell.closeMovieButton.tag = indexPath.item;
         
         if (remake.thumbnail)
         {
@@ -157,10 +160,6 @@
             }
         }
         
-        if (![indexPath isEqual:self.expandedCellIndexPath])
-        {
-            [self collapseCellAtIndexPath:indexPath];
-        }
         [self setRemakeCell:remakeCell withStatus: remake.status];
     }
     
@@ -169,40 +168,42 @@
 
 -(void)setRemakeCell:(HMGUserRemakeCVCell *)remakeCell withStatus:(HMGRemakeStatus)status
 {
+    NSString *imagePath;
+    UIImage *bgimage;
+    
     switch (status)
     {
         case HMGRemakeStatusInProgress:
-            remakeCell.thumbnail.userInteractionEnabled = NO;
-            remakeCell.statusLabel.text = @"incomplete";
+            imagePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"under-construction" ofType:@"png"];
+            bgimage = [UIImage imageWithContentsOfFile:imagePath];
+            [remakeCell.actionButton setBackgroundImage:bgimage forState:UIControlStateNormal];
             [remakeCell.shareButton setHidden:YES];
             remakeCell.shareButton.enabled = NO;
-            remakeCell.remakeButton.enabled = YES;
-            remakeCell.completeButton.enabled = YES;
+            remakeCell.remakeButton.enabled = YES;            
             remakeCell.deleteButton.enabled = YES;
             break;
         case HMGRemakeStatusDone:
-            remakeCell.thumbnail.userInteractionEnabled = YES;
-            remakeCell.statusLabel.text = @"";
+            imagePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"pb_play_icon" ofType:@"png"];
+            bgimage = [UIImage imageWithContentsOfFile:imagePath];
+            [remakeCell.actionButton setBackgroundImage:bgimage forState:UIControlStateNormal];
             remakeCell.shareButton.enabled = YES;
-            [remakeCell.completeButton setHidden:YES];
-            remakeCell.completeButton.enabled = NO;
             remakeCell.remakeButton.enabled = YES;
             remakeCell.deleteButton.enabled = YES;
             break;
+        
         case HMGRemakeStatusNew:
-            remakeCell.thumbnail.userInteractionEnabled = NO;
-            remakeCell.statusLabel.text = @"New";
+            imagePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"under-construction.png" ofType:nil];
+            bgimage = [UIImage imageWithContentsOfFile:imagePath];
+            [remakeCell.actionButton setBackgroundImage:bgimage forState:UIControlStateNormal];
+            [remakeCell.shareButton setHidden:YES];
             remakeCell.shareButton.enabled = NO;
             remakeCell.remakeButton.enabled = YES;
-            remakeCell.completeButton.enabled = YES;
             remakeCell.deleteButton.enabled = YES;
             break;
+
         case HMGRemakeStatusRendering:
-            remakeCell.thumbnail.userInteractionEnabled = NO;
-            remakeCell.statusLabel.text = @"rendering";
+            [remakeCell.actionButton setTitle:@"render" forState:UIControlStateNormal];
             remakeCell.shareButton.enabled = NO;
-            [remakeCell.completeButton setHidden:YES];
-            remakeCell.completeButton.enabled = NO;
             remakeCell.remakeButton.enabled = YES;
             remakeCell.deleteButton.enabled = NO;
             break;
@@ -211,7 +212,38 @@
 }
 
 
--(IBAction)playRemake:(UITapGestureRecognizer *)gesture
+- (IBAction)actionButtonPushed:(UIButton *)sender
+{
+    HMGLogDebug(@"%s started" , __PRETTY_FUNCTION__);
+    NSInteger index = sender.tag;
+    HMGRemake *remake = self.userRemakes[index];
+    HMGLogInfo(@"the user selected remake at index: %d" , index);
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
+    //HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)sender.superview.superview;
+    
+    [self displayViewBounds:cell.moviePlaceHolder];
+    
+    switch (remake.status)
+    {
+        case HMGRemakeStatusDone:
+            [self playRemakeVideoWithURL:remake.video inCell:cell];
+            break;
+        case HMGRemakeStatusInProgress:
+            //TODO:connect to recorder at last non taken scene
+            break;
+        case HMGRemakeStatusNew:
+            //TODO:connect to recorder at last non taken scene
+            break;
+        case HMGRemakeStatusRendering:
+            break;
+    }
+
+    HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
+}
+
+
+/*-(IBAction)playRemake:(UITapGestureRecognizer *)gesture
 {
     HMGLogDebug(@"%s started" , __PRETTY_FUNCTION__);
     
@@ -220,7 +252,6 @@
     if (indexPath)
     {
         HMGRemake *remake = self.userRemakes[indexPath.item];
-        [self.moviePlaceHolder expand];
         [self playRemakeVideoWithURL:remake.video];
         HMGLogInfo(@"the user selected remake at index: @d" , indexPath.item);
     }
@@ -235,44 +266,55 @@
     NSIndexPath *indexPath = [self.userRemakesCV indexPathForItemAtPoint:tapLocation];
     if (indexPath)
     {
-        [self collapseCellAtIndexPath:self.expandedCellIndexPath];
-        self.expandedCellIndexPath = indexPath;
         HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
-        [cell.moreView setHidden:YES];
-        [cell.expandedView setHidden:NO];
         [self.userRemakesCV performBatchUpdates:nil completion:nil];
     }
     
-}
+}*/
 
-
-- (IBAction)collapseMovieView:(id)sender
+/*- (IBAction)collapseMovieView:(id)sender
 {
     [self.moviePlaceHolder collapse];
     [self.movieplayer stop];
     self.movieplayer = nil;
-}
+}*/
 
--(void)collapseCellAtIndexPath:(NSIndexPath *)indexPath
+/*-(void)collapseCellAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath == nil) return;
     HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
     [cell.expandedView setHidden:YES];
     [cell.moreView setHidden:NO];
-}
+}*/
 
 
 
--(void)playRemakeVideoWithURL:(NSURL *)videoURL
+-(void)playRemakeVideoWithURL:(NSURL *)videoURL inCell:(UICollectionViewCell *)cell
 {
+    
+    HMGUserRemakeCVCell *remakeCell;
+    if ([cell isKindOfClass:[HMGUserRemakeCVCell class]])
+    {
+        remakeCell = (HMGUserRemakeCVCell *)cell;
+    }
     self.movieplayer = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
     self.movieplayer.controlStyle = MPMovieControlStyleEmbedded;
-    self.movieplayer.shouldAutoplay = NO;
-    [self.movieplayer.view setFrame: self.moviePlaceHolder.bounds];
     self.movieplayer.scalingMode = MPMovieScalingModeFill;
-    [self.moviePlaceHolder addSubview:self.movieplayer.view];
-    [self.moviePlaceHolder addSubview:self.closeMovieView];
+    [self.movieplayer.view setFrame: cell.bounds];
+    self.movieplayer.shouldAutoplay = YES;
+    [remakeCell.moviePlaceHolder insertSubview:self.movieplayer.view belowSubview:remakeCell.closeMovieButton];
+    [remakeCell.thumbnail setHidden:YES];
+    [remakeCell addSubview:remakeCell.moviePlaceHolder];
     [self.movieplayer setFullscreen:NO animated:YES];
+}
+- (IBAction)closeMovieButtonPushed:(UIButton *)sender
+{
+    [self.movieplayer stop];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
+    HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
+    [cell.moviePlaceHolder removeFromSuperview];
+    [cell.thumbnail setHidden:NO];
+    
 }
 
 - (IBAction)showSettingModal:(id)sender
@@ -295,7 +337,7 @@
 }
 
 #pragma mark sharing
-- (IBAction)shareButtonPushed:(UIButton *)button
+/*- (IBAction)shareButtonPushed:(UIButton *)button
 {
     HMGShareViewController *vc = [[HMGShareViewController alloc] initWithDefaultNibInParentVC:self];
     self.shareVC = vc;
@@ -305,13 +347,25 @@
     self.shareVC.URLToShare = [videoURL absoluteString];
     self.shareVC.storyID = remake.storyID;
     self.shareVC.thumbnail = remake.thumbnail;
-}
+}*/
 
 - (IBAction)reloadDataPushed:(id)sender
 {
     HMGHomage *homageCore = [HMGHomage sharedHomage];
     self.userRemakes = homageCore.myRemakes;
     [self.userRemakesCV reloadData];
+}
+
+-(void)displayViewBounds:(UIView *)view
+{
+    CGRect frame = view.bounds;
+    CGFloat originX = frame.origin.x;
+    CGFloat originY = frame.origin.y;
+    CGFloat width = frame.size.width;
+    CGFloat height = frame.size.height;
+    
+    NSLog(@"view bounds of cell are: origin:(%f,%f) height: %f width: %f" , originX,originY,height,width);
+    
 }
 
 
