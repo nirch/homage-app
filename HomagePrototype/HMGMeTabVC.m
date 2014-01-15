@@ -46,6 +46,7 @@
     HMGHomage *homageCore = [HMGHomage sharedHomage];
     self.userName.text = homageCore.me.userName;
     self.userRemakes = homageCore.myRemakes;
+    self.movieplayer.view.tag = -1;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -177,7 +178,7 @@
             imagePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"under-construction" ofType:@"png"];
             bgimage = [UIImage imageWithContentsOfFile:imagePath];
             [remakeCell.actionButton setBackgroundImage:bgimage forState:UIControlStateNormal];
-            [remakeCell.shareButton setHidden:YES];
+            //[remakeCell.shareButton setHidden:YES];
             remakeCell.shareButton.enabled = NO;
             remakeCell.remakeButton.enabled = YES;            
             remakeCell.deleteButton.enabled = YES;
@@ -195,7 +196,7 @@
             imagePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"under-construction.png" ofType:nil];
             bgimage = [UIImage imageWithContentsOfFile:imagePath];
             [remakeCell.actionButton setBackgroundImage:bgimage forState:UIControlStateNormal];
-            [remakeCell.shareButton setHidden:YES];
+            //[remakeCell.shareButton setHidden:YES];
             remakeCell.shareButton.enabled = NO;
             remakeCell.remakeButton.enabled = YES;
             remakeCell.deleteButton.enabled = YES;
@@ -222,12 +223,12 @@
     HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
     //HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)sender.superview.superview;
     
-    [self displayViewBounds:cell.moviePlaceHolder];
+    //[self displayViewBounds:cell.moviePlaceHolder];
     
     switch (remake.status)
     {
         case HMGRemakeStatusDone:
-            [self playRemakeVideoWithURL:remake.video inCell:cell];
+            [self playRemakeVideoWithURL:remake.video inCell:cell withIndexPath:indexPath];
             break;
         case HMGRemakeStatusInProgress:
             //TODO:connect to recorder at last non taken scene
@@ -289,7 +290,7 @@
 
 
 
--(void)playRemakeVideoWithURL:(NSURL *)videoURL inCell:(UICollectionViewCell *)cell
+-(void)playRemakeVideoWithURL:(NSURL *)videoURL inCell:(UICollectionViewCell *)cell withIndexPath:(NSIndexPath *)indexPath
 {
     
     HMGUserRemakeCVCell *remakeCell;
@@ -297,24 +298,40 @@
     {
         remakeCell = (HMGUserRemakeCVCell *)cell;
     }
+    
+    if (self.movieplayer.view.tag != -1) //another movie is being played in another cell
+    {
+        NSIndexPath *otherIndexPath = [NSIndexPath indexPathForRow:self.movieplayer.view.tag inSection:0];
+        HMGUserRemakeCVCell *otherRemakeCell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:otherIndexPath];
+        [self closeMovieInCell:otherRemakeCell];
+    }
+    
     self.movieplayer = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
     self.movieplayer.controlStyle = MPMovieControlStyleEmbedded;
     self.movieplayer.scalingMode = MPMovieScalingModeFill;
     [self.movieplayer.view setFrame: cell.bounds];
+    self.movieplayer.view.tag = indexPath.item;
     self.movieplayer.shouldAutoplay = YES;
     [remakeCell.moviePlaceHolder insertSubview:self.movieplayer.view belowSubview:remakeCell.closeMovieButton];
     [remakeCell.thumbnail setHidden:YES];
-    [remakeCell addSubview:remakeCell.moviePlaceHolder];
+    [remakeCell.buttonsView setHidden:YES];
+    [remakeCell.moviePlaceHolder setHidden:NO];
     [self.movieplayer setFullscreen:NO animated:YES];
 }
 - (IBAction)closeMovieButtonPushed:(UIButton *)sender
 {
-    [self.movieplayer stop];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
-    HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
-    [cell.moviePlaceHolder removeFromSuperview];
-    [cell.thumbnail setHidden:NO];
-    
+    HMGUserRemakeCVCell *remakeCell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
+    [self closeMovieInCell:remakeCell];
+}
+
+-(void)closeMovieInCell:(HMGUserRemakeCVCell *)remakeCell
+{
+    [self.movieplayer stop];
+    [remakeCell.moviePlaceHolder setHidden:YES];
+    [remakeCell.thumbnail setHidden:NO];
+    [remakeCell.buttonsView setHidden:NO];
+    self.movieplayer.view.tag = -1; //we are good to go and play a movie in another cell
 }
 
 - (IBAction)showSettingModal:(id)sender

@@ -87,7 +87,6 @@
 		26C0860A186709EA007D2B8D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C08609186709EA007D2B8D /* MessageUI.framework */; };
 		26FC99DC18855E15005521B2 /* share_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 26FC99DB18855E15005521B2 /* share_orange.png */; };
 		26FC99E018856F39005521B2 /* backwardsR.png in Resources */ = {isa = PBXBuildFile; fileRef = 26FC99DF18856F39005521B2 /* backwardsR.png */; };
-		26FC99E318857F07005521B2 /* UIButton+indexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FC99E218857F07005521B2 /* UIButton+indexPath.m */; };
 		26FC99E51885AA0F005521B2 /* closeX.png in Resources */ = {isa = PBXBuildFile; fileRef = 26FC99E41885AA0F005521B2 /* closeX.png */; };
 		26FC99E9188692E3005521B2 /* closeX1.png in Resources */ = {isa = PBXBuildFile; fileRef = 26FC99E8188692E3005521B2 /* closeX1.png */; };
 		65215F8517F8685C00AB95F0 /* HMGFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65215F8417F8685C00AB95F0 /* HMGFileManager.m */; };
@@ -364,7 +363,6 @@
 		260683AF181D67F300D390DA /* HMGtakeCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGtakeCVCell.h; sourceTree = "<group>"; };
 		260683B0181D67F300D390DA /* HMGtakeCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGtakeCVCell.m; sourceTree = "<group>"; };
 		26092CF41882D5BA001132B2 /* shareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shareView.xib; sourceTree = "<group>"; };
-		26092CF61882DE66001132B2 /* HMGVCDismissProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGVCDismissProtocol.h; sourceTree = "<group>"; };
 		262A2C8B17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.05.22 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2013-08-26 at 9.05.22 PM.png"; sourceTree = "<group>"; };
 		262A2C8C17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.09.25 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2013-08-26 at 9.09.25 PM.png"; sourceTree = "<group>"; };
 		262A2C8D17DE2CAD006D2EAA /* Screen Shot 2013-08-26 at 9.11.28 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2013-08-26 at 9.11.28 PM.png"; sourceTree = "<group>"; };
@@ -436,8 +434,6 @@
 		26C08609186709EA007D2B8D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		26FC99DB18855E15005521B2 /* share_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_orange.png; sourceTree = "<group>"; };
 		26FC99DF18856F39005521B2 /* backwardsR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backwardsR.png; sourceTree = "<group>"; };
-		26FC99E118857F07005521B2 /* UIButton+indexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+indexPath.h"; path = "HomagePrototype/UIButton+indexPath.h"; sourceTree = "<group>"; };
-		26FC99E218857F07005521B2 /* UIButton+indexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+indexPath.m"; path = "HomagePrototype/UIButton+indexPath.m"; sourceTree = "<group>"; };
 		26FC99E41885AA0F005521B2 /* closeX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeX.png; sourceTree = "<group>"; };
 		26FC99E8188692E3005521B2 /* closeX1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeX1.png; sourceTree = "<group>"; };
 		65215F8317F8685C00AB95F0 /* HMGFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGFileManager.h; sourceTree = "<group>"; };
@@ -876,9 +872,6 @@
 		F1C8EEBE17CF38420093DB0A = {
 			isa = PBXGroup;
 			children = (
-				26092CF61882DE66001132B2 /* HMGVCDismissProtocol.h */,
-				26FC99E118857F07005521B2 /* UIButton+indexPath.h */,
-				26FC99E218857F07005521B2 /* UIButton+indexPath.m */,
 				2684E7F2187DC0FC00006A75 /* UITabBarController+autorotation.h */,
 				2684E7F3187DC0FC00006A75 /* UITabBarController+autorotation.m */,
 				F1C8EED017CF38420093DB0A /* HomagePrototype */,
@@ -1478,7 +1471,6 @@
 				F1F04AF417E1B36F00720C5C /* HMGTextSegment.m in Sources */,
 				F1F04AF717E1B39700720C5C /* HMGFixedSegment.m in Sources */,
 				F16804291872FB2600637C46 /* HMGStory.m in Sources */,
-				26FC99E318857F07005521B2 /* UIButton+indexPath.m in Sources */,
 				2655874A17E618E40086D936 /* HMGRemakeCVCell.m in Sources */,
 				26034A16187C4E07002938B0 /* IASKSpecifier.m in Sources */,
 				26034A15187C4E07002938B0 /* IASKSettingsStoreUserDefaults.m in Sources */,
