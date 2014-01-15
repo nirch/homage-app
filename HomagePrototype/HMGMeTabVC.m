@@ -64,12 +64,17 @@
 
 -(void)viewDidDisappear:(BOOL)animated
 {
+    
+    if (self.playingMovieIndex == -1) return;
+    
     NSIndexPath *otherIndexPath = [NSIndexPath indexPathForRow:self.playingMovieIndex inSection:0];
-    HMGLogDebug(@"video is playing at cell #%d" , otherIndexPath.item);
+    HMGLogDebug(@"video is playing at cell #%d. going to stop it" , otherIndexPath.item);
     HMGUserRemakeCVCell *otherRemakeCell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:otherIndexPath];
     [self closeMovieInCell:otherRemakeCell];
 }
 
+
+#pragma mark remakes collection view design
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -105,24 +110,6 @@
 
     return cell;
 }
-
-/*- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    //Return the size of each cell to draw
-    CGSize cellSize = (CGSize) { .width = 319, .height = [self heightForCellAtIndexPath:indexPath]};
-    return cellSize;
-}
-
--(CGFloat)heightForCellAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([indexPath isEqual:self.expandedCellIndexPath])
-    {
-        return 235;
-    } else {
-        return 206;
-    }
-
-}*/
 
 
 - (void)updateCell:(UICollectionViewCell *)cell withRemake:(HMGRemake *)remake withIndexPath:(NSIndexPath *)indexPath
@@ -231,9 +218,6 @@
     HMGLogInfo(@"the user selected remake at index: %d" , index);
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
-    //HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)sender.superview.superview;
-    
-    //[self displayViewBounds:cell.moviePlaceHolder];
     
     switch (remake.status)
     {
@@ -247,58 +231,12 @@
             //TODO:connect to recorder at last non taken scene
             break;
         case HMGRemakeStatusRendering:
+            //TODO: what to do?
             break;
     }
 
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
 }
-
-
-/*-(IBAction)playRemake:(UITapGestureRecognizer *)gesture
-{
-    HMGLogDebug(@"%s started" , __PRETTY_FUNCTION__);
-    
-    CGPoint tapLocation = [gesture locationInView:self.userRemakesCV];
-    NSIndexPath *indexPath = [self.userRemakesCV indexPathForItemAtPoint:tapLocation];
-    if (indexPath)
-    {
-        HMGRemake *remake = self.userRemakes[indexPath.item];
-        [self playRemakeVideoWithURL:remake.video];
-        HMGLogInfo(@"the user selected remake at index: @d" , indexPath.item);
-    }
-    
-    HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
-}
-
-
-- (IBAction)expandRemakeCell:(UITapGestureRecognizer *)gesture
-{
-    CGPoint tapLocation = [gesture locationInView:self.userRemakesCV];
-    NSIndexPath *indexPath = [self.userRemakesCV indexPathForItemAtPoint:tapLocation];
-    if (indexPath)
-    {
-        HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
-        [self.userRemakesCV performBatchUpdates:nil completion:nil];
-    }
-    
-}*/
-
-/*- (IBAction)collapseMovieView:(id)sender
-{
-    [self.moviePlaceHolder collapse];
-    [self.movieplayer stop];
-    self.movieplayer = nil;
-}*/
-
-/*-(void)collapseCellAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath == nil) return;
-    HMGUserRemakeCVCell *cell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
-    [cell.expandedView setHidden:YES];
-    [cell.moreView setHidden:NO];
-}*/
-
-
 
 -(void)playRemakeVideoWithURL:(NSURL *)videoURL inCell:(UICollectionViewCell *)cell withIndexPath:(NSIndexPath *)indexPath
 {
@@ -329,10 +267,10 @@
     [remakeCell.moviePlaceHolder setHidden:NO];
     [self.movieplayer setFullscreen:NO animated:YES];
 }
+
 - (IBAction)closeMovieButtonPushed:(UIButton *)sender
 {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
-    HMGUserRemakeCVCell *remakeCell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:indexPath];
+    HMGUserRemakeCVCell *remakeCell = (HMGUserRemakeCVCell *)[self getCellFromCollectionView:self.userRemakesCV atIndex:sender.tag atSection:0];
     [self closeMovieInCell:remakeCell];
 }
 
@@ -363,6 +301,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 	// your code here to reconfigure the app for changed settings
 }
+
 #pragma mark sharing
 - (IBAction)shareButtonPushed:(UIButton *)button
 {
@@ -378,12 +317,16 @@
     
 }
 
+
+#pragma mark helper functions 
+
 - (IBAction)reloadDataPushed:(id)sender
 {
     HMGHomage *homageCore = [HMGHomage sharedHomage];
     self.userRemakes = homageCore.myRemakes;
     [self.userRemakesCV reloadData];
 }
+
 
 -(void)displayViewBounds:(UIView *)view
 {
@@ -395,6 +338,13 @@
     
     NSLog(@"view bounds of cell are: origin:(%f,%f) height: %f width: %f" , originX,originY,height,width);
     
+}
+
+-(UICollectionViewCell *)getCellFromCollectionView:(UICollectionView *)collectionView atIndex:(NSInteger)index atSection:(NSInteger)section
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:section];
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    return cell;
 }
 
 

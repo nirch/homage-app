@@ -424,6 +424,9 @@
                                                             <state key="normal" backgroundImage="share_orange.png">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="shareButtonPushed:" destination="0vs-aC-dy7" eventType="touchUpInside" id="EBA-pp-vxa"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Rs8-pd-oGv">
                                                             <rect key="frame" x="274" y="147" width="39" height="31"/>
