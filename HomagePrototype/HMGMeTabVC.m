@@ -352,12 +352,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 	// your code here to reconfigure the app for changed settings
 }
-
 #pragma mark sharing
 /*- (IBAction)shareButtonPushed:(UIButton *)button
 {
-    HMGShareViewController *vc = [[HMGShareViewController alloc] initWithDefaultNibInParentVC:self];
-    self.shareVC = vc;
+    NSString *shareString = @"Check out the cool video i created with #Homage App";
     NSInteger index = button.tag;
     HMGRemake *remake = self.userRemakes[index];
     NSURL *videoURL = remake.video;
