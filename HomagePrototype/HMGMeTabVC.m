@@ -23,6 +23,8 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *userRemakesCV;
 @property (strong,nonatomic) NSArray *userRemakes;
+@property (nonatomic) NSInteger playingMovieIndex;
+
 //@property (weak,nonatomic) HMGShareViewController *shareVC;
 
 @end
@@ -43,10 +45,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.playingMovieIndex = -1;
     HMGHomage *homageCore = [HMGHomage sharedHomage];
     self.userName.text = homageCore.me.userName;
     self.userRemakes = homageCore.myRemakes;
-    self.movieplayer.view.tag = -1;
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -61,7 +64,10 @@
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    [self.movieplayer stop];
+    NSIndexPath *otherIndexPath = [NSIndexPath indexPathForRow:self.playingMovieIndex inSection:0];
+    HMGLogDebug(@"video is playing at cell #%d" , otherIndexPath.item);
+    HMGUserRemakeCVCell *otherRemakeCell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:otherIndexPath];
+    [self closeMovieInCell:otherRemakeCell];
 }
 
 
@@ -161,13 +167,13 @@
             }
         }
         
-        [self setRemakeCell:remakeCell withStatus: remake.status];
+        [self updateUIOfRemakeCell:remakeCell withStatus: remake.status];
     }
     
     HMGLogDebug(@"%s finished" , __PRETTY_FUNCTION__);
 }
 
--(void)setRemakeCell:(HMGUserRemakeCVCell *)remakeCell withStatus:(HMGRemakeStatus)status
+-(void)updateUIOfRemakeCell:(HMGUserRemakeCVCell *)remakeCell withStatus:(HMGRemakeStatus)status
 {
     NSString *imagePath;
     UIImage *bgimage;
@@ -175,35 +181,40 @@
     switch (status)
     {
         case HMGRemakeStatusInProgress:
+            [remakeCell.actionButton setTitle:@"" forState:UIControlStateNormal];
             imagePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"under-construction" ofType:@"png"];
             bgimage = [UIImage imageWithContentsOfFile:imagePath];
             [remakeCell.actionButton setBackgroundImage:bgimage forState:UIControlStateNormal];
-            //[remakeCell.shareButton setHidden:YES];
+            [remakeCell.shareButton setHidden:YES];
             remakeCell.shareButton.enabled = NO;
             remakeCell.remakeButton.enabled = YES;            
             remakeCell.deleteButton.enabled = YES;
             break;
         case HMGRemakeStatusDone:
+            [remakeCell.actionButton setTitle:@"" forState:UIControlStateNormal];
             imagePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"pb_play_icon" ofType:@"png"];
             bgimage = [UIImage imageWithContentsOfFile:imagePath];
             [remakeCell.actionButton setBackgroundImage:bgimage forState:UIControlStateNormal];
+            [remakeCell.shareButton setHidden:NO];
             remakeCell.shareButton.enabled = YES;
             remakeCell.remakeButton.enabled = YES;
             remakeCell.deleteButton.enabled = YES;
             break;
         
         case HMGRemakeStatusNew:
+            [remakeCell.actionButton setTitle:@"" forState:UIControlStateNormal];
             imagePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"under-construction.png" ofType:nil];
             bgimage = [UIImage imageWithContentsOfFile:imagePath];
             [remakeCell.actionButton setBackgroundImage:bgimage forState:UIControlStateNormal];
-            //[remakeCell.shareButton setHidden:YES];
+            [remakeCell.shareButton setHidden:YES];
             remakeCell.shareButton.enabled = NO;
             remakeCell.remakeButton.enabled = YES;
             remakeCell.deleteButton.enabled = YES;
             break;
 
         case HMGRemakeStatusRendering:
-            [remakeCell.actionButton setTitle:@"render" forState:UIControlStateNormal];
+            [remakeCell.actionButton setTitle:@"R" forState:UIControlStateNormal];
+            [remakeCell.shareButton setHidden:YES];
             remakeCell.shareButton.enabled = NO;
             remakeCell.remakeButton.enabled = YES;
             remakeCell.deleteButton.enabled = NO;
@@ -211,7 +222,6 @@
             
     }
 }
-
 
 - (IBAction)actionButtonPushed:(UIButton *)sender
 {
@@ -299,9 +309,10 @@
         remakeCell = (HMGUserRemakeCVCell *)cell;
     }
     
-    if (self.movieplayer.view.tag != -1) //another movie is being played in another cell
+    if (self.playingMovieIndex != -1) //another movie is being played in another cell
     {
-        NSIndexPath *otherIndexPath = [NSIndexPath indexPathForRow:self.movieplayer.view.tag inSection:0];
+        NSIndexPath *otherIndexPath = [NSIndexPath indexPathForRow:self.playingMovieIndex inSection:0];
+        HMGLogDebug(@"video is playing at cell #%d" , otherIndexPath.item);
         HMGUserRemakeCVCell *otherRemakeCell = (HMGUserRemakeCVCell *)[self.userRemakesCV cellForItemAtIndexPath:otherIndexPath];
         [self closeMovieInCell:otherRemakeCell];
     }
@@ -310,7 +321,7 @@
     self.movieplayer.controlStyle = MPMovieControlStyleEmbedded;
     self.movieplayer.scalingMode = MPMovieScalingModeFill;
     [self.movieplayer.view setFrame: cell.bounds];
-    self.movieplayer.view.tag = indexPath.item;
+    self.playingMovieIndex = indexPath.item;
     self.movieplayer.shouldAutoplay = YES;
     [remakeCell.moviePlaceHolder insertSubview:self.movieplayer.view belowSubview:remakeCell.closeMovieButton];
     [remakeCell.thumbnail setHidden:YES];
@@ -331,7 +342,7 @@
     [remakeCell.moviePlaceHolder setHidden:YES];
     [remakeCell.thumbnail setHidden:NO];
     [remakeCell.buttonsView setHidden:NO];
-    self.movieplayer.view.tag = -1; //we are good to go and play a movie in another cell
+    self.playingMovieIndex = -1; //we are good to go and play a movie in another cell
 }
 
 - (IBAction)showSettingModal:(id)sender
@@ -353,16 +364,19 @@
 	// your code here to reconfigure the app for changed settings
 }
 #pragma mark sharing
-/*- (IBAction)shareButtonPushed:(UIButton *)button
+- (IBAction)shareButtonPushed:(UIButton *)button
 {
     NSString *shareString = @"Check out the cool video i created with #Homage App";
     NSInteger index = button.tag;
     HMGRemake *remake = self.userRemakes[index];
-    NSURL *videoURL = remake.video;
-    self.shareVC.URLToShare = [videoURL absoluteString];
-    self.shareVC.storyID = remake.storyID;
-    self.shareVC.thumbnail = remake.thumbnail;
-}*/
+    NSArray *activityItems = [NSArray arrayWithObjects:shareString, remake.thumbnail,remake.video , nil];
+   UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    [activityViewController setValue:shareString forKey:@"subject"];
+    activityViewController.excludedActivityTypes = @[UIActivityTypePostToTwitter,UIActivityTypeMessage,UIActivityTypePrint,UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,UIActivityTypeAddToReadingList];
+    //activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:activityViewController animated:YES completion:^{}];
+    
+}
 
 - (IBAction)reloadDataPushed:(id)sender
 {
